@@ -1,156 +1,148 @@
 import Link from "next/link";
 
+// Menu data for easy editing
+const footerMenus = {
+  treatsAndInfo: {
+    title: "Treats & Info",
+    items: [
+      { name: "Paw-some Treats", href: "/treats" },
+      { name: "Inside the Bite", href: "/inside-the-bite" },
+      { name: "Our Pack Journey", href: "/our-pack-journey" },
+      { name: "Paw-rents Ask", href: "/paw-rents-ask" },
+      { name: "Paw-some Treats", href: "/treats" }, // Duplicate in the image
+    ],
+  },
+  forPawrents: {
+    title: "For Paw-rents",
+    items: [
+      { name: "How to Order", href: "/how-to-order" },
+      { name: "Shipping Info", href: "/shipping-info" },
+      { name: "Returns & Refunds", href: "/returns-refunds" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms-of-service" },
+    ],
+  },
+  social: {
+    title: "Let's Be Furiends",
+    items: [
+      { name: "Facebook", href: "https://facebook.com", icon: "facebook" },
+      { name: "Instagram", href: "https://instagram.com", icon: "instagram" },
+      { name: "Youtube", href: "https://youtube.com", icon: "youtube" },
+    ],
+  },
+};
+
 export function Footer() {
   return (
-    <footer className="bg-gray-800 text-white mt-auto">
-      <div className="container mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">NOURISH</h3>
-            <p className="text-gray-300 mb-4">
-              Premium dog treats made with love, science, and the highest quality ingredients.
+    <footer className="border-t border-gray-200 pt-12 pb-8 bg-white">
+      <div className="container mx-auto px-4">
+        {/* Newsletter Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
+          <div className="lg:col-span-1">
+            <h2 className="text-3xl font-bold mb-4">Stay in the Loop, Pup!</h2>
+            <p className="text-gray-600 mb-4">
+              Join our pack to fetch updates on new flavors, restocks, and tail-wagging promos.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-amber-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-300 hover:text-amber-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-300 hover:text-amber-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                </svg>
-              </a>
+
+            <div className="flex flex-col space-y-4 max-w-md">
+              <input type="email" placeholder="Enter your email" className="border border-gray-300 px-4 py-3 rounded" />
+              <button className="bg-black text-white py-3 px-6 rounded hover:bg-gray-800 transition-colors">
+                Subscribe
+              </button>
+              <p className="text-sm text-gray-500">
+                By subscribing, you agree to our{" "}
+                <Link href="/privacy-policy" className="underline">
+                  Privacy Policy
+                </Link>{" "}
+                and give us paw-mission to send you updates.
+              </p>
             </div>
           </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/shop" className="text-gray-300 hover:text-amber-400">
-                  Shop All
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-300 hover:text-amber-400">
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-300 hover:text-amber-400">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/faqs" className="text-gray-300 hover:text-amber-400">
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-amber-400">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Top Products</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/products/calming-chews" className="text-gray-300 hover:text-amber-400">
-                  Calming Chews
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/protein-bites" className="text-gray-300 hover:text-amber-400">
-                  Protein Bites
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/dental-sticks" className="text-gray-300 hover:text-amber-400">
-                  Dental Sticks
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/training-treats" className="text-gray-300 hover:text-amber-400">
-                  Training Treats
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/gift-boxes" className="text-gray-300 hover:text-amber-400">
-                  Gift Boxes
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact & Help</h4>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2 mt-0.5 text-amber-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <span>support@nourishpets.com</span>
-              </li>
-              <li className="flex items-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2 mt-0.5 text-amber-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <span>1-800-NOURISH</span>
-              </li>
-            </ul>
-            <div className="mt-6">
-              <h4 className="text-lg font-semibold mb-4">Join Our Pack</h4>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800"
-                />
-                <button className="bg-amber-500 hover:bg-amber-600 px-4 py-2 rounded-r-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
+
+          {/* Menu Columns */}
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Treats & Info */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4">{footerMenus.treatsAndInfo.title}</h3>
+              <ul className="space-y-3">
+                {footerMenus.treatsAndInfo.items.map((item, index) => (
+                  <li key={index}>
+                    <Link href={item.href} className="text-gray-700 hover:text-black">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* For Paw-rents */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4">{footerMenus.forPawrents.title}</h3>
+              <ul className="space-y-3">
+                {footerMenus.forPawrents.items.map((item, index) => (
+                  <li key={index}>
+                    <Link href={item.href} className="text-gray-700 hover:text-black">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Let's Be Furiends */}
+            <div>
+              <h3 className="font-semibold text-lg mb-4">{footerMenus.social.title}</h3>
+              <ul className="space-y-3">
+                {footerMenus.social.items.map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    <Link href={item.href} className="text-gray-700 hover:text-black flex items-center">
+                      <span className="mr-2">
+                        {item.icon === "facebook" && (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-6 h-6"
+                          >
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                          </svg>
+                        )}
+                        {item.icon === "instagram" && (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-6 h-6"
+                          >
+                            <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.059-.976.045-1.505.207-1.858.344-.466.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.37-.058 4.04 0 2.67.01 2.986.058 4.04.045.976.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.04.058 2.67 0 2.986-.01 4.04-.058.976-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.054.058-1.37.058-4.04 0-2.67-.01-2.986-.058-4.04-.045-.976-.207-1.504-.344-1.857a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.054-.048-1.37-.058-4.04-.058zm0 3.063a5.136 5.136 0 110 10.27 5.136 5.136 0 010-10.27zm0 8.468a3.333 3.333 0 100-6.666 3.333 3.333 0 000 6.666zm6.538-8.469a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" />
+                          </svg>
+                        )}
+                        {item.icon === "youtube" && (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-6 h-6"
+                          >
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                          </svg>
+                        )}
+                      </span>
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-gray-700 text-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} Nourish Pet Treats. All rights reserved.</p>
+
+        {/* Logo and Copyright */}
+        <div className="border-t border-gray-200 pt-8">
+          <div className="flex flex-col items-center justify-center">
+            <div className="text-9xl font-black tracking-tighter mb-6">NOURISH</div>
+            <div className="text-sm text-gray-500 mb-6">© {new Date().getFullYear()} Nourish. All rights reserved.</div>
+          </div>
         </div>
       </div>
     </footer>
