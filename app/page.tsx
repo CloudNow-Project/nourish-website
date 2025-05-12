@@ -28,7 +28,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section with dog and product image */}
-      <section className="relative pt-24 min-h-[90vh] flex items-center py-12 overflow-hidden bg-terracota">
+      <section className="relative pt-32 min-h-[90vh] flex items-center py-12 overflow-hidden bg-terracota">
         <div className="container max-w-6xl mx-auto px-4 relative z-10">
           <div className="flex gap-20 items-center px-10">
             {/* Left side content with balanced margins */}
@@ -72,11 +72,11 @@ export default function Home() {
         <Paw size={130} color="#B04818" className="absolute bottom-60 right-1/4 opacity-25 -rotate-12 md:block" />
       </section>
 
-      {/* Why Paw-rents Choose Nourish */}
+      {/* Why Pawrents Choose Nourish */}
       <section className="py-24 bg-white">
         <div className="container max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-center text-chile-rojo mb-8">
-            Why Paw-rents Choose Nourish
+            Why Pawrents Choose Nourish
           </h2>
           <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
             Our treats aren&apos;t just tasty—they&apos;re made with carefully sourced ingredients, nutritional
@@ -117,8 +117,8 @@ export default function Home() {
 
       {/* Featured Products Section */}
       <ProductGrid
-        title="Paw-some Treats"
-        subtitle="Healthy, tasty, and paw-picked by dogs everywhere."
+        title="Pawsome Treats"
+        subtitle="Healthy, tasty, and pawpicked by dogs everywhere."
         products={featuredProducts}
       />
 

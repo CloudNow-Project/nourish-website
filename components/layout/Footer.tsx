@@ -1,35 +1,23 @@
 import Link from "next/link";
 import { footerMenus, newsletterContent } from "@/data/site";
 import { Paw } from "@/components/ui/Paw";
+import { NourishLogo } from "@/components/ui/NourishLogo";
 
 export function Footer() {
   return (
     <footer className="relative text-[#FFF1BF]">
-      {/* Smooth curved top edge that matches the reference image */}
-      <div
-        className="h-32 w-full overflow-hidden"
-        style={{
-          backgroundColor: "#114F3C",
-          borderTopLeftRadius: "100% 80%",
-          borderTopRightRadius: "100% 80%",
-          marginTop: "-4rem",
-        }}
-      >
-        {/* No paws in the curved area as requested */}
-      </div>
-
       {/* Main footer content */}
-      <div className="relative pb-16 overflow-hidden" style={{ backgroundColor: "#114F3C" }}>
-        {/* Decorative paw prints in background */}
+      <div className="relative py-16 overflow-hidden" style={{ backgroundColor: "#114F3C" }}>
+        {/* Decorative paw prints in background with varied orientations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <Paw size={120} color="#FFF1BF" className="absolute top-10 left-10 opacity-5" />
-          <Paw size={80} color="#FFF1BF" className="absolute top-40 right-20 opacity-5" />
-          <Paw size={100} color="#FFF1BF" className="absolute bottom-20 left-1/4 opacity-5" />
-          <Paw size={60} color="#FFF1BF" className="absolute top-1/2 right-1/3 opacity-5" />
-          <Paw size={90} color="#FFF1BF" className="absolute bottom-10 right-10 opacity-5" />
+          <Paw size={120} color="#FFF1BF" className="absolute top-10 left-10 opacity-5 rotate-45" />
+          <Paw size={80} color="#FFF1BF" className="absolute top-40 right-20 opacity-5 -rotate-12" />
+          <Paw size={100} color="#FFF1BF" className="absolute bottom-20 left-1/4 opacity-5 -rotate-30" />
+          <Paw size={60} color="#FFF1BF" className="absolute top-1/2 right-1/3 opacity-5 -rotate-45" />
+          <Paw size={90} color="#FFF1BF" className="absolute bottom-10 right-10 opacity-5 rotate-30" />
         </div>
 
-        <div className="container max-w-6xl mx-auto px-4 relative z-10 pt-4">
+        <div className="container max-w-6xl mx-auto px-4 relative z-10 pt-12">
           <div className="flex flex-col lg:flex-row">
             {/* Newsletter Subscription */}
             <div className="lg:w-[30%] mb-10 lg:mb-0 pr-0 lg:pr-12">
@@ -77,7 +65,7 @@ export function Footer() {
                 </ul>
               </div>
 
-              {/* For Paw-rents */}
+              {/* For Pawrents */}
               <div>
                 <h3 className="font-semibold text-lg mb-4 text-[#FFF1BF]">{footerMenus.forPawrents.title}</h3>
                 <ul className="space-y-3">
@@ -145,8 +133,14 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="border-t border-[#FFF1BF]/20 mt-12 pt-8">
-            <div className="flex flex-col items-center justify-center">
-              <div className="text-6xl md:text-9xl font-black tracking-tighter mb-6 text-[#FFF1BF]">NOURISH</div>
+            <div className="flex flex-col items-center justify-center md:my-4 lg:my-5">
+              <div className="md:my-6 w-full flex justify-center">
+                <NourishLogo
+                  color="#FFF1BF"
+                  size={500}
+                  className="sm:scale-100 md:scale-125 lg:scale-150 transform-gpu transition-transform duration-300 hover:scale-110 md:hover:scale-130 lg:hover:scale-155"
+                />
+              </div>
               <div className="text-sm text-[#FFF1BF]/70">
                 © {new Date().getFullYear()} Nourish. All rights reserved.
               </div>

@@ -10,7 +10,7 @@ export const siteConfig = {
 export const mainNav = [
   { name: "Inside the Bite", href: "/inside-the-bite" },
   { name: "Our Pack Journey", href: "/our-pack-journey" },
-  { name: "Paw-rents Ask", href: "/paw-rents-ask" },
+  { name: "Pawrents Ask", href: "/pawrents-ask" },
   { name: "Give Us a Woof", href: "/give-us-a-woof" },
 ];
 
@@ -19,14 +19,14 @@ export const footerMenus = {
   treatsAndInfo: {
     title: "Treats & Info",
     items: [
-      { name: "Paw-some Treats", href: "/treats" },
+      { name: "Pawsome Treats", href: "/treats" },
       { name: "Inside the Bite", href: "/inside-the-bite" },
       { name: "Our Pack Journey", href: "/our-pack-journey" },
-      { name: "Paw-rents Ask", href: "/paw-rents-ask" },
+      { name: "Pawrents Ask", href: "/pawrents-ask" },
     ],
   },
   forPawrents: {
-    title: "For Paw-rents",
+    title: "For Pawrents",
     items: [
       { name: "How to Order", href: "/how-to-order" },
       { name: "Shipping Info", href: "/shipping-info" },
@@ -50,5 +50,5 @@ export const newsletterContent = {
   title: "Stay in the Loop, Pup!",
   description: "Join our pack to fetch updates on new flavors, restocks, and tail-wagging promos.",
   buttonText: "Subscribe",
-  disclaimer: "By subscribing, you agree to our Privacy Policy and give us paw-mission to send you updates.",
+  disclaimer: "By subscribing, you agree to our Privacy Policy and give us pawmission to send you updates.",
 }; 

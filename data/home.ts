@@ -1,4 +1,4 @@
-// Features for "Why Paw-rents Choose Nourish" section
+// Features for "Why Pawrents Choose Nourish" section
 export const features = [
   {
     id: "superfood",
@@ -32,7 +32,7 @@ export const gallerySection = {
     { id: "2", src: "", alt: "Playful puppy with Nourish biscuit" },
     { id: "3", src: "", alt: "Dog owner giving treats to pet" },
     { id: "4", src: "", alt: "Excited dog waiting for treat" },
-    { id: "5", src: "", alt: "Golden retriever with paw-some treat" },
+    { id: "5", src: "", alt: "Golden retriever with pawsome treat" },
     { id: "6", src: "", alt: "Small dog with big treat" },
     { id: "7", src: "", alt: "Dog duo sharing treats" },
   ],
@@ -55,7 +55,7 @@ export const ctaSection = {
 
 // Blog section data
 export const blogSection = {
-  heading: "Tales & Tips for Paw-rents",
+  heading: "Tales & Tips for Pawrents",
   subheading: "Explore tips, insights, and wellness guides for your furry family member.",
   viewAllLink: "/blog",
   categories: [
@@ -102,8 +102,8 @@ export const blogSection = {
 
 // Testimonials section data
 export const testimonials = {
-  heading: "What Paw-rents Say",
-  subheading: "Healthy pups, happy paw-rents — see what they're woofing about!",
+  heading: "What Pawrents Say",
+  subheading: "Healthy pups, happy pawrents — see what they're woofing about!",
   reviews: [
     {
       id: "1",
@@ -134,9 +134,9 @@ export const testimonials = {
 
 // Stats section data
 export const statsSection = {
-  heading: "Why Our Treats Are Paw-sitively Amazing",
+  heading: "Why Our Treats Are Pawsitively Amazing",
   subheading: "Join the pack of satisfied pups! Our superfood treats are loved by dogs and their owners alike.",
-  ctaText: "Paw-some Treats",
+  ctaText: "Pawsome Treats",
   ctaUrl: "/treats",
   stats: [
     {

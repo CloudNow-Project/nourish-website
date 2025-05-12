@@ -74,7 +74,7 @@ export const allProducts: Product[] = [
   {
     id: "9",
     name: "Peanut Butter Paws",
-    description: "Paw-shaped treats made with natural peanut butter – a protein-rich favorite that helps keep teeth clean.",
+    description: "Pawshaped treats made with natural peanut butter – a protein-rich favorite that helps keep teeth clean.",
     price: 12,
     imageSrc: "",
     slug: "peanut-butter-paws",

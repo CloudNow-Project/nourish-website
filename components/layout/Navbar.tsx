@@ -4,8 +4,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { mainNav } from "@/data/site";
+import { Paw } from "@/components/ui/Paw";
+import { NourishLogo } from "@/components/ui/NourishLogo";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const pathname = usePathname();
+
   return (
     <div className="w-full fixed top-0 z-50">
       <motion.nav
@@ -17,24 +22,44 @@ export function Navbar() {
         <div className="container mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
           {/* Logo */}
           <div className="relative z-10">
-            <Link href="/" className="font-display text-3xl md:text-4xl text-terracota font-bold tracking-wide">
-              nourish
+            <Link href="/" className="block">
+              <NourishLogo color="#d06224" size={150} className="hover:scale-105 transition-transform duration-300" />
             </Link>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-10 relative z-10">
-            {mainNav.map((item) => (
-              <div key={item.href} className="group">
-                <Link
-                  href={item.href}
-                  className="text-nourish-text text-lg md:text-xl font-medium relative pb-1 hover:text-chile-rojo transition-colors"
-                >
-                  {item.name}
-                  <span className="absolute left-0 bottom-0 w-0 h-1 bg-chile-rojo group-hover:w-full transition-all duration-300"></span>
-                </Link>
-              </div>
-            ))}
+            {mainNav.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <div key={item.href} className="group relative">
+                  {/* Paw icon that appears behind the text on hover or active state */}
+                  <div className="absolute inset-0 flex items-center justify-center -z-10">
+                    {isActive ? (
+                      <Paw
+                        size={32}
+                        color="#B04818" /* chile-rojo color for active */
+                        className="opacity-20 rotate-12"
+                      />
+                    ) : (
+                      <Paw
+                        size={32}
+                        color="#FFA94D" /* lighter orange color for hover */
+                        className="opacity-0 group-hover:opacity-30 -rotate-12 transition-all duration-300"
+                      />
+                    )}
+                  </div>
+                  <Link
+                    href={item.href}
+                    className={`text-lg md:text-xl font-medium relative z-10 transition-colors ${
+                      isActive ? "text-chile-rojo font-bold" : "text-nourish-text hover:text-chile-rojo"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </div>
+              );
+            })}
           </div>
 
           {/* CTA Button */}
