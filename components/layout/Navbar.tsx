@@ -41,7 +41,7 @@ export function Navbar() {
           <div className="relative z-10">
             <Link href="/treats">
               <Button className="bg-chile-rojo hover:bg-terracota text-white font-medium text-lg rounded-md px-8 py-6 transition-colors border-none shadow-md">
-                Paw-some Treats
+                Pawsome Treats
               </Button>
             </Link>
           </div>
