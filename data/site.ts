@@ -11,7 +11,7 @@ export const mainNav = [
   { name: "Inside the Bite", href: "/inside-the-bite" },
   { name: "Our Pack Journey", href: "/our-pack-journey" },
   { name: "Paw-rents Ask", href: "/paw-rents-ask" },
-  { name: "Give Us a Bark", href: "/give-us-a-bark" },
+  { name: "Give Us a Woof", href: "/give-us-a-woof" },
 ];
 
 // Footer menu data for easy editing

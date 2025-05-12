@@ -103,7 +103,7 @@ export const blogSection = {
 // Testimonials section data
 export const testimonials = {
   heading: "What Paw-rents Say",
-  subheading: "Healthy pups, happy paw-rents — see what they're barking about!",
+  subheading: "Healthy pups, happy paw-rents — see what they're woofing about!",
   reviews: [
     {
       id: "1",
