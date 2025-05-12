@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-quicksand);
+  --font-display: var(--font-fredoka);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -44,25 +44,45 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Brand Colors from Nourish packaging */
+  --nourish-salmon: #f8b8a8;
+  --nourish-orange: #f3b266;
+  --nourish-red: #e55a3c;
+  --nourish-green: #4ca771;
+  --nourish-text: #333333;
+
+  /* Ernest-inspired colors */
+  --ernest-teal: #5eccc7;
+  --ernest-coral: #ff9c92;
+  --ernest-navy: #2b5b9b;
+  --ernest-beige: #f8f4ea;
+  --ernest-tan: #dac2a0;
+
+  /* New color palette */
+  --terracota: #d06224;
+  --chile-rojo: #ae431e;
+  --olive: #8a8635;
+  --sunset: #eac891;
+
+  --radius: 1rem;
+  --background: var(--ernest-beige); /* Light beige color */
+  --foreground: var(--nourish-text);
+  --card: var(--ernest-beige); /* Light beige color */
+  --card-foreground: var(--nourish-text);
+  --popover: var(--ernest-beige); /* Light beige color */
+  --popover-foreground: var(--nourish-text);
+  --primary: var(--ernest-teal);
+  --primary-foreground: #ffffff;
+  --secondary: var(--ernest-coral);
+  --secondary-foreground: #ffffff;
+  --muted: #f8f8f8;
+  --muted-foreground: #666666;
+  --accent: var(--ernest-navy);
+  --accent-foreground: #ffffff;
+  --destructive: var(--nourish-red);
+  --border: #eeeeee;
+  --input: #eeeeee;
+  --ring: var(--ernest-teal);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -79,24 +99,24 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: #121212;
+  --foreground: #ffffff;
+  --card: #1e1e1e;
+  --card-foreground: #ffffff;
+  --popover: #1e1e1e;
+  --popover-foreground: #ffffff;
+  --primary: var(--ernest-teal);
+  --primary-foreground: #121212;
+  --secondary: var(--ernest-coral);
+  --secondary-foreground: #121212;
+  --muted: #2a2a2a;
+  --muted-foreground: #a0a0a0;
+  --accent: var(--ernest-navy);
+  --accent-foreground: #ffffff;
+  --destructive: var(--nourish-red);
+  --border: #333333;
+  --input: #333333;
+  --ring: var(--ernest-teal);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -119,4 +139,97 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold;
+  }
+}
+
+/* Utility classes for brand colors */
+.text-nourish-salmon {
+  color: var(--nourish-salmon);
+}
+.text-nourish-orange {
+  color: var(--nourish-orange);
+}
+.text-nourish-red {
+  color: var(--nourish-red);
+}
+.text-nourish-green {
+  color: var(--nourish-green);
+}
+.bg-nourish-salmon {
+  background-color: var(--nourish-salmon);
+}
+.bg-nourish-orange {
+  background-color: var(--nourish-orange);
+}
+.bg-nourish-red {
+  background-color: var(--nourish-red);
+}
+.bg-nourish-green {
+  background-color: var(--nourish-green);
+}
+
+/* Ernest-inspired color utilities */
+.text-ernest-teal {
+  color: var(--ernest-teal);
+}
+.text-ernest-coral {
+  color: var(--ernest-coral);
+}
+.text-ernest-navy {
+  color: var(--ernest-navy);
+}
+.text-ernest-beige {
+  color: var(--ernest-beige);
+}
+.text-ernest-tan {
+  color: var(--ernest-tan);
+}
+.bg-ernest-teal {
+  background-color: var(--ernest-teal);
+}
+.bg-ernest-coral {
+  background-color: var(--ernest-coral);
+}
+.bg-ernest-navy {
+  background-color: var(--ernest-navy);
+}
+.bg-ernest-beige {
+  background-color: var(--ernest-beige);
+}
+.bg-ernest-tan {
+  background-color: var(--ernest-tan);
+}
+
+/* New color palette utilities */
+.text-terracota {
+  color: var(--terracota);
+}
+.text-chile-rojo {
+  color: var(--chile-rojo);
+}
+.text-olive {
+  color: var(--olive);
+}
+.text-sunset {
+  color: var(--sunset);
+}
+.bg-terracota {
+  background-color: var(--terracota);
+}
+.bg-chile-rojo {
+  background-color: var(--chile-rojo);
+}
+.bg-olive {
+  background-color: var(--olive);
+}
+.bg-sunset {
+  background-color: var(--sunset);
 }

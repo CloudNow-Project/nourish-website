@@ -1,130 +1,168 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ProductGrid } from "@/components/products/ProductGrid";
+import { StatsSection } from "@/components/sections/StatsSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { GallerySection } from "@/components/sections/GallerySection";
+import { CTASection } from "@/components/sections/CTASection";
+import { BlogSection } from "@/components/sections/BlogSection";
+import { Paw } from "@/components/ui/Paw";
+import Image from "next/image";
+
+// Import data from dedicated data files
+import { featuredProducts } from "@/data/products";
+import {
+  features,
+  heroContent,
+  statsSection,
+  testimonials,
+  gallerySection,
+  ctaSection,
+  blogSection,
+} from "@/data/home";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-ernest-beige">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-amber-100 to-yellow-100 py-16">
-        <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-amber-800">
-              Wholesome Treats,
-              <br />
-              <span className="text-amber-600">Happier Tails</span>
-            </h1>
-            <p className="text-gray-700 text-lg">
-              Made with love, premium ingredients, and absolutely no fillers. Because your furry friend deserves the
-              very best.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button className="bg-amber-600 hover:bg-amber-700 px-6 py-2 rounded-full text-white">Shop Now</Button>
-              <Button className="bg-white border border-amber-600 text-amber-600 hover:bg-amber-50 px-6 py-2 rounded-full">
-                Learn More
-              </Button>
+      {/* Hero Section with dog and product image */}
+      <section className="relative pt-24 min-h-[90vh] flex items-center py-12 overflow-hidden bg-terracota">
+        <div className="container max-w-6xl mx-auto px-4 relative z-10">
+          <div className="flex gap-20 items-center px-10">
+            {/* Left side content with balanced margins */}
+            <div className="order-2 md:order-1 space-y-8">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold">
+                <span className="text-sunset block mb-2">{heroContent.heading.mainText} </span>
+                <span className="text-white">{heroContent.heading.highlightedText}</span>
+              </h1>
+
+              <p className="text-white/90 text-lg md:text-xl">{heroContent.subheading}</p>
+
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Button className="bg-nourish-orange hover:bg-nourish-orange/90 px-6 md:px-8 py-6 rounded-full text-nourish-text text-lg shadow-lg shadow-nourish-orange/20">
+                  {heroContent.primaryCta.text}
+                </Button>
+                <Button className="bg-olive hover:bg-olive/90 px-6 md:px-8 py-6 rounded-full text-white text-lg shadow-lg shadow-olive/20">
+                  {heroContent.secondaryCta.text}
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className="relative h-64 md:h-80">
-            <div className="absolute inset-0 bg-gray-300 rounded-lg overflow-hidden">
-              {/* Hero Image Placeholder */}
-              <Image src="/dog-placeholder.jpg" alt="Happy dog with treats" fill className="object-cover" priority />
+
+            {/* Right side image - adjusted to match actual ratio */}
+            <div className="order-1 md:order-2 flex justify-center">
+              <div className="relative w-auto h-[400px] md:h-[450px] lg:h-[600px] aspect-[2/3]">
+                <Image
+                  src="/images/nourish-header-01.png"
+                  alt="Nourish dog treats with happy dog"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Highly visible paw prints as decorative elements */}
+        <Paw size={200} color="#B04818" className="absolute top-20 left-20 opacity-30 rotate-12 md:block" />
+        <Paw size={150} color="#B04818" className="absolute top-1/4 right-40 opacity-25 -rotate-12 md:block" />
+        <Paw size={170} color="#B04818" className="absolute bottom-40 left-1/3 opacity-30 rotate-45 md:block" />
+        <Paw size={130} color="#B04818" className="absolute bottom-60 right-1/4 opacity-25 -rotate-12 md:block" />
       </section>
 
       {/* Why Paw-rents Choose Nourish */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why Paw-rents Choose Nourish</h2>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+      <section className="py-24 bg-white">
+        <div className="container max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-center text-chile-rojo mb-8">
+            Why Paw-rents Choose Nourish
+          </h2>
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
             Our treats aren&apos;t just tasty—they&apos;re made with carefully sourced ingredients, nutritional
             integrity, and doggie science. Here&apos;s why we&apos;re different.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="text-center p-6 rounded-lg hover:shadow-md transition-shadow">
-              <div className="mx-auto w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-amber-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Map through the features data */}
+            {features.map((feature) => (
+              <div
+                key={feature.id}
+                className="text-center p-8 rounded-xl hover:shadow-xl transition-shadow border-2 border-chile-rojo/30"
+              >
+                <div className="mx-auto w-20 h-20 bg-chile-rojo/20 rounded-full flex items-center justify-center mb-6">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10 text-chile-rojo"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.iconPath} />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-display font-bold text-chile-rojo mb-3">{feature.title}</h3>
+                <p className="text-gray-600 text-lg">{feature.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-amber-700 mb-2">Superfood Packed</h3>
-              <p className="text-gray-600">
-                Nutrient-rich ingredients carefully selected to support your dog&apos;s health and vitality.
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="text-center p-6 rounded-lg hover:shadow-md transition-shadow">
-              <div className="mx-auto w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-amber-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-amber-700 mb-2">Vet-Approved Recipes</h3>
-              <p className="text-gray-600">
-                Formulated with input from veterinary nutritionists to ensure optimal health benefits.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="text-center p-6 rounded-lg hover:shadow-md transition-shadow">
-              <div className="mx-auto w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-amber-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-amber-700 mb-2">Sensitive-Friendly</h3>
-              <p className="text-gray-600">
-                Gentle on tummies with allergen-conscious options for pups with sensitive systems.
-              </p>
-            </div>
+            ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full">Learn More</Button>
+          <div className="text-center mt-16">
+            <Button className="bg-terracota hover:bg-terracota/90 text-white px-8 py-6 rounded-full text-lg font-medium">
+              Learn More
+            </Button>
           </div>
         </div>
       </section>
+
+      {/* Featured Products Section */}
+      <ProductGrid
+        title="Paw-some Treats"
+        subtitle="Healthy, tasty, and paw-picked by dogs everywhere."
+        products={featuredProducts}
+      />
+
+      {/* Gallery Section */}
+      <GallerySection
+        heading={gallerySection.heading}
+        subheading={gallerySection.subheading}
+        images={gallerySection.images}
+      />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection
+        heading={testimonials.heading}
+        subheading={testimonials.subheading}
+        reviews={testimonials.reviews}
+      />
+
+      {/* Stats Section */}
+      <StatsSection
+        heading={statsSection.heading}
+        subheading={statsSection.subheading}
+        stats={statsSection.stats}
+        ctaText={statsSection.ctaText}
+        ctaUrl={statsSection.ctaUrl}
+        bgColor="#555555" // Temporary gray background until image is provided
+      />
+
+      {/* CTA Section */}
+      <CTASection
+        heading={ctaSection.heading}
+        description={ctaSection.description}
+        image={ctaSection.image}
+        primaryButton={ctaSection.primaryButton}
+        secondaryButton={ctaSection.secondaryButton}
+      />
+
+      {/* Blog Section */}
+      <BlogSection
+        heading={blogSection.heading}
+        subheading={blogSection.subheading}
+        categories={blogSection.categories}
+        posts={blogSection.posts}
+        viewAllLink={blogSection.viewAllLink}
+      />
 
       <Footer />
     </div>
