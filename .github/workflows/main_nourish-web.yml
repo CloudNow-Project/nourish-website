@@ -71,7 +71,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: "nourish-website"
+          app-name: "nourish-web"
           slot-name: "Production"
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_17C150A7A185443A883D3B429F5B17F3 }}
