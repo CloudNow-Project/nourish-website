@@ -33,6 +33,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         type: "spring",
         damping: 18,
         stiffness: 300,
+        duration: 0.5,
       },
     },
   };
@@ -43,7 +44,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.5,
+        delayChildren: 0.7,
       },
     },
   };
@@ -53,8 +54,8 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 1.1,
+        staggerChildren: 0.2,
+        delayChildren: 1.3,
       },
     },
   };
@@ -69,6 +70,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         type: "spring",
         stiffness: 400,
         damping: 15,
+        duration: 0.7,
       },
     },
   };
@@ -82,49 +84,67 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         type: "spring",
         stiffness: 200,
         damping: 20,
-        delay: 0.2,
-        duration: 1,
+        delay: 0.1,
+        duration: 0.8,
       },
     },
   };
 
-  const productContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 1.0,
-      },
-    },
-  };
+  // Removing the product container staggering approach and using individual animations instead
 
-  const productAnimation = (direction: number) => ({
-    hidden: {
-      opacity: 0,
-      y: 30,
-      rotate: direction === 1 ? -15 : 15,
-    },
+  const firstProductAnimation = {
+    hidden: { opacity: 0, y: 30, rotate: -15, scale: 0.9 },
     show: {
       opacity: 1,
       y: 0,
-      rotate: direction === 1 ? -5 : 5,
+      rotate: -5,
+      scale: 1,
       transition: {
         type: "spring",
         stiffness: 300,
         damping: 15,
+        duration: 0.8,
+        delay: 1.8, // First product delay
       },
     },
     hover: {
       y: -10,
-      rotate: direction === 1 ? -8 : 8,
+      rotate: -8,
       transition: {
         type: "spring",
         stiffness: 400,
         damping: 10,
+        duration: 0.3, // Quick hover transition
       },
     },
-  });
+  };
+
+  const secondProductAnimation = {
+    hidden: { opacity: 0, y: 30, rotate: 15, scale: 0.9 },
+    show: {
+      opacity: 1,
+      y: 0,
+      rotate: 5,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+        duration: 0.8,
+        delay: 2, // Second product delay - appears after first
+      },
+    },
+    hover: {
+      y: -10,
+      rotate: 8,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10,
+        duration: 0.3, // Quick hover transition
+      },
+    },
+  };
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-8 md:pt-24 md:pb-12 overflow-hidden">
@@ -174,14 +194,14 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
             >
               <motion.div variants={buttonVariant} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Link href={primaryCta.url}>
-                  <Button className="w-full sm:w-auto bg-nourish-orange hover:bg-nourish-orange/90 px-6 md:px-8 py-5 md:py-6 rounded-full text-nourish-text text-base md:text-lg shadow-lg shadow-nourish-orange/20">
+                  <Button className="w-full sm:w-auto bg-[#EA7625] hover:bg-[#EA7625]/90 px-6 md:px-8 py-5 md:py-6 rounded-full text-white text-base md:text-lg shadow-lg shadow-[#EA7625]/20">
                     {primaryCta.text}
                   </Button>
                 </Link>
               </motion.div>
               <motion.div variants={buttonVariant} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Link href={secondaryCta.url}>
-                  <Button className="w-full sm:w-auto bg-olive hover:bg-olive/90 px-6 md:px-8 py-5 md:py-6 rounded-full text-white text-base md:text-lg shadow-lg shadow-olive/20">
+                  <Button className="w-full sm:w-auto bg-[#258A49] hover:bg-[#258A49]/90 px-6 md:px-8 py-5 md:py-6 rounded-full text-white text-base md:text-lg shadow-lg shadow-[#258A49]/20">
                     {secondaryCta.text}
                   </Button>
                 </Link>
@@ -208,18 +228,22 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                 />
               </motion.div>
 
-              {/* Product Container - Positioned relative to the container */}
-              <motion.div
-                className="absolute top-[45%] left-[50%] transform -translate-x-1/2 -translate-y-[40%] flex items-center justify-center z-20"
-                variants={productContainer}
-                initial="hidden"
-                animate="show"
-              >
+              {/* Products with individual animations */}
+              <div className="absolute top-[45%] left-[50%] transform -translate-x-1/2 -translate-y-[40%] flex items-center justify-center z-20">
                 {/* Product 1: Pumpkin and Beef */}
                 <motion.div
-                  className="transform rotate-[-5deg] w-[200px] md:w-[200px] lg:w-[220px] z-30"
-                  variants={productAnimation(1)}
+                  className="transform w-[200px] md:w-[200px] lg:w-[220px] z-30"
+                  variants={firstProductAnimation}
+                  initial="hidden"
+                  animate="show"
                   whileHover="hover"
+                  transition={{
+                    type: "spring",
+                    stiffness: 700,
+                    damping: 35,
+                    mass: 0.8, // Lower mass for faster response
+                    restDelta: 0.001, // Lower threshold for animation end
+                  }}
                 >
                   <Image
                     src="/images/products/product-pumpkind-and-beef.png"
@@ -233,9 +257,18 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
 
                 {/* Product 2: Strawberry and Carrot */}
                 <motion.div
-                  className="transform rotate-[5deg] w-[200px] md:w-[200px] lg:w-[220px] ml-[-40px] mt-10 z-30"
-                  variants={productAnimation(2)}
+                  className="transform w-[200px] md:w-[200px] lg:w-[220px] ml-[-40px] mt-10 z-30"
+                  variants={secondProductAnimation}
+                  initial="hidden"
+                  animate="show"
                   whileHover="hover"
+                  transition={{
+                    type: "spring",
+                    stiffness: 700,
+                    damping: 35,
+                    mass: 0.8, // Lower mass for faster response
+                    restDelta: 0.001, // Lower threshold for animation end
+                  }}
                 >
                   <Image
                     src="/images/products/product-strawberry-and-carrot.png"
@@ -246,7 +279,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                     priority
                   />
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

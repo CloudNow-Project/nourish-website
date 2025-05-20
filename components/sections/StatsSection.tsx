@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import Image from "next/image";
 import Link from "next/link";
 
 type Stat = {
@@ -18,9 +19,18 @@ interface StatsSectionProps {
 
 export function StatsSection({ heading, subheading, stats, ctaText, ctaUrl, bgColor = "#6B7280" }: StatsSectionProps) {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: bgColor }}>
-      {/* This div will be replaced with an image background later */}
-      <div className="absolute inset-0 bg-opacity-70"></div>
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "transparent" }}>
+      {/* Background image - simplifying the approach completely */}
+      <Image
+        src="/images/home/stats-dog.jpg"
+        alt="Dogs eating from bowls"
+        fill
+        priority
+        className="object-cover object-center z-0"
+      />
+
+      {/* Semi-transparent color overlay - using a color that will blend well with the image */}
+      <div className="absolute inset-0 bg-black/60 z-[1]"></div>
 
       <div className="container max-w-6xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
