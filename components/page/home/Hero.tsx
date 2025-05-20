@@ -107,16 +107,6 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         delay: 1.8, // First product delay
       },
     },
-    hover: {
-      y: -10,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-        duration: 0.3, // Quick hover transition
-      },
-    },
   };
 
   const secondProductAnimation = {
@@ -132,16 +122,6 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         damping: 15,
         duration: 0.8,
         delay: 2, // Second product delay - appears after first
-      },
-    },
-    hover: {
-      y: -10,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-        duration: 0.3, // Quick hover transition
       },
     },
   };
@@ -220,7 +200,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                 animate="show"
               >
                 <Image
-                  src="/images/hero-doggo.png"
+                  src="/images/doggo.png"
                   alt="Cartoon dog illustration"
                   fill
                   className="object-contain object-center"
@@ -229,25 +209,36 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
               </motion.div>
 
               {/* Products with individual animations */}
-              <div className="absolute top-[50%] left-[30%] transform -translate-x-1/2 translate-y-[10%] flex items-center justify-center z-20">
+              <div className="absolute top-[50%] left-[30%] transform -translate-x-1/2 translate-y-[10%] flex items-center justify-center z-20 group">
                 {/* Product 1: Pumpkin and Beef */}
                 <motion.div
-                  className="transform w-[200px] md:w-[200px] lg:w-[330px] z-40 scale-[1.05] relative"
+                  className="transform w-[200px] md:w-[200px] lg:w-[330px] z-40 scale-[1.05] relative
+                             group-hover:-translate-y-3 group-hover:rotate-[-3deg] transition-all duration-300 ease-out"
                   variants={firstProductAnimation}
                   initial="hidden"
                   animate="show"
-                  whileHover="hover"
                   transition={{
                     type: "spring",
                     stiffness: 700,
                     damping: 35,
-                    mass: 0.8, // Lower mass for faster response
-                    restDelta: 0.001, // Lower threshold for animation end
+                    mass: 0.8,
+                    restDelta: 0.001,
                   }}
                 >
                   {/* Custom shadow element that appears to cast from first product onto second */}
                   <div
                     className="absolute right-[20px] top-[30px] bottom-[40px] w-[100px] z-35 rounded-lg"
+                    style={{
+                      background: "linear-gradient(to right, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0) 100%)",
+                      transform: "skewY(-2deg)",
+                      filter: "blur(8px)",
+                      opacity: 0.7,
+                    }}
+                  ></div>
+
+                  {/* Custom shadow element that appears to cast from first product onto second */}
+                  <div
+                    className="absolute right-[-120px] top-[30px] bottom-[40px] w-[100px] z-35 rounded-lg"
                     style={{
                       background: "linear-gradient(to right, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0) 100%)",
                       transform: "skewY(-2deg)",
@@ -268,17 +259,17 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
 
                 {/* Product 2: Strawberry and Carrot */}
                 <motion.div
-                  className="transform w-[200px] md:w-[200px] lg:w-[330px] ml-[-138px] mt-6 z-30"
+                  className="transform w-[200px] md:w-[200px] lg:w-[330px] ml-[-138px] mt-6 z-30
+                             group-hover:-translate-y-3 group-hover:rotate-[3deg] transition-all duration-300 ease-out"
                   variants={secondProductAnimation}
                   initial="hidden"
                   animate="show"
-                  whileHover="hover"
                   transition={{
                     type: "spring",
                     stiffness: 700,
                     damping: 35,
-                    mass: 0.8, // Lower mass for faster response
-                    restDelta: 0.001, // Lower threshold for animation end
+                    mass: 0.8,
+                    restDelta: 0.001,
                   }}
                 >
                   <Image
