@@ -17,7 +17,7 @@ interface StatsSectionProps {
   bgColor?: string;
 }
 
-export function StatsSection({ heading, subheading, stats, ctaText, ctaUrl, bgColor = "#6B7280" }: StatsSectionProps) {
+export function StatsSection({ heading, subheading, stats, ctaText, ctaUrl }: StatsSectionProps) {
   return (
     <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "transparent" }}>
       {/* Background image - simplifying the approach completely */}
