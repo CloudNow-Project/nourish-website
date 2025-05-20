@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { footerMenus, newsletterContent } from "@/data/site";
-import { Paw } from "@/components/ui/Paw";
+import { Paw } from "@/components/ui/Icons";
 import { NourishLogo } from "@/components/ui/NourishLogo";
 
 export function Footer() {
@@ -17,7 +17,7 @@ export function Footer() {
           <Paw size={90} color="#FFF1BF" className="absolute bottom-10 right-10 opacity-5 rotate-30" />
         </div>
 
-        <div className="container max-w-6xl mx-auto px-4 relative z-10 pt-12">
+        <div className="container mx-auto px-4 relative z-10 pt-12">
           <div className="flex flex-col lg:flex-row">
             {/* Newsletter Subscription */}
             <div className="lg:w-[30%] mb-10 lg:mb-0 pr-0 lg:pr-12">
@@ -138,7 +138,7 @@ export function Footer() {
                 <NourishLogo
                   color="#FFF1BF"
                   size={500}
-                  className="sm:scale-100 md:scale-125 lg:scale-150 transform-gpu transition-transform duration-300 hover:scale-110 md:hover:scale-130 lg:hover:scale-155"
+                  className="sm:scale-100 md:scale-125 lg:scale-150 transform-gpu transition-transform duration-300 hover:scale-110 md:hover:scale-130 lg:hover:scale-155 mb-10"
                 />
               </div>
               <div className="text-sm text-[#FFF1BF]/70">

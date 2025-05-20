@@ -6,7 +6,12 @@ import { HealthSection } from "@/components/page/our-pack-journey/Health";
 import { TeamSection } from "@/components/page/our-pack-journey/Team";
 import { ConnectSection } from "@/components/page/our-pack-journey/Connect";
 
-export default function OurPackJourneyPage() {
+export const metadata = {
+  title: "Our Pack Story | Nourish",
+  description: "Learn about our journey and the team behind Nourish's premium dog treats.",
+};
+
+export default function AboutUsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-ernest-beige">
       <Navbar />

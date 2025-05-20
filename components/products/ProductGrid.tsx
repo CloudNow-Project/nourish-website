@@ -1,5 +1,6 @@
 import { ProductCard } from "./ProductCard";
 import { Button } from "@/components/ui/button";
+import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 
 export interface Product {
   id: string;
@@ -32,7 +33,15 @@ export function ProductGrid({
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-ernest-navy mb-2">{title}</h2>
+            <ShadowedHeading
+              text={title}
+              as="h2"
+              size="lg"
+              textColor="#1f2937"
+              shadowColor="#E5E7EB"
+              shadowOffset={3}
+              className="mb-2"
+            />
             {subtitle && <p className="text-gray-600 max-w-2xl">{subtitle}</p>}
           </div>
           {showViewAllButton && (

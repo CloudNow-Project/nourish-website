@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import Link from "next/link";
 
 type Stat = {
@@ -25,7 +26,15 @@ export function StatsSection({ heading, subheading, stats, ctaText, ctaUrl, bgCo
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="text-white">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">{heading}</h2>
+            <ShadowedHeading
+              text={heading}
+              as="h2"
+              size="lg"
+              textColor="white"
+              shadowColor="rgba(255,255,255,0.3)"
+              shadowOffset={3}
+              className="mb-6"
+            />
             <p className="text-lg md:text-xl mb-8 text-white/90 max-w-lg">{subheading}</p>
 
             {ctaText && ctaUrl && (
@@ -44,7 +53,14 @@ export function StatsSection({ heading, subheading, stats, ctaText, ctaUrl, bgCo
           <div className="grid grid-cols-2 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-white">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-bold mb-2 font-display">{stat.value}</div>
+                <ShadowedHeading
+                  text={stat.value}
+                  size="lg"
+                  textColor="white"
+                  shadowColor="rgba(255,255,255,0.3)"
+                  shadowOffset={3}
+                  className="mb-2"
+                />
                 <div className="text-lg text-white/80">{stat.label}</div>
               </div>
             ))}

@@ -6,7 +6,12 @@ import { IngredientsSection } from "@/components/page/inside-the-bite/Ingredient
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { testimonials } from "@/data/inside-the-bite";
 
-export default function InsideTheBitePage() {
+export const metadata = {
+  title: "Inside the Bite | Nourish",
+  description: "Learn about the premium ingredients in our superfood dog treats.",
+};
+
+export default function IngredientsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-ernest-beige">
       <Navbar />

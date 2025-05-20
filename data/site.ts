@@ -6,12 +6,12 @@ export const siteConfig = {
   ogImage: "https://nourish-treats.com/og.jpg",
 };
 
-// Navigation items
+// Navigation items with icons for Navbar
 export const mainNav = [
-  { name: "Inside the Bite", href: "/inside-the-bite" },
-  { name: "Our Pack Journey", href: "/our-pack-journey" },
-  { name: "Pawrents Ask", href: "/pawrents-ask" },
-  { name: "Give Us a Woof", href: "/give-us-a-woof" },
+  { name: "Inside the Bite", href: "/ingredients", icon: "Bowl" },
+  { name: "Our Pack Story", href: "/about-us", icon: "Pack" },
+  { name: "Pawrents Ask", href: "/faq", icon: "Pawsk" },
+  { name: "Give us a Woof", href: "/contact", icon: "Woof" },
 ];
 
 // Footer menu data for easy editing

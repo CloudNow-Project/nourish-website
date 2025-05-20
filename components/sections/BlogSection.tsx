@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 
 type BlogPost = {
   id: string;
@@ -29,12 +30,20 @@ interface BlogSectionProps {
 
 export function BlogSection({ heading, subheading, posts, categories, viewAllLink }: BlogSectionProps) {
   return (
-    <section className="py-24 bg-ernest-beige">
+    <section className="py-24 bg-[#fffefa]">
       <div className="container max-w-6xl mx-auto px-4">
         {/* Blog Header */}
         <div className="text-center mb-16">
           <div className="text-sm text-ernest-teal uppercase font-medium tracking-wider mb-2">Blog</div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-ernest-navy mb-4">{heading}</h2>
+          <ShadowedHeading
+            text={heading}
+            as="h2"
+            size="lg"
+            textColor="#1f2937"
+            shadowColor="#E5E7EB"
+            shadowOffset={3}
+            className="text-center mb-4"
+          />
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subheading}</p>
         </div>
 
@@ -47,7 +56,7 @@ export function BlogSection({ heading, subheading, posts, categories, viewAllLin
             return (
               <div key={post.id} className="group">
                 {/* Blog Post Image */}
-                <div className="aspect-[3/2] rounded-lg overflow-hidden bg-gray-200 mb-4 relative">
+                <div className="aspect-[3/2] rounded-lg overflow-hidden bg-gray-100 mb-4 relative">
                   {post.imageSrc ? (
                     <Image
                       src={post.imageSrc}
@@ -56,10 +65,10 @@ export function BlogSection({ heading, subheading, posts, categories, viewAllLin
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-400">
+                    <div className="w-full h-full flex items-center justify-center text-terracota/60">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-12 w-12"
+                        className="h-16 w-16"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -83,9 +92,13 @@ export function BlogSection({ heading, subheading, posts, categories, viewAllLin
                 </div>
 
                 {/* Post Title */}
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-ernest-teal transition-colors">
-                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                </h3>
+                <div className="mb-2">
+                  <Link href={`/blog/${post.slug}`} className="group-hover:text-ernest-teal transition-colors">
+                    <h3 className="text-lg md:text-xl font-display font-semibold text-gray-900 group-hover:text-ernest-teal transition-colors">
+                      {post.title}
+                    </h3>
+                  </Link>
+                </div>
 
                 {/* Post Excerpt */}
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>

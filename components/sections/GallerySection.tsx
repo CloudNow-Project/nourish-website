@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 
 type GalleryImage = {
   id: string;
@@ -17,7 +18,15 @@ export function GallerySection({ heading, subheading, images }: GallerySectionPr
     <section className="py-24 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-ernest-navy mb-4">{heading}</h2>
+          <ShadowedHeading
+            text={heading}
+            as="h2"
+            size="lg"
+            textColor="#1f2937"
+            shadowColor="#E5E7EB"
+            shadowOffset={3}
+            className="text-center mb-4"
+          />
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subheading}</p>
         </div>
 

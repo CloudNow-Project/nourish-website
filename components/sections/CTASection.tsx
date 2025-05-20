@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 
 interface CTASectionProps {
   heading: string;
@@ -24,7 +25,15 @@ export function CTASection({ heading, description, image, primaryButton, seconda
           <div className="flex flex-col md:flex-row">
             {/* Left side - Content */}
             <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-ernest-navy mb-4">{heading}</h2>
+              <ShadowedHeading
+                text={heading}
+                as="h2"
+                size="md"
+                textColor="#1f2937"
+                shadowColor="#E5E7EB"
+                shadowOffset={3}
+                className="mb-4"
+              />
               <p className="text-gray-600 mb-8">{description}</p>
 
               <div className="flex flex-wrap gap-4">

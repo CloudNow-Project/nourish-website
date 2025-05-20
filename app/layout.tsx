@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { quicksand, fredoka } from "./fonts";
+import { quicksand, fredoka, sharpShooter } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Nourish | Superfood Dog Treats",
@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${quicksand.variable} ${fredoka.variable} antialiased font-sans`}>{children}</body>
+      <body className={`${quicksand.variable} ${fredoka.variable} ${sharpShooter.variable} antialiased font-sans`}>
+        {children}
+      </body>
     </html>
   );
 }

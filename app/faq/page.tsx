@@ -4,7 +4,12 @@ import { PawRentsAskHero } from "@/components/page/pawrents-ask/Hero";
 import { FaqSection } from "@/components/page/pawrents-ask/Faq";
 import { CtaSection } from "@/components/page/pawrents-ask/Cta";
 
-export default function PawRentsAskPage() {
+export const metadata = {
+  title: "Pawrents Ask | Nourish",
+  description: "Find answers to common questions about our dog treats and ingredients.",
+};
+
+export default function FaqPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />

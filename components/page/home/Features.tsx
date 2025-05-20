@@ -1,12 +1,14 @@
-import { Button } from "@/components/ui/button";
+import { Bowl } from "@/components/ui/Icons";
+import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
+import Image from "next/image";
 import Link from "next/link";
 
 interface Feature {
   id: string;
   title: string;
   description: string;
-  iconPath: string;
-  color: string;
+  image: string;
 }
 
 interface FeaturesProps {
@@ -17,44 +19,56 @@ export function Features({ features }: FeaturesProps) {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center text-chile-rojo mb-6 md:mb-8">
-          Why Pawrents Choose Nourish
-        </h2>
+        <div className="text-center mb-6 md:mb-8">
+          <ShadowedHeading
+            text="Less Junk, More Drool"
+            as="h2"
+            size="lg"
+            textColor="#AC4C43"
+            shadowColor="#FADCB9"
+            shadowOffset={3}
+            className="text-center"
+          />
+        </div>
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10 md:mb-16 text-base md:text-lg px-4">
-          Our treats aren&apos;t just tasty—they&apos;re made with carefully sourced ingredients, nutritional integrity,
-          and doggie science. Here&apos;s why we&apos;re different.
+          Crafted with all-natural, health conscious ingredients, Nourish Superfood Dog Treats support your dog&apos;s
+          health, happiness, and tail-wagging moments—one bite at a time.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 px-4">
           {features.map((feature) => (
-            <div
-              key={feature.id}
-              className="text-center p-6 md:p-8 rounded-xl hover:shadow-xl transition-shadow border-2 border-chile-rojo/30"
-            >
-              <div className="mx-auto w-16 h-16 md:w-20 md:h-20 bg-chile-rojo/20 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 md:h-10 md:w-10 text-chile-rojo"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.iconPath} />
-                </svg>
+            <div key={feature.id} className="text-center p-6 md:p-4 rounded-xl transition-transform hover:scale-105">
+              <div className="mx-auto w-32 h-32 md:w-40 md:h-40 mb-5 relative">
+                <Image
+                  src={`/images/home/feature/${feature.image}`}
+                  alt={feature.title}
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <h3 className="text-xl md:text-2xl font-display font-bold text-chile-rojo mb-2 md:mb-3">
-                {feature.title}
-              </h3>
+              <div className="mb-2 md:mb-3">
+                <ShadowedHeading
+                  text={feature.title}
+                  as="h3"
+                  size="sm"
+                  textColor="#AC4C43"
+                  shadowColor="#FADCB9"
+                  shadowOffset={2}
+                  className="text-center"
+                />
+              </div>
               <p className="text-gray-600 text-base md:text-lg">{feature.description}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-10 md:mt-16">
-          <Link href="/inside-the-bite">
-            <Button className="bg-terracota hover:bg-terracota/90 text-white px-6 md:px-8 py-5 md:py-6 rounded-full text-base md:text-lg font-medium">
-              Learn More
-            </Button>
+          <Link
+            href="/ingredients"
+            className="inline-flex items-center text-base font-medium transition-all px-4 py-1.5 rounded-full bg-[#AC4C43] text-white hover:bg-[#AC4C43]/90 group"
+          >
+            <Bowl className="w-10 h-10 mr-2" size={28} />
+            <TextSwipeAnimation>Inside the Bite</TextSwipeAnimation>
           </Link>
         </div>
       </div>
