@@ -34,15 +34,15 @@ export default function Home() {
         secondaryCta={heroContent.secondaryCta}
       />
 
+      {/* Features Section */}
+      <Features features={features} />
+
       {/* Featured Products Section */}
       <ProductGrid
         title="Pawsome Treats"
         subtitle="Healthy, tasty, and pawpicked by dogs everywhere."
         products={featuredProducts}
       />
-
-      {/* Features Section */}
-      <Features features={features} />
 
       {/* Gallery Section */}
       <GallerySection

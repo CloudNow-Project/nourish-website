@@ -45,7 +45,7 @@ export const gallerySection = {
 export const ctaSection = {
   heading: "Snack Time Starts Here",
   description: "Order via WhatsApp or your favorite marketplace and spoil your pup with treats that are as nutritious as they are drool-worthy.",
-  image: "",
+  image: "/images/home/doggo-stop-here.jpg",
   primaryButton: {
     text: "Chat",
     url: "https://wa.me/yourwhatsappnumber",

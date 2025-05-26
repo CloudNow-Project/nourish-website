@@ -47,9 +47,17 @@ export function CTASection({ heading, description, image, primaryButton, seconda
             </div>
 
             {/* Right side - Image */}
-            <div className="md:w-1/2 bg-gray-200 min-h-[300px] relative">
+            <div className="md:w-1/2 bg-cream-light p-6 flex items-center justify-center min-h-[350px]">
               {image ? (
-                <Image src={image} alt="Dog treat promo" fill className="object-cover" />
+                <div className="relative h-full w-full flex items-center justify-center">
+                  <Image
+                    src={image}
+                    alt="Dog treat promo"
+                    width={500}
+                    height={400}
+                    className="object-contain max-h-full"
+                  />
+                </div>
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-gray-400">
                   <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">

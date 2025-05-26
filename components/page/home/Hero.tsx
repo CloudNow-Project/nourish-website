@@ -128,6 +128,17 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
 
   return (
     <section className="relative flex items-center py-32 md:py-40 lg:py-48 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="/images/home/hero/hero-bg.png"
+          alt="Background"
+          fill
+          priority
+          className="object-cover object-bottom"
+        />
+      </div>
+
       <div className="container max-w-6xl mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           {/* Content Section */}
