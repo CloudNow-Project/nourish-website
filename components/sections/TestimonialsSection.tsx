@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import { AnimatedElement } from "@/components/ui/AnimatedElement";
 
 type Review = {
   id: string;
@@ -44,59 +45,72 @@ export function TestimonialsSection({ heading, subheading, reviews }: Testimonia
     <section className="py-24 bg-ernest-beige">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <ShadowedHeading
-            text={heading}
-            as="h2"
-            size="lg"
-            textColor="#1f2937"
-            shadowColor="#E5E7EB"
-            shadowOffset={3}
-            className="text-center mb-4"
-          />
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subheading}</p>
+          <AnimatedElement variant="fadeInUp" delay={0.1}>
+            <ShadowedHeading
+              text={heading}
+              as="h2"
+              size="lg"
+              textColor="#1f2937"
+              shadowColor="#E5E7EB"
+              shadowOffset={3}
+              className="text-center mb-4"
+            />
+          </AnimatedElement>
+
+          <AnimatedElement variant="fadeInUp" delay={0.2}>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subheading}</p>
+          </AnimatedElement>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {reviews.map((review) => (
-            <div key={review.id} className="bg-white p-8 rounded-lg shadow-md flex flex-col">
-              {/* Stars */}
-              <div className="flex mb-4">{renderStars(review.rating)}</div>
+          {reviews.map((review, index) => (
+            <AnimatedElement key={review.id} variant="fadeInUp" delay={0.3 + index * 0.1}>
+              <div className="bg-white p-8 rounded-lg shadow-md flex flex-col">
+                {/* Stars */}
+                <div className="flex mb-4">{renderStars(review.rating)}</div>
 
-              {/* Review text */}
-              <blockquote className="text-lg font-medium text-gray-800 mb-6 flex-grow">
-                &ldquo;{review.text}&rdquo;
-              </blockquote>
+                {/* Review text */}
+                <blockquote className="text-lg font-medium text-gray-800 mb-6 flex-grow">
+                  &ldquo;{review.text}&rdquo;
+                </blockquote>
 
-              {/* Reviewer info */}
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200 mr-4">
-                  {review.imageSrc ? (
-                    <Image src={review.imageSrc} alt={review.author} width={48} height={48} className="object-cover" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-400">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1}
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <div className="font-semibold text-ernest-navy">{review.author}</div>
-                  <div className="text-sm text-gray-500">{review.title}</div>
+                {/* Reviewer info */}
+                <div className="flex items-center">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200 mr-4">
+                    {review.imageSrc ? (
+                      <Image
+                        src={review.imageSrc}
+                        alt={review.author}
+                        width={48}
+                        height={48}
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-gray-400">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1}
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                          />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-ernest-navy">{review.author}</div>
+                    <div className="text-sm text-gray-500">{review.title}</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedElement>
           ))}
         </div>
       </div>

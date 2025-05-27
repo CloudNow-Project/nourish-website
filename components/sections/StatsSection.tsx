@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,43 +37,52 @@ export function StatsSection({ heading, subheading, stats, ctaText, ctaUrl }: St
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="text-white">
-            <ShadowedHeading
-              text={heading}
-              as="h2"
-              size="lg"
-              textColor="white"
-              shadowColor="rgba(255,255,255,0.3)"
-              shadowOffset={3}
-              className="mb-6"
-            />
-            <p className="text-lg md:text-xl mb-8 text-white/90 max-w-lg">{subheading}</p>
+            <AnimatedElement variant="fadeInLeft" delay={0.1}>
+              <ShadowedHeading
+                text={heading}
+                as="h2"
+                size="lg"
+                textColor="white"
+                shadowColor="rgba(255,255,255,0.3)"
+                shadowOffset={3}
+                className="mb-6"
+              />
+            </AnimatedElement>
+
+            <AnimatedElement variant="fadeInLeft" delay={0.2}>
+              <p className="text-lg md:text-xl mb-8 text-white/90 max-w-lg">{subheading}</p>
+            </AnimatedElement>
 
             {ctaText && ctaUrl && (
-              <div>
-                <Button
-                  asChild
-                  className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-6 text-lg font-medium rounded-md"
-                >
-                  <Link href={ctaUrl}>{ctaText}</Link>
-                </Button>
-              </div>
+              <AnimatedElement variant="fadeInUp" delay={0.3}>
+                <div>
+                  <Button
+                    asChild
+                    className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-6 text-lg font-medium rounded-md"
+                  >
+                    <Link href={ctaUrl}>{ctaText}</Link>
+                  </Button>
+                </div>
+              </AnimatedElement>
             )}
           </div>
 
           {/* Right side - Stats grid */}
           <div className="grid grid-cols-2 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-white">
-                <ShadowedHeading
-                  text={stat.value}
-                  size="lg"
-                  textColor="white"
-                  shadowColor="rgba(255,255,255,0.3)"
-                  shadowOffset={3}
-                  className="mb-2"
-                />
-                <div className="text-lg text-white/80">{stat.label}</div>
-              </div>
+              <AnimatedElement key={index} variant="fadeInRight" delay={0.3 + index * 0.1}>
+                <div className="text-white">
+                  <ShadowedHeading
+                    text={stat.value}
+                    size="lg"
+                    textColor="white"
+                    shadowColor="rgba(255,255,255,0.3)"
+                    shadowOffset={3}
+                    className="mb-2"
+                  />
+                  <div className="text-lg text-white/80">{stat.label}</div>
+                </div>
+              </AnimatedElement>
             ))}
           </div>
         </div>
