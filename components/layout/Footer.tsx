@@ -60,7 +60,7 @@ export function Footer() {
                   <h3 className="font-semibold text-lg mb-4 text-[#FFF1BF]">{footerMenus.treatsAndInfo.title}</h3>
                   <ul className="space-y-3">
                     {footerMenus.treatsAndInfo.items.map((item, index) => (
-                      <li key={index} className={`transition-all duration-300 hover:translate-x-1`}>
+                      <li key={index}>
                         <Link href={item.href} className="text-[#FFF1BF]/80 hover:text-[#F3B266]">
                           {item.name}
                         </Link>
@@ -76,7 +76,7 @@ export function Footer() {
                   <h3 className="font-semibold text-lg mb-4 text-[#FFF1BF]">{footerMenus.forPawrents.title}</h3>
                   <ul className="space-y-3">
                     {footerMenus.forPawrents.items.map((item, index) => (
-                      <li key={index} className={`transition-all duration-300 hover:translate-x-1`}>
+                      <li key={index}>
                         <Link href={item.href} className="text-[#FFF1BF]/80 hover:text-[#F3B266]">
                           {item.name}
                         </Link>
@@ -92,7 +92,7 @@ export function Footer() {
                   <h3 className="font-semibold text-lg mb-4 text-[#FFF1BF]">{footerMenus.social.title}</h3>
                   <ul className="space-y-3">
                     {footerMenus.social.items.map((item, index) => (
-                      <li key={index} className={`transition-all duration-300 hover:translate-x-1`}>
+                      <li key={index}>
                         <Link href={item.href} className="text-[#FFF1BF]/80 hover:text-[#F3B266] flex items-center">
                           {item.icon === "facebook" && (
                             <span className="mr-2">
@@ -152,7 +152,6 @@ export function Footer() {
                   />
                 </div>
               </AnimatedElement>
-
               <AnimatedElement variant="fadeInUp" delay={0.6}>
                 <div className="text-sm text-[#FFF1BF]/70">
                   © {new Date().getFullYear()} Nourish. All rights reserved.
