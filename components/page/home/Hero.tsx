@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import { IconButton } from "@/components/ui/IconButton";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -55,7 +55,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 1.3,
+        delayChildren: 1,
       },
     },
   };
@@ -104,7 +104,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         stiffness: 300,
         damping: 15,
         duration: 0.8,
-        delay: 1.8, // First product delay
+        delay: 1.3,
       },
     },
   };
@@ -121,7 +121,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         stiffness: 300,
         damping: 15,
         duration: 0.8,
-        delay: 2, // Second product delay - appears after first
+        delay: 1.5,
       },
     },
   };
@@ -185,16 +185,26 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
             >
               <motion.div variants={buttonVariant} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Link href={primaryCta.url}>
-                  <Button className="w-full sm:w-auto bg-[#EA7625] hover:bg-[#EA7625]/90 px-6 md:px-8 py-5 md:py-6 rounded-full text-white text-base md:text-lg shadow-lg shadow-[#EA7625]/20">
+                  <IconButton
+                    href={primaryCta.url}
+                    icon={<Image src="/images/shopee-logo.png" alt="Shopee" width={24} height={24} />}
+                    variant="orange"
+                    className="w-full sm:w-auto"
+                  >
                     {primaryCta.text}
-                  </Button>
+                  </IconButton>
                 </Link>
               </motion.div>
               <motion.div variants={buttonVariant} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Link href={secondaryCta.url}>
-                  <Button className="w-full sm:w-auto bg-[#258A49] hover:bg-[#258A49]/90 px-6 md:px-8 py-5 md:py-6 rounded-full text-white text-base md:text-lg shadow-lg shadow-[#258A49]/20">
+                  <IconButton
+                    href={secondaryCta.url}
+                    icon={<Image src="/images/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
+                    variant="olive"
+                    className="w-full sm:w-auto"
+                  >
                     {secondaryCta.text}
-                  </Button>
+                  </IconButton>
                 </Link>
               </motion.div>
             </motion.div>
