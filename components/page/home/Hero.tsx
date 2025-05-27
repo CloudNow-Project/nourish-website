@@ -183,25 +183,23 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
               initial="hidden"
               animate="show"
             >
-              <motion.div variants={buttonVariant} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div variants={buttonVariant}>
                 <Link href={primaryCta.url}>
                   <IconButton
                     href={primaryCta.url}
-                    icon={<Image src="/images/shopee-logo.png" alt="Shopee" width={24} height={24} />}
-                    variant="orange"
-                    className="w-full sm:w-auto"
+                    icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
+                    className="w-full sm:w-auto bg-[#F65E42]"
                   >
                     {primaryCta.text}
                   </IconButton>
                 </Link>
               </motion.div>
-              <motion.div variants={buttonVariant} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div variants={buttonVariant}>
                 <Link href={secondaryCta.url}>
                   <IconButton
                     href={secondaryCta.url}
-                    icon={<Image src="/images/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
-                    variant="olive"
-                    className="w-full sm:w-auto"
+                    icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
+                    className="w-full sm:w-auto bg-[#5B9959]"
                   >
                     {secondaryCta.text}
                   </IconButton>

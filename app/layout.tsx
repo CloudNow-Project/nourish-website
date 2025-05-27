@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${quicksand.variable} ${fredoka.variable} ${sharpShooter.variable} antialiased font-sans`}>
+      <body
+        className={`${quicksand.variable} ${fredoka.variable} ${sharpShooter.variable} antialiased font-sans overscroll-y-none`}
+      >
         {children}
       </body>
     </html>

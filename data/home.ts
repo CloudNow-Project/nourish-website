@@ -20,7 +20,7 @@ export const features = [
   },
   {
     id: "no-chicken",
-    title: "No Chicken or Chicken By-Products",
+    title: "Chicken-Free Recipe",
     description: "Perfect for dogs with sensitivities - our recipes avoid common allergens for gentle nutrition.",
     image: "feature-no-chicken.png",
   },
