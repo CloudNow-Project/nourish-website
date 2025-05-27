@@ -8,7 +8,6 @@ import { CTASection } from "@/components/sections/CTASection";
 import { BlogSection } from "@/components/sections/BlogSection";
 import { Hero } from "@/components/page/home/Hero";
 import { Features } from "@/components/page/home/Features";
-import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 // Import data from dedicated data files
 import { featuredProducts } from "@/data/products";
@@ -27,7 +26,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
+      {/* Hero Section - Already has its own animations */}
       <Hero
         heading={heroContent.heading}
         subheading={heroContent.subheading}
@@ -36,70 +35,56 @@ export default function Home() {
       />
 
       {/* Features Section */}
-      <AnimatedSection delay={0.1}>
-        <Features features={features} />
-      </AnimatedSection>
+      <Features features={features} />
 
-      {/* Featured Products Section */}
-      <AnimatedSection delay={0.2}>
-        <ProductGrid
-          title="Pawsome Treats"
-          subtitle="Healthy, tasty, and pawpicked by dogs everywhere."
-          products={featuredProducts}
-        />
-      </AnimatedSection>
+      {/* Featured Products Section - Updated with individual animations */}
+      <ProductGrid
+        title="Pawsome Treats"
+        subtitle="Healthy, tasty, and pawpicked by dogs everywhere."
+        products={featuredProducts}
+      />
 
       {/* Gallery Section */}
-      <AnimatedSection delay={0.3}>
-        <GallerySection
-          heading={gallerySection.heading}
-          subheading={gallerySection.subheading}
-          images={gallerySection.images}
-        />
-      </AnimatedSection>
+      <GallerySection
+        heading={gallerySection.heading}
+        subheading={gallerySection.subheading}
+        images={gallerySection.images}
+      />
 
       {/* Testimonials Section */}
-      <AnimatedSection delay={0.4}>
-        <TestimonialsSection
-          heading={testimonials.heading}
-          subheading={testimonials.subheading}
-          reviews={testimonials.reviews}
-        />
-      </AnimatedSection>
+      <TestimonialsSection
+        heading={testimonials.heading}
+        subheading={testimonials.subheading}
+        reviews={testimonials.reviews}
+      />
 
       {/* Stats Section */}
-      <AnimatedSection delay={0.5}>
-        <StatsSection
-          heading={statsSection.heading}
-          subheading={statsSection.subheading}
-          stats={statsSection.stats}
-          ctaText={statsSection.ctaText}
-          ctaUrl={statsSection.ctaUrl}
-          bgColor="#555555" // Temporary gray background until image is provided
-        />
-      </AnimatedSection>
+      <StatsSection
+        heading={statsSection.heading}
+        subheading={statsSection.subheading}
+        stats={statsSection.stats}
+        ctaText={statsSection.ctaText}
+        ctaUrl={statsSection.ctaUrl}
+        bgColor="#555555" // Temporary gray background until image is provided
+      />
 
       {/* CTA Section */}
-      <AnimatedSection delay={0.6}>
-        <CTASection
-          heading={ctaSection.heading}
-          description={ctaSection.description}
-          image={ctaSection.image}
-          primaryButton={ctaSection.primaryButton}
-          secondaryButton={ctaSection.secondaryButton}
-        />
-      </AnimatedSection>
+      <CTASection
+        heading={ctaSection.heading}
+        description={ctaSection.description}
+        image={ctaSection.image}
+        primaryButton={ctaSection.primaryButton}
+        secondaryButton={ctaSection.secondaryButton}
+      />
 
       {/* Blog Section */}
-      <AnimatedSection delay={0.7}>
-        <BlogSection
-          heading={blogSection.heading}
-          subheading={blogSection.subheading}
-          categories={blogSection.categories}
-          posts={blogSection.posts}
-          viewAllLink={blogSection.viewAllLink}
-        />
-      </AnimatedSection>
+      <BlogSection
+        heading={blogSection.heading}
+        subheading={blogSection.subheading}
+        categories={blogSection.categories}
+        posts={blogSection.posts}
+        viewAllLink={blogSection.viewAllLink}
+      />
 
       <Footer />
     </div>
