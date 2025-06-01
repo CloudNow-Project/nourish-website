@@ -18,11 +18,11 @@ export function Footer() {
           <Paw size={90} color="#FFF1BF" className="absolute bottom-10 right-10 opacity-5 rotate-30" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 pt-12">
+        <div className="container mx-auto px-4 relative z-10 lg:pt-12">
           <div className="flex flex-col lg:flex-row">
             {/* Newsletter Subscription */}
             <AnimatedElement variant="fadeInUp" delay={0.1}>
-              <div className="lg:w-[30%] mb-10 lg:mb-0 pr-0 lg:pr-12">
+              <div className="mb-10 lg:mb-0 pr-0 lg:pr-12">
                 <h2 className="text-3xl font-bold mb-4 text-[#FFF1BF]">{newsletterContent.title}</h2>
                 <p className="text-[#FFF1BF]/90 mb-6">{newsletterContent.description}</p>
 
@@ -148,7 +148,7 @@ export function Footer() {
                   <NourishLogo
                     color="#FFF1BF"
                     size={500}
-                    className="sm:scale-100 md:scale-125 lg:scale-150 transform-gpu transition-transform duration-300 hover:scale-110 md:hover:scale-130 lg:hover:scale-155 mb-10"
+                    className="scale-50 sm:scale-100 md:scale-125 lg:scale-150 transform-gpu transition-transform duration-300 hover:scale-80 sm:hover:scale-110 md:hover:scale-130 lg:hover:scale-155 mb-10"
                   />
                 </div>
               </AnimatedElement>
