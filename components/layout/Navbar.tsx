@@ -14,6 +14,8 @@ export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Check if current page is home or faq page
+  const isHomePage = pathname === "/" || pathname === "/faq";
 
   // Handle scroll effect
   useEffect(() => {
@@ -93,17 +95,17 @@ export function Navbar() {
   };
 
   return (
-    <div className="w-full fixed top-0 z-50 pointer-events-none">
+    <div className={`w-full fixed top-0 z-50 pointer-events-none ${!isHomePage ? "bg-white shadow-md" : ""}`}>
       {/* Desktop Navigation - Hidden on Mobile */}
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
         className={`w-full hidden xl:block transition-all duration-300 ease-in-out pointer-events-auto ${
-          scrolled ? "bg-white/80 backdrop-blur-sm shadow-md py-2" : "bg-transparent py-4"
+          scrolled || !isHomePage ? "bg-white/95 backdrop-blur-sm shadow-md py-2" : "bg-transparent py-4"
         }`}
         style={{
-          borderRadius: scrolled ? "0" : "0 0 20px 20px",
+          borderRadius: scrolled || !isHomePage ? "0" : "0 0 20px 20px",
         }}
       >
         <div className="2xl:container mx-auto px-4 relative">
@@ -177,7 +179,7 @@ export function Navbar() {
       {/* Mobile Navigation - Only visible on Mobile */}
       <div
         className={`xl:hidden w-full transition-all duration-300 ease-in-out pointer-events-auto ${
-          scrolled ? "bg-white/80 backdrop-blur-sm shadow-md" : "bg-transparent"
+          scrolled || !isHomePage ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-transparent"
         }`}
       >
         <div className="container mx-auto px-4 py-3 flex items-center justify-center relative">
