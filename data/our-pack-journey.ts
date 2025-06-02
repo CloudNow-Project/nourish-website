@@ -1,14 +1,13 @@
 // Hero section
 export const heroContent = {
-  heading: "Healthy Treats, Happy Tails!",
+  heading: "Crafted with Care, Backed by Passion",
   description: "At Nourish, we're on a mission to fuel joy, health, and tail-wags — one superfood bite at a time."
 };
 
 // Journey section
 export const journeyContent = {
   heading: "Our Pack Journey: From Passion to Pawsitive Impact",
-  description: "Nourish began with a simple goal: to craft wholesome, superfood-packed treats that dogs crave and pawrents trust. Inspired by our love for pets and powered by nutrition science, we're here to make every treat moment care you can feel good about.",
-  imageSrc: ""
+  description: "From superfood science to tail-wagging joy — discover the journey behind Indonesia’s nutritious dog treats that pawrents trust and pups love.",  imageSrc: ""
 };
 
 // Health benefits section

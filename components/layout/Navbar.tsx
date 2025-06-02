@@ -119,7 +119,7 @@ export function Navbar() {
             variants={logoAnimation}
           >
             <Link href="/" className="block">
-              <NourishLogo color="#f6b656" size={170} className="hover:scale-105 transition-transform duration-300" />
+              <NourishLogo color="#FFBD58" size={170} className="hover:scale-105 transition-transform duration-300" />
             </Link>
           </motion.div>
 
@@ -191,7 +191,7 @@ export function Navbar() {
             transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
           >
             <Link href="/" className="block">
-              <NourishLogo color="#f6b656" size={200} className="transition-transform duration-300" />
+              <NourishLogo color="#FFBD58" size={200} className="transition-transform duration-300" />
             </Link>
           </motion.div>
 

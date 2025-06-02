@@ -6,16 +6,16 @@ import { AnimatedElement } from "@/components/ui/AnimatedElement";
 
 export function Footer() {
   return (
-    <footer className="relative text-[#FFF1BF]">
+    <footer className="relative text-white">
       {/* Main footer content */}
-      <div className="relative py-16 overflow-hidden" style={{ backgroundColor: "#114F3C" }}>
+      <div className="relative py-16 overflow-hidden" style={{ backgroundColor: "#FFBD58" }}>
         {/* Decorative paw prints in background with varied orientations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <Paw size={120} color="#FFF1BF" className="absolute top-10 left-10 opacity-5 rotate-45" />
-          <Paw size={80} color="#FFF1BF" className="absolute top-40 right-20 opacity-5 -rotate-12" />
-          <Paw size={100} color="#FFF1BF" className="absolute bottom-20 left-1/4 opacity-5 -rotate-30" />
-          <Paw size={60} color="#FFF1BF" className="absolute top-1/2 right-1/3 opacity-5 -rotate-45" />
-          <Paw size={90} color="#FFF1BF" className="absolute bottom-10 right-10 opacity-5 rotate-30" />
+          <Paw size={120} color="white" className="absolute top-10 left-10 opacity-5 rotate-45" />
+          <Paw size={80} color="white" className="absolute top-40 right-20 opacity-5 -rotate-12" />
+          <Paw size={100} color="white" className="absolute bottom-20 left-1/4 opacity-5 -rotate-30" />
+          <Paw size={60} color="white" className="absolute top-1/2 right-1/3 opacity-5 -rotate-45" />
+          <Paw size={90} color="white" className="absolute bottom-10 right-10 opacity-5 rotate-30" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 lg:pt-12">
@@ -23,23 +23,23 @@ export function Footer() {
             {/* Newsletter Subscription */}
             <AnimatedElement variant="fadeInUp" delay={0.1}>
               <div className="mb-10 lg:mb-0 pr-0 lg:pr-12">
-                <h2 className="text-3xl font-bold mb-4 text-[#FFF1BF]">{newsletterContent.title}</h2>
-                <p className="text-[#FFF1BF]/90 mb-6">{newsletterContent.description}</p>
+                <h2 className="text-3xl font-extrabold mb-4 text-white">{newsletterContent.title}</h2>
+                <p className="text-white font-medium mb-6">{newsletterContent.description}</p>
 
                 <div className="mb-6">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full border border-[#FFF1BF]/20 bg-[#114F3C] bg-opacity-90 px-4 py-3 rounded mb-4 text-[#FFF1BF] placeholder:text-[#FFF1BF]/60 focus:outline-none focus:ring-2 focus:ring-[#FFF1BF]/50"
+                    className="w-full border border-white/30 bg-[#FFBD58] bg-opacity-90 px-4 py-3 rounded mb-4 text-white font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
-                  <button className="bg-[#FFF1BF] hover:bg-[#F3B266] text-[#114F3C] font-semibold py-3 px-8 rounded transition-colors">
+                  <button className="bg-white hover:bg-white/90 text-[#FFBD58] font-bold py-3 px-8 rounded transition-colors">
                     {newsletterContent.buttonText}
                   </button>
                 </div>
 
-                <p className="text-sm text-[#FFF1BF]/80">
+                <p className="text-sm text-white font-medium">
                   {newsletterContent.disclaimer.split("Privacy Policy")[0]}
-                  <Link href="/privacy-policy" className="underline text-[#FFF1BF] hover:text-[#F3B266]">
+                  <Link href="/privacy-policy" className="underline text-white font-bold hover:text-white/90">
                     Privacy Policy
                   </Link>
                   {newsletterContent.disclaimer.split("Privacy Policy")[1]}
@@ -49,7 +49,7 @@ export function Footer() {
 
             {/* Vertical divider for larger screens */}
             <div className="hidden lg:block lg:w-[5%] self-stretch">
-              <div className="h-full w-px bg-[#FFF1BF]/20 mx-auto"></div>
+              <div className="h-full w-px bg-white/20 mx-auto"></div>
             </div>
 
             {/* Menu Columns */}
@@ -57,11 +57,11 @@ export function Footer() {
               {/* Treats & Info */}
               <AnimatedElement variant="fadeInUp" delay={0.2}>
                 <div>
-                  <h3 className="font-semibold text-lg mb-4 text-[#FFF1BF]">{footerMenus.treatsAndInfo.title}</h3>
+                  <h3 className="font-bold text-lg mb-4 text-white">{footerMenus.treatsAndInfo.title}</h3>
                   <ul className="space-y-3">
                     {footerMenus.treatsAndInfo.items.map((item, index) => (
                       <li key={index}>
-                        <Link href={item.href} className="text-[#FFF1BF]/80 hover:text-[#F3B266]">
+                        <Link href={item.href} className="text-white font-medium hover:text-white hover:underline">
                           {item.name}
                         </Link>
                       </li>
@@ -73,11 +73,11 @@ export function Footer() {
               {/* For Pawrents */}
               <AnimatedElement variant="fadeInUp" delay={0.3}>
                 <div>
-                  <h3 className="font-semibold text-lg mb-4 text-[#FFF1BF]">{footerMenus.forPawrents.title}</h3>
+                  <h3 className="font-bold text-lg mb-4 text-white">{footerMenus.forPawrents.title}</h3>
                   <ul className="space-y-3">
                     {footerMenus.forPawrents.items.map((item, index) => (
                       <li key={index}>
-                        <Link href={item.href} className="text-[#FFF1BF]/80 hover:text-[#F3B266]">
+                        <Link href={item.href} className="text-white font-medium hover:text-white hover:underline">
                           {item.name}
                         </Link>
                       </li>
@@ -89,11 +89,14 @@ export function Footer() {
               {/* Let's Be Furiends */}
               <AnimatedElement variant="fadeInUp" delay={0.4}>
                 <div>
-                  <h3 className="font-semibold text-lg mb-4 text-[#FFF1BF]">{footerMenus.social.title}</h3>
+                  <h3 className="font-bold text-lg mb-4 text-white">{footerMenus.social.title}</h3>
                   <ul className="space-y-3">
                     {footerMenus.social.items.map((item, index) => (
                       <li key={index}>
-                        <Link href={item.href} className="text-[#FFF1BF]/80 hover:text-[#F3B266] flex items-center">
+                        <Link
+                          href={item.href}
+                          className="text-white font-medium hover:text-white hover:underline flex items-center"
+                        >
                           {item.icon === "facebook" && (
                             <span className="mr-2">
                               <svg
@@ -141,19 +144,19 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-[#FFF1BF]/20 mt-12 pt-8">
+          <div className="border-t border-white/20 mt-12 pt-8">
             <div className="flex flex-col items-center justify-center md:my-4 lg:my-5">
               <AnimatedElement variant="fadeIn" delay={0.5}>
                 <div className="md:my-6 w-full flex justify-center">
                   <NourishLogo
-                    color="#FFF1BF"
+                    color="white"
                     size={500}
                     className="scale-50 sm:scale-100 md:scale-125 lg:scale-150 transform-gpu transition-transform duration-300 hover:scale-80 sm:hover:scale-110 md:hover:scale-130 lg:hover:scale-155 mb-10"
                   />
                 </div>
               </AnimatedElement>
               <AnimatedElement variant="fadeInUp" delay={0.6}>
-                <div className="text-sm text-[#FFF1BF]/70">
+                <div className="text-sm text-white font-medium">
                   © {new Date().getFullYear()} Nourish. All rights reserved.
                 </div>
               </AnimatedElement>

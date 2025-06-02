@@ -1,10 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { OurPackJourneyHero } from "@/components/page/our-pack-journey/Hero";
-import { JourneySection } from "@/components/page/our-pack-journey/Journey";
-import { HealthSection } from "@/components/page/our-pack-journey/Health";
-import { TeamSection } from "@/components/page/our-pack-journey/Team";
-import { ConnectSection } from "@/components/page/our-pack-journey/Connect";
+import { StorySection } from "@/components/page/our-pack-journey/StorySection";
+import { VisionMissionSection } from "@/components/page/our-pack-journey/VisionMissionSection";
+import { ValuesSection } from "@/components/page/our-pack-journey/ValuesSection";
+import { TeamSection } from "@/components/page/our-pack-journey/TeamSection";
 
 export const metadata = {
   title: "Our Pack Story | Nourish",
@@ -13,14 +13,16 @@ export const metadata = {
 
 export default function AboutUsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-ernest-beige">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
 
-      <OurPackJourneyHero />
-      <JourneySection />
-      <HealthSection />
-      <TeamSection />
-      <ConnectSection />
+      <main>
+        <OurPackJourneyHero />
+        <StorySection />
+        <VisionMissionSection />
+        <ValuesSection />
+        <TeamSection />
+      </main>
 
       <Footer />
     </div>
