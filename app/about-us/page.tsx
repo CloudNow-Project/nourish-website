@@ -31,21 +31,21 @@ export default function AboutUsPage() {
         </div>
 
         {/* Vision & Mission Section - Elegant fade-in animation */}
-        <div className="relative py-4">
+        <div className="relative">
           <AnimatedElement variant="fadeInUp" delay={0.2} threshold={0.3}>
             <VisionMissionSection />
           </AnimatedElement>
         </div>
 
         {/* Values Section - Staggered entrance animation */}
-        <div className="relative py-4">
+        <div className="relative">
           <AnimatedElement variant="fadeInUp" delay={0.3} threshold={0.3}>
             <ValuesSection />
           </AnimatedElement>
         </div>
 
         {/* Team Section - Side entrance animation */}
-        <div className="relative py-4">
+        <div className="relative">
           <AnimatedElement variant="fadeInRight" delay={0.2} threshold={0.3}>
             <TeamSection />
           </AnimatedElement>
