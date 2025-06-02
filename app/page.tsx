@@ -44,18 +44,18 @@ export default function Home() {
         products={featuredProducts}
       />
 
-      {/* Gallery Section */}
-      <GallerySection
-        heading={gallerySection.heading}
-        subheading={gallerySection.subheading}
-        images={gallerySection.images}
-      />
-
       {/* Testimonials Section */}
       <TestimonialsSection
         heading={testimonials.heading}
         subheading={testimonials.subheading}
         reviews={testimonials.reviews}
+      />
+
+      {/* Gallery Section */}
+      <GallerySection
+        heading={gallerySection.heading}
+        subheading={gallerySection.subheading}
+        images={gallerySection.images}
       />
 
       {/* Stats Section */}

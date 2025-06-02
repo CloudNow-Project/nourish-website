@@ -26,8 +26,8 @@ export function Features({ features }: FeaturesProps) {
               text="Less Junk, More Drool"
               as="h2"
               size="lg"
-              textColor="#AC4C43"
-              shadowColor="#FADCB9"
+              textColor="#1f2937"
+              shadowColor="#E5E7EB"
               shadowOffset={3}
               className="text-center"
             />
@@ -35,7 +35,7 @@ export function Features({ features }: FeaturesProps) {
         </AnimatedElement>
 
         <AnimatedElement variant="fadeInUp" delay={0.2}>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10 md:mb-16 text-base md:text-lg px-4">
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10 md:mb-16 text-base md:text-lg px-4 font-semibold">
             Crafted with all-natural, health conscious ingredients, Nourish Superfood Dog Treats support your dog&apos;s
             health, happiness, and tail-wagging moments—one bite at a time.
           </p>
@@ -58,13 +58,13 @@ export function Features({ features }: FeaturesProps) {
                     text={feature.title}
                     as="h3"
                     size="sm"
-                    textColor="#AC4C43"
+                    textColor="#FFBD58"
                     shadowColor="#FADCB9"
                     shadowOffset={2}
                     className="text-center"
                   />
                 </div>
-                <p className="text-gray-600 text-base md:text-lg">{feature.description}</p>
+                <p className="text-gray-600 text-base md:text-lg font-semibold">{feature.description}</p>
               </div>
             </AnimatedElement>
           ))}
@@ -74,7 +74,7 @@ export function Features({ features }: FeaturesProps) {
           <div className="text-center mt-10 md:mt-16">
             <Link
               href="/ingredients"
-              className="inline-flex items-center text-base font-medium transition-all px-4 py-1.5 rounded-full bg-[#AC4C43] text-white hover:bg-[#AC4C43]/90 group"
+              className="inline-flex items-center text-base font-semibold transition-all px-4 py-1.5 rounded-full border-2 border-[#333] text-[#333] hover:bg-[#333] hover:text-white group"
             >
               <Bowl className="w-10 h-10 mr-2" size={28} />
               <TextSwipeAnimation>Inside the Bite</TextSwipeAnimation>

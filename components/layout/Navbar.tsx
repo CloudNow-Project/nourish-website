@@ -132,10 +132,10 @@ export function Navbar() {
                   <motion.div key={item.href} variants={navItem}>
                     <Link
                       href={item.href}
-                      className={`flex items-center text-base font-medium transition-all px-3 py-2 rounded-full group ${
+                      className={`flex items-center text-base font-semibold transition-all px-3 py-2 rounded-full group ${
                         isActive
                           ? "bg-[#FDEACD] text-[#725B39] font-bold"
-                          : "text-nourish-text hover:text-chile-rojo hover:bg-sunset/20"
+                          : "text-nourish-text hover:text-[#FFBD58] hover:bg-sunset/20"
                       }`}
                     >
                       {getIconComponent(item.icon)}
@@ -154,10 +154,10 @@ export function Navbar() {
                   <motion.div key={item.href} variants={navItem}>
                     <Link
                       href={item.href}
-                      className={`flex items-center text-base font-medium transition-all px-3 py-2 rounded-full group ${
+                      className={`flex items-center text-base font-semibold transition-all px-3 py-2 rounded-full group ${
                         isActive
                           ? "bg-[#FDEACD] text-[#725B39] font-bold"
-                          : "text-nourish-text hover:text-chile-rojo hover:bg-sunset/20"
+                          : "text-nourish-text hover:text-[#FFBD58] hover:bg-sunset/20"
                       }`}
                     >
                       {getIconComponent(item.icon)}

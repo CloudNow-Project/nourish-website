@@ -171,7 +171,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
             </motion.h1>
 
             <motion.p
-              className="text-black/90 text-base sm:text-lg md:text-xl max-w-md mx-auto md:mx-0"
+              className="text-black/90 text-base sm:text-lg md:text-xl max-w-md mx-auto md:mx-0 font-semibold"
               variants={fadeInUp}
             >
               {subheading}

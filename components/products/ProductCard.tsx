@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ShadowedHeading } from "../ui/ShadowedHeading";
 
 interface ProductCardProps {
   id: string;
@@ -37,11 +38,19 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
         </Link>
       </div>
       <div>
-        <h3 className="text-lg font-bold text-gray-900 font-display">
-          <Link href={`/treats/${slug}`}>{name}</Link>
-        </h3>
-        <p className="mt-1 text-sm text-gray-600 mb-3">{description}</p>
-        <p className="font-semibold text-ernest-navy">${price}</p>
+        <Link href={`/treats/${slug}`}>
+          <ShadowedHeading
+            text={name}
+            as="h3"
+            size="xxs"
+            textColor="#FFBD58"
+            shadowColor="#FBE2BF"
+            shadowOffset={3}
+            className="hover:text-[#f6b656] transition-colors"
+          />
+        </Link>
+        <p className="mt-1 text-gray-600 mb-3 font-semibold text-base">{description}</p>
+        <p className="font-semibold text-[#333] text-xl">${price}</p>
       </div>
     </div>
   );

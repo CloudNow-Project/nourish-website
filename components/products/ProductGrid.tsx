@@ -48,7 +48,7 @@ export function ProductGrid({
 
             {subtitle && (
               <AnimatedElement variant="fadeInUp" delay={0.2}>
-                <p className="text-gray-600 max-w-2xl">{subtitle}</p>
+                <p className="text-gray-600 max-w-2xl font-semibold text-lg">{subtitle}</p>
               </AnimatedElement>
             )}
           </div>

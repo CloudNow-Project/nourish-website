@@ -167,7 +167,7 @@ export const heroContent = {
     mainText: "Superfood Powered",
     highlightedText: "Drool Worthy"
   },
-  subheading: "Crafted with love and powered by superfoods – give your dog the goodness they deserve.",
+  subheading: "Crafted with love and powered by superfoods, give your dog the goodness they deserve.",
   primaryCta: {
     text: "Order on Shopee",
     url: "https://shopee.com/nourish"

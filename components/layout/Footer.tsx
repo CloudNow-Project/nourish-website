@@ -3,6 +3,7 @@ import { footerMenus, newsletterContent } from "@/data/site";
 import { Paw } from "@/components/ui/Icons";
 import { NourishLogo } from "@/components/ui/NourishLogo";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 
 export function Footer() {
   return (
@@ -23,7 +24,15 @@ export function Footer() {
             {/* Newsletter Subscription */}
             <AnimatedElement variant="fadeInUp" delay={0.1}>
               <div className="mb-10 lg:mb-0 pr-0 lg:pr-12">
-                <h2 className="text-3xl font-extrabold mb-4 text-white">{newsletterContent.title}</h2>
+                <ShadowedHeading
+                  text={newsletterContent.title}
+                  as="h2"
+                  size="md"
+                  textColor="white"
+                  shadowColor="rgba(255,255,255,0.3)"
+                  shadowOffset={3}
+                  className="mb-4"
+                />
                 <p className="text-white font-semibold mb-6">{newsletterContent.description}</p>
 
                 <div className="mb-6">
