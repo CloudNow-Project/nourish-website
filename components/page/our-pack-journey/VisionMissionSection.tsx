@@ -18,8 +18,8 @@ export function VisionMissionSection() {
         <div className="max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-[#f7d08a] mb-6">Our Vision</h2>
           <p className="text-xl leading-relaxed text-gray-800">
-            Our vision is to become Indonesia's leading beneficial dog treat brand, one that is synonymous with health,
-            luxury, and quality—all while remaining affordable for pet owners.
+            Our vision is to become Indonesia&apos;s leading beneficial dog treat brand, one that is synonymous with
+            health, luxury, and quality—all while remaining affordable for pet owners.
           </p>
         </div>
 
@@ -28,8 +28,8 @@ export function VisionMissionSection() {
           <h2 className="text-4xl md:text-5xl font-display font-bold text-[#f7d08a] mb-6">Our Mission</h2>
           <p className="text-xl leading-relaxed text-gray-800">
             Our mission is to provide tasty, nutritious, and safe toppers and treats for pawrents who want nothing but
-            the best for their dogs. We are dedicated to crafting products that not only satisfy your dog's palate but
-            also contribute to their overall health and well-being.
+            the best for their dogs. We are dedicated to crafting products that not only satisfy your dog&apos;s palate
+            but also contribute to their overall health and well-being.
           </p>
         </div>
 

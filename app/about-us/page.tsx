@@ -24,7 +24,7 @@ export default function AboutUsPage() {
         <OurPackJourneyHero />
 
         {/* Story Section - Wrapped with a parallax scroll effect */}
-        <div className="relative py-4 overflow-hidden">
+        <div className="relative overflow-hidden">
           <AnimatedElement variant="fadeIn" threshold={0.2}>
             <StorySection />
           </AnimatedElement>
