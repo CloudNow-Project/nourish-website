@@ -24,20 +24,20 @@ export function Footer() {
             <AnimatedElement variant="fadeInUp" delay={0.1}>
               <div className="mb-10 lg:mb-0 pr-0 lg:pr-12">
                 <h2 className="text-3xl font-extrabold mb-4 text-white">{newsletterContent.title}</h2>
-                <p className="text-white font-medium mb-6">{newsletterContent.description}</p>
+                <p className="text-white font-semibold mb-6">{newsletterContent.description}</p>
 
                 <div className="mb-6">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full border border-white/30 bg-[#FFBD58] bg-opacity-90 px-4 py-3 rounded mb-4 text-white font-medium placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    className="w-full border-2 border-white/30 bg-[#FFBD58] bg-opacity-90 px-4 py-3 rounded mb-4 text-white font-semibold placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
                   <button className="bg-white hover:bg-white/90 text-[#FFBD58] font-bold py-3 px-8 rounded transition-colors">
                     {newsletterContent.buttonText}
                   </button>
                 </div>
 
-                <p className="text-sm text-white font-medium">
+                <p className="text-sm text-white font-semibold">
                   {newsletterContent.disclaimer.split("Privacy Policy")[0]}
                   <Link href="/privacy-policy" className="underline text-white font-bold hover:text-white/90">
                     Privacy Policy
@@ -49,7 +49,7 @@ export function Footer() {
 
             {/* Vertical divider for larger screens */}
             <div className="hidden lg:block lg:w-[5%] self-stretch">
-              <div className="h-full w-px bg-white/20 mx-auto"></div>
+              <div className="h-full w-[2px] bg-white/20 mx-auto"></div>
             </div>
 
             {/* Menu Columns */}
@@ -61,7 +61,7 @@ export function Footer() {
                   <ul className="space-y-3">
                     {footerMenus.treatsAndInfo.items.map((item, index) => (
                       <li key={index}>
-                        <Link href={item.href} className="text-white font-medium hover:text-white hover:underline">
+                        <Link href={item.href} className="text-white font-semibold hover:text-white hover:underline">
                           {item.name}
                         </Link>
                       </li>
@@ -77,7 +77,7 @@ export function Footer() {
                   <ul className="space-y-3">
                     {footerMenus.forPawrents.items.map((item, index) => (
                       <li key={index}>
-                        <Link href={item.href} className="text-white font-medium hover:text-white hover:underline">
+                        <Link href={item.href} className="text-white font-semibold hover:text-white hover:underline">
                           {item.name}
                         </Link>
                       </li>
@@ -95,7 +95,7 @@ export function Footer() {
                       <li key={index}>
                         <Link
                           href={item.href}
-                          className="text-white font-medium hover:text-white hover:underline flex items-center"
+                          className="text-white font-semibold hover:text-white hover:underline flex items-center"
                         >
                           {item.icon === "facebook" && (
                             <span className="mr-2">
@@ -144,7 +144,7 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-white/20 mt-12 pt-8">
+          <div className="border-t-2 border-white/20 mt-12 pt-8">
             <div className="flex flex-col items-center justify-center md:my-4 lg:my-5">
               <AnimatedElement variant="fadeIn" delay={0.5}>
                 <div className="md:my-6 w-full flex justify-center">
@@ -156,7 +156,7 @@ export function Footer() {
                 </div>
               </AnimatedElement>
               <AnimatedElement variant="fadeInUp" delay={0.6}>
-                <div className="text-sm text-white font-medium">
+                <div className="text-sm text-white font-semibold">
                   © {new Date().getFullYear()} Nourish. All rights reserved.
                 </div>
               </AnimatedElement>
