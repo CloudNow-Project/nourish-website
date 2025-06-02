@@ -30,7 +30,7 @@ export const contactInfo = {
   },
   office: {
     title: "Office",
-    address: "Jakarta, Indonesia",
+    address: "Surabaya, Indonesia",
     directionsText: "Get Directions",
     directionsUrl: "https://maps.google.com/",
     mapEmbedUrl: "" // This would be a Google Maps embed URL in production
