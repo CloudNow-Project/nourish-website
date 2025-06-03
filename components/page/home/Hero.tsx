@@ -267,7 +267,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                   ></div>
 
                   <Image
-                    src="/images/products/product-pumpkind-and-beef.png"
+                    src="/images/products/product-pumpkind-and-beef-transparent.png"
                     alt="Nourish Pumpkin and Beef dog treats"
                     width={250}
                     height={350}
@@ -292,7 +292,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                   }}
                 >
                   <Image
-                    src="/images/products/product-strawberry-and-carrot.png"
+                    src="/images/products/product-strawberry-and-carrot-transparent.png"
                     alt="Nourish Strawberry and Carrot dog treats"
                     width={250}
                     height={350}
