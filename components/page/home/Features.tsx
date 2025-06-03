@@ -59,7 +59,7 @@ export function Features({ features }: FeaturesProps) {
                     as="h3"
                     size="sm"
                     textColor="#FFBD58"
-                    shadowColor="#FADCB9"
+                    shadowColor="#FBE2BF80"
                     shadowOffset={2}
                     className="text-center"
                   />

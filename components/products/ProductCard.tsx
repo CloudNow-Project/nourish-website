@@ -13,8 +13,8 @@ interface ProductCardProps {
 
 export function ProductCard({ name, description, price, imageSrc, slug }: ProductCardProps) {
   return (
-    <div className="group flex flex-col transition-all">
-      <div className="aspect-square overflow-hidden rounded-lg bg-gray-200 mb-4 relative group-hover:shadow-md transition-shadow">
+    <div className="group flex flex-col transition-all bg-white p-4 rounded-xl">
+      <div className="aspect-[4/5] overflow-hidden rounded-lg bg-gray-200 mb-4 relative group-hover:shadow-md transition-shadow">
         <Link href={`/treats/${slug}`}>
           {imageSrc ? (
             <Image
@@ -45,7 +45,7 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
             size="xxs"
             textColor="#FFBD58"
             shadowColor="#FBE2BF"
-            shadowOffset={3}
+            shadowOffset={2}
             className="hover:text-[#f6b656] transition-colors"
           />
         </Link>

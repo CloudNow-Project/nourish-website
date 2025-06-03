@@ -104,9 +104,15 @@ export function BlogSection({ heading, subheading, posts, categories, viewAllLin
                   {/* Post Title */}
                   <div className="mb-2">
                     <Link href={`/blog/${post.slug}`} className="group-hover:text-ernest-teal transition-colors">
-                      <h3 className="text-lg md:text-xl font-display font-semibold text-gray-900 group-hover:text-ernest-teal transition-colors">
-                        {post.title}
-                      </h3>
+                      <ShadowedHeading
+                        text={post.title}
+                        as="h3"
+                        size="lg"
+                        textColor="#1f2937"
+                        shadowColor="#E5E7EB"
+                        shadowOffset={2}
+                        className="text-lg md:text-xl font-display font-semibold text-gray-900 group-hover:text-ernest-teal transition-colors"
+                      />
                     </Link>
                   </div>
 

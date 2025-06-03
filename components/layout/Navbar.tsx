@@ -134,8 +134,8 @@ export function Navbar() {
                       href={item.href}
                       className={`flex items-center text-base font-semibold transition-all px-3 py-2 rounded-full group ${
                         isActive
-                          ? "bg-[#FDEACD] text-[#725B39] font-bold"
-                          : "text-nourish-text hover:text-[#FFBD58] hover:bg-sunset/20"
+                          ? "bg-[#FDEACD] text-[#000000] font-bold"
+                          : "text-nourish-text hover:text-[#A2501B] hover:bg-sunset/20"
                       }`}
                     >
                       {getIconComponent(item.icon)}
@@ -154,10 +154,10 @@ export function Navbar() {
                   <motion.div key={item.href} variants={navItem}>
                     <Link
                       href={item.href}
-                      className={`flex items-center text-base font-semibold transition-all px-3 py-2 rounded-full group ${
+                      className={`flex text-[#000000] items-center text-base font-semibold transition-all px-3 py-2 rounded-full group ${
                         isActive
-                          ? "bg-[#FDEACD] text-[#725B39] font-bold"
-                          : "text-nourish-text hover:text-[#FFBD58] hover:bg-sunset/20"
+                          ? "bg-[#FDEACD] font-bold"
+                          : "text-nourish-text hover:text-[#A2501B] hover:bg-sunset/20"
                       }`}
                     >
                       {getIconComponent(item.icon)}
@@ -240,7 +240,7 @@ export function Navbar() {
                           onClick={() => setIsOpen(false)}
                           className={`flex items-center text-xl py-3 px-4 rounded-lg font-medium transition-colors group ${
                             isActive
-                              ? "bg-[#FFF2D9] text-[#725B39] font-bold"
+                              ? "bg-[#FFF2D9] text-[#000000] font-bold"
                               : "text-nourish-text hover:bg-[#FFF2D9]/50"
                           }`}
                         >

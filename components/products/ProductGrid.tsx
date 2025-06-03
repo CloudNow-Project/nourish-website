@@ -12,6 +12,42 @@ export interface Product {
   slug: string;
 }
 
+// Sample products data using display images
+export const sampleProducts: Product[] = [
+  {
+    id: "strawberry-carrot",
+    name: "Strawberry & Carrot",
+    description: "A sweet and nutritious blend perfect for your energetic pup",
+    price: 12.99,
+    imageSrc: "/images/products/display-strawberry-and-carrot.png",
+    slug: "strawberry-carrot",
+  },
+  {
+    id: "pumpkin-beef",
+    name: "Pumpkin & Beef",
+    description: "Hearty and protein-rich treat for active dogs",
+    price: 14.99,
+    imageSrc: "/images/products/display-pumpkind-and-beef.png",
+    slug: "pumpkin-beef",
+  },
+  {
+    id: "coconut-chia",
+    name: "Coconut & Chia",
+    description: "Omega-rich superfood blend for a shiny coat and healthy digestion",
+    price: 13.99,
+    imageSrc: "/images/products/display-coconut-and-chia.png",
+    slug: "coconut-chia",
+  },
+  {
+    id: "beef-beet",
+    name: "Beef & Beet",
+    description: "Antioxidant-rich formula to support immune health",
+    price: 14.99,
+    imageSrc: "/images/products/display-beef-and-beet.png",
+    slug: "beef-beet",
+  },
+];
+
 interface ProductGridProps {
   title: string;
   subtitle?: string;
@@ -24,13 +60,13 @@ interface ProductGridProps {
 export function ProductGrid({
   title,
   subtitle,
-  products,
+  products = sampleProducts, // Default to sample products if none provided
   showViewAllButton = true,
   viewAllButtonText = "Sniff Them All",
   viewAllUrl = "/treats",
 }: ProductGridProps) {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-24 bg-[#FFBD58]">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
@@ -39,8 +75,8 @@ export function ProductGrid({
                 text={title}
                 as="h2"
                 size="lg"
-                textColor="#1f2937"
-                shadowColor="#E5E7EB"
+                textColor="#00000"
+                shadowColor="#eda334"
                 shadowOffset={3}
                 className="mb-2"
               />
@@ -58,7 +94,7 @@ export function ProductGrid({
               <div className="mt-4 md:mt-0">
                 <Button
                   variant="outline"
-                  className="border-ernest-navy text-ernest-navy hover:bg-ernest-navy hover:text-white"
+                  className="border-ernest-navy bg-white text-ernest-navy hover:text-white hover:bg-ernest-navy"
                   asChild
                 >
                   <a href={viewAllUrl}>{viewAllButtonText}</a>

@@ -228,7 +228,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
               </motion.div>
 
               {/* Products with individual animations */}
-              <div className="absolute top-[50%] left-[30%] transform -translate-x-1/2 translate-y-[10%] flex items-center justify-center z-20 group">
+              <div className="absolute top-[50%] left-[30%] transform -translate-x-1/2 translate-y-[25%] flex items-center justify-center z-20 group">
                 {/* Product 1: Pumpkin and Beef */}
                 <motion.div
                   className="transform w-[200px] md:w-[200px] lg:w-[330px] z-40 scale-[1.05] relative
@@ -278,7 +278,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
 
                 {/* Product 2: Strawberry and Carrot */}
                 <motion.div
-                  className="transform w-[200px] md:w-[200px] lg:w-[330px] ml-[-138px] mt-6 z-30
+                  className="transform w-[200px] md:w-[200px] lg:w-[330px] scale-[1.05] ml-[-140px] z-30
                              group-hover:-translate-y-3 group-hover:rotate-[3deg] transition-all duration-300 ease-out"
                   variants={secondProductAnimation}
                   initial="hidden"

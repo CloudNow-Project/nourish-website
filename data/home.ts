@@ -114,7 +114,7 @@ export const testimonials = {
       author: "Emily Johnson",
       title: "Pet Owner, Dog Lover",
       rating: 5,
-      imageSrc: "", // Placeholder for now
+      imageSrc: "/images/avatar/ava-01.jpg", // Placeholder for now
     },
     {
       id: "2",
@@ -122,7 +122,7 @@ export const testimonials = {
       author: "Michael Smith",
       title: "Dog Trainer, Canine Academy",
       rating: 5,
-      imageSrc: "", // Placeholder for now
+      imageSrc: "/images/avatar/ava-02.jpg", // Placeholder for now
     },
     {
       id: "3",
@@ -130,7 +130,7 @@ export const testimonials = {
       author: "Sarah Lee",
       title: "Veterinarian, Pet Care",
       rating: 5,
-      imageSrc: "", // Placeholder for now
+      imageSrc: "/images/avatar/ava-03.jpg", // Placeholder for now
     },
   ],
 };
