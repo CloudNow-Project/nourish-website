@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 interface HeroProps {
   heading: {
     mainText: string;
-    highlightedText: string;
   };
   subheading: string;
   primaryCta: {
@@ -90,8 +89,6 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
     },
   };
 
-  // Removing the product container staggering approach and using individual animations instead
-
   const firstProductAnimation = {
     hidden: { opacity: 0, y: 30, rotate: 0, scale: 0.9 },
     show: {
@@ -127,7 +124,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
   };
 
   return (
-    <section className="relative flex items-center py-32 md:py-40 lg:py-48 overflow-hidden">
+    <section className="relative flex items-center py-32 md:py-24 lg:py-48 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -139,11 +136,12 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         />
       </div>
 
-      <div className="container max-w-6xl mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row items-center">
+      <div className="container max-w-6xl mx-auto px-6 sm:px-12 relative z-10">
+        {/* Desktop Layout */}
+        <div className="hidden lg:flex lg:flex-row items-center">
           {/* Content Section */}
           <motion.div
-            className="w-full md:w-1/2 space-y-6 md:space-y-8 text-center md:text-left z-10"
+            className="w-1/2 space-y-8 text-left z-10"
             variants={staggerContainer}
             initial="hidden"
             animate="show"
@@ -156,29 +154,19 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
               <ShadowedHeading
                 text={heading.mainText}
                 className="mb-2"
-                size="xl"
-                textColor="#f6b656"
-                shadowColor="#FBE2BF"
-                shadowOffset={4}
-              />
-              <ShadowedHeading
-                text={heading.highlightedText}
-                size="xl"
+                size="hero"
                 textColor="#f6b656"
                 shadowColor="#FBE2BF"
                 shadowOffset={4}
               />
             </motion.h1>
 
-            <motion.p
-              className="text-black/90 text-base sm:text-lg md:text-xl max-w-md mx-auto md:mx-0 font-semibold"
-              variants={fadeInUp}
-            >
+            <motion.p className="text-black/90 text-2xl max-w-md font-medium" variants={fadeInUp}>
               {subheading}
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2 md:pt-4"
+              className="flex flex-row items-center justify-start gap-4 pt-4"
               variants={buttonContainer}
               initial="hidden"
               animate="show"
@@ -188,7 +176,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                   <IconButton
                     href={primaryCta.url}
                     icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
-                    className="w-full sm:w-auto bg-[#F65E42]"
+                    className="w-auto bg-[#F65E42]"
                   >
                     {primaryCta.text}
                   </IconButton>
@@ -199,7 +187,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                   <IconButton
                     href={secondaryCta.url}
                     icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
-                    className="w-full sm:w-auto bg-[#5B9959]"
+                    className="w-auto bg-[#5B9959]"
                   >
                     {secondaryCta.text}
                   </IconButton>
@@ -208,12 +196,12 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
             </motion.div>
           </motion.div>
 
-          {/* Dog and Products Section - Combined as one unit */}
-          <div className="w-full md:w-1/2 relative mt-8 md:mt-0">
-            <div className="relative w-full h-[450px] md:h-[500px] lg:h-[550px]">
-              {/* Dog Image as a positioned base */}
+          {/* Dog and Products Section for Desktop */}
+          <div className="w-1/2 relative">
+            <div className="relative w-full h-[550px]">
+              {/* Dog Image */}
               <motion.div
-                className="absolute inset-0 scale-[1.8] md:scale-[1.6] lg:scale-[1.6] translate-x-[10%]"
+                className="absolute inset-0 scale-[1.6] translate-x-[10%]"
                 variants={dogAnimation}
                 initial="hidden"
                 animate="show"
@@ -231,7 +219,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
               <div className="absolute top-[50%] left-[30%] transform -translate-x-1/2 translate-y-[25%] flex items-center justify-center z-20 group">
                 {/* Product 1: Pumpkin and Beef */}
                 <motion.div
-                  className="transform w-[200px] md:w-[200px] lg:w-[330px] z-40 scale-[1.05] relative
+                  className="transform w-[330px] z-40 scale-[1.05] relative
                              group-hover:-translate-y-3 group-hover:rotate-[-3deg] transition-all duration-300 ease-out"
                   variants={firstProductAnimation}
                   initial="hidden"
@@ -278,7 +266,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
 
                 {/* Product 2: Strawberry and Carrot */}
                 <motion.div
-                  className="transform w-[200px] md:w-[200px] lg:w-[330px] scale-[1.05] ml-[-140px] z-30
+                  className="transform w-[330px] scale-[1.05] ml-[-120px] z-30
                              group-hover:-translate-y-3 group-hover:rotate-[3deg] transition-all duration-300 ease-out"
                   variants={secondProductAnimation}
                   initial="hidden"
@@ -301,6 +289,142 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
                   />
                 </motion.div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile and Tablet Layout */}
+        <div className="flex flex-col lg:hidden">
+          {/* Content Section */}
+          <motion.div
+            className="w-full space-y-6 z-10 mb-6 mt-10 text-left"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.h1
+              className="font-display font-bold"
+              style={{ fontFamily: "var(--font-sharpshooter)" }}
+              variants={fadeInUp}
+            >
+              <ShadowedHeading
+                text={heading.mainText}
+                className="mb-2"
+                size="hero"
+                textColor="#f6b656"
+                shadowColor="#FBE2BF"
+                shadowOffset={4}
+              />
+            </motion.h1>
+
+            <motion.p className="text-black/90 text-xl max-w-md font-semibold" variants={fadeInUp}>
+              {subheading}
+            </motion.p>
+          </motion.div>
+
+          {/* Combined dog and products section */}
+          <div className="relative flex flex-row items-start justify-start gap-4 pt-4 md:min-h-[500px] min-h-[450px]">
+            {/* Dog Image for Tablet */}
+            <motion.div
+              className="absolute inset-0 right-10 scale-[1.4] md:scale-150 translate-y-[0%]"
+              variants={dogAnimation}
+              initial="hidden"
+              animate="show"
+            >
+              {/* Custom shadow element that appears to cast from first product onto second */}
+              <div
+                className="absolute right-[20px] top-[30px] bottom-[40px] w-[100px] z-35 rounded-lg"
+                style={{
+                  background: "linear-gradient(to right, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0) 100%)",
+                  transform: "skewY(-2deg)",
+                  filter: "blur(8px)",
+                  opacity: 0.7,
+                }}
+              ></div>
+
+              {/* Custom shadow element that appears to cast from first product onto second */}
+              <div
+                className="absolute right-[-120px] top-[30px] bottom-[40px] w-[100px] z-35 rounded-lg"
+                style={{
+                  background: "linear-gradient(to right, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0) 100%)",
+                  transform: "skewY(-2deg)",
+                  filter: "blur(8px)",
+                  opacity: 0.7,
+                }}
+              ></div>
+              <Image
+                src="/images/doggo.png"
+                alt="Cartoon dog illustration"
+                fill
+                className="object-contain object-right-top"
+                priority
+              />
+            </motion.div>
+
+            {/* CTA Buttons - Positioned to match reference image */}
+            <motion.div
+              className="flex flex-col items-start justify-start gap-4 mb-8 w-auto z-20 relative mt-4"
+              variants={buttonContainer}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.div variants={buttonVariant} className="w-auto">
+                <Link href={primaryCta.url} className="block">
+                  <IconButton
+                    href={primaryCta.url}
+                    icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
+                    className="w-auto bg-[#F65E42] pr-4"
+                  >
+                    {primaryCta.text}
+                  </IconButton>
+                </Link>
+              </motion.div>
+              <motion.div variants={buttonVariant} className="w-auto">
+                <Link href={secondaryCta.url} className="block">
+                  <IconButton
+                    href={secondaryCta.url}
+                    icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
+                    className="w-auto bg-[#5B9959] pr-4"
+                  >
+                    {secondaryCta.text}
+                  </IconButton>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Products at Bottom for Tablet */}
+            <div className="absolute bottom-[-10px] left-0 flex items-center justify-start md:justify-center z-10">
+              <motion.div
+                className="transform w-[160px] md:w-[180px] relative mr-5 scale-[1.4]"
+                variants={firstProductAnimation}
+                initial="hidden"
+                animate="show"
+              >
+                <Image
+                  src="/images/products/product-pumpkind-and-beef-transparent.png"
+                  alt="Nourish Pumpkin and Beef dog treats"
+                  width={180}
+                  height={250}
+                  className="drop-shadow-xl"
+                  priority
+                />
+              </motion.div>
+
+              <motion.div
+                className="transform w-[160px] md:w-[180px] relative scale-[1.4]"
+                variants={secondProductAnimation}
+                initial="hidden"
+                animate="show"
+              >
+                <Image
+                  src="/images/products/product-strawberry-and-carrot-transparent.png"
+                  alt="Nourish Strawberry and Carrot dog treats"
+                  width={180}
+                  height={250}
+                  className="drop-shadow-xl"
+                  priority
+                />
+              </motion.div>
             </div>
           </div>
         </div>

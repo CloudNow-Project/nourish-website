@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 
 interface ShadowedHeadingProps {
   text: string;
+  highlightWord?: string;
+  highlightColor?: string;
   className?: string;
   as?: React.ElementType;
-  size?: "xxs" | "xs" | "sm" | "md" | "lg" | "xl";
+  size?: "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "hero";
   textColor?: string;
   shadowColor?: string;
   shadowOffset?: number;
@@ -15,6 +17,8 @@ interface ShadowedHeadingProps {
 
 export function ShadowedHeading({
   text,
+  highlightWord,
+  highlightColor = "#f6b656",
   className,
   as: Component = "span",
   size = "lg",
@@ -45,6 +49,44 @@ export function ShadowedHeading({
     md: "text-3xl md:text-4xl",
     lg: "text-4xl md:text-5xl",
     xl: "text-5xl md:text-6xl",
+    hero: "text-4xl md:text-7xl",
+  };
+
+  // Process text to add highlight and support line breaks
+  const renderText = () => {
+    if (!highlightWord) {
+      // If no highlight word, just render the text with <br> support
+      return text.split("<br>").map((line, i) => (
+        <React.Fragment key={i}>
+          {i > 0 && <br />}
+          {line}
+        </React.Fragment>
+      ));
+    }
+
+    // If there's a highlight word, we need to handle both highlight and <br>
+    return text.split("<br>").map((line, i) => {
+      // Check if this line contains the highlight word
+      if (line.includes(highlightWord)) {
+        const parts = line.split(highlightWord);
+        return (
+          <React.Fragment key={i}>
+            {i > 0 && <br />}
+            {parts[0]}
+            <span style={{ color: highlightColor }}>{highlightWord}</span>
+            {parts[1]}
+          </React.Fragment>
+        );
+      }
+
+      // Line without highlight word
+      return (
+        <React.Fragment key={i}>
+          {i > 0 && <br />}
+          {line}
+        </React.Fragment>
+      );
+    });
   };
 
   // Using CSS text-shadow instead of positioned elements for better reliability
@@ -62,7 +104,7 @@ export function ShadowedHeading({
         textShadow: `${shadowOffset * 0.06}rem ${shadowOffset * 0.06}rem 0 ${shadowColor}`,
       }}
     >
-      {text}
+      {renderText()}
     </Component>
   );
 }

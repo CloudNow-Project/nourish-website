@@ -4,6 +4,8 @@ import { Paw } from "@/components/ui/Icons";
 import { NourishLogo } from "@/components/ui/NourishLogo";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
+import { Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,11 +14,11 @@ export function Footer() {
       <div className="relative py-16 overflow-hidden" style={{ backgroundColor: "#FFBD58" }}>
         {/* Decorative paw prints in background with varied orientations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <Paw size={120} color="white" className="absolute top-10 left-10 opacity-5 rotate-45" />
-          <Paw size={80} color="white" className="absolute top-40 right-20 opacity-5 -rotate-12" />
-          <Paw size={100} color="white" className="absolute bottom-20 left-1/4 opacity-5 -rotate-30" />
-          <Paw size={60} color="white" className="absolute top-1/2 right-1/3 opacity-5 -rotate-45" />
-          <Paw size={90} color="white" className="absolute bottom-10 right-10 opacity-5 rotate-30" />
+          <Paw size={120} color="white" className="absolute top-10 left-10 opacity-15 rotate-45" />
+          <Paw size={80} color="white" className="absolute top-40 right-20 opacity-15 -rotate-12" />
+          <Paw size={100} color="white" className="absolute bottom-20 left-1/4 opacity-15 -rotate-30" />
+          <Paw size={60} color="white" className="absolute top-1/2 right-1/3 opacity-15 -rotate-45" />
+          <Paw size={90} color="white" className="absolute bottom-10 right-10 opacity-15 rotate-30" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 lg:pt-12">
@@ -41,9 +43,14 @@ export function Footer() {
                     placeholder="Enter your email"
                     className="w-full border-2 border-white/30 bg-[#FFBD58] bg-opacity-90 px-4 py-3 rounded mb-4 text-white font-semibold placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
-                  <button className="bg-white hover:bg-white/90 text-[#FFBD58] font-bold py-3 px-8 rounded transition-colors">
-                    {newsletterContent.buttonText}
-                  </button>
+
+                  <Link
+                    href="/newsletter"
+                    className="inline-flex items-center text-base font-semibold transition-all px-4 py-2 rounded-xs bg-white text-[#FFBD58] group"
+                  >
+                    <Mail className="w-6 h-6 mr-2" strokeWidth={1.25} />
+                    <TextSwipeAnimation>{newsletterContent.buttonText}</TextSwipeAnimation>
+                  </Link>
                 </div>
 
                 <p className="text-sm text-white font-semibold">

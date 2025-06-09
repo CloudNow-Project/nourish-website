@@ -7,77 +7,125 @@ export const heroContent = {
 // Ingredient sections
 export const ingredients = [
   {
-    id: "first-ingredient",
-    heading: "Discover the Power of Our All-Natural Superfood Ingredients for Your Dog",
-    description: "Our superfood ingredients are carefully selected to boost your dog's health and vitality. Packed with essential nutrients, they support overall wellness and a happy life.",
-    benefits: {
-      title: "Health Benefits",
-      description: "Rich in antioxidants, vitamins, and minerals for a thriving, energetic pet."
-    },
-    quality: {
-      title: "Quality Ingredients",
-      description: "Sourced from trusted farms, ensuring safety and nutrition in every bite."
-    },
-    imageSrc: ""
+    id: "ginger-powder",
+    heading: "Ginger Powder",
+    description: "Reduces inflammation, aids digestion, soothes tummies.",
+    icon: "GingerPowder"
   },
   {
-    id: "second-ingredient",
-    heading: "Discover the Power of Our Second Key Ingredient for Your Dog's Health",
-    description: "Our second key ingredient is rich in antioxidants, promoting a strong immune system. It also supports healthy skin and a shiny coat, ensuring your furry friend feels their best.",
-    benefits: {
-      title: "Health Benefits",
-      description: "Packed with nutrients, it enhances overall vitality and well-being for your dog."
-    },
-    quality: {
-      title: "Ingredient Source",
-      description: "Sourced from nature, ensuring purity and quality for your beloved pet."
-    },
-    imageSrc: ""
+    id: "chia-seeds",
+    heading: "Chia Seeds",
+    description: "Omega-3s, fiber, and protein for joints, energy, and gut.",
+    icon: "ChiaSeeds"
   },
   {
-    id: "third-ingredient",
-    heading: "Unlock the Power of Natural Ingredients",
-    description: "Our third key ingredient is rich in antioxidants, promoting overall health in dogs. It supports a shiny coat and boosts the immune system.",
-    benefits: {
-      title: "Health Boost",
-      description: "Enhances vitality and keeps your dog feeling their best every day."
-    },
-    quality: {
-      title: "Natural Goodness",
-      description: "Packed with nutrients to support your dog's active lifestyle."
-    },
-    imageSrc: ""
+    id: "flax-seeds",
+    heading: "Flax Seeds",
+    description: "Supports healthy coat and digestion with omega-3s.",
+    icon: "FlaxSeeds"
+  },
+  {
+    id: "pumpkin",
+    heading: "Pumpkin",
+    description: "Fiber-rich and gut-friendly — perfect for digestion.",
+    icon: "Pumpkin"
+  },
+  {
+    id: "ground-beef",
+    heading: "Ground Beef",
+    description: "High-protein with essential aminos and B vitamins.",
+    icon: "Beef"
+  },
+  {
+    id: "sweet-potato",
+    heading: "Sweet Potato",
+    description: "Fiber and vitamin A for energy and immune support.",
+    icon: "SweetPotato"
+  },
+  {
+    id: "spirulina",
+    heading: "Spirulina",
+    description: "Packed with antioxidants and detox-friendly nutrients.",
+    icon: "Spirulina"
+  },
+  {
+    id: "rice-flour",
+    heading: "Rice Flour",
+    description: "Gentle carb source for sensitive digestion.",
+    icon: "Rice"
+  },
+  {
+    id: "oats",
+    heading: "Oats",
+    description: "Supports digestion and balances blood sugar.",
+    icon: "Oats"
+  },
+  {
+    id: "peanuts",
+    heading: "Peanuts",
+    description: "Healthy fats and vitamins for skin and energy.",
+    icon: "Peanuts"
+  },
+  {
+    id: "beet-root-powder",
+    heading: "Beet Root Powder",
+    description: "Supports heart health and circulation.",
+    icon: "BeetRootPowder"
+  },
+  {
+    id: "egg",
+    heading: "Egg",
+    description: "Complete protein for growth and vitality.",
+    icon: "Egg"
+  },
+  {
+    id: "pumpkin-seeds",
+    heading: "Pumpkin Seeds",
+    description: "Antioxidants and zinc for immunity and coat.",
+    icon: "PumpkinSeeds"
+  },
+  {
+    id: "carrot",
+    heading: "Carrot",
+    description: "Vitamin A boost for eyes, skin, and defense.",
+    icon: "Carrot"
+  },
+  {
+    id: "strawberry",
+    heading: "Strawberry",
+    description: "Antioxidants and fiber for digestion.",
+    icon: "Strawberry"
   }
 ];
 
 // Testimonials section
 export const testimonials = {
-  heading: "Customer Testimonials",
-  subheading: "Our ingredients have transformed our dog's health!",
+  heading: "Happy Dogs, Happy Humans",
+  subheading: "See the difference wholesome ingredients make",
   reviews: [
     {
       id: "1",
-      text: "Since switching my dog is more energetic and happy!",
+      text: "My picky eater LOVES these treats! And I love that they're actually good for him.",
       author: "Emily Johnson",
-      title: "Dog Owner",
+      title: "Dog Mom to Max",
       rating: 5,
-      imageSrc: "" // Placeholder
+      imageSrc: "/images/testimonials/testimonial-1.jpg"
     },
     {
       id: "2",
-      text: "These treats have made a noticeable difference!",
+      text: "Since switching to Nourish treats, Bailey's coat is shinier and her energy is through the roof!",
       author: "Mark Smith",
-      title: "Pet Enthusiast",
+      title: "Pet Parent",
       rating: 5,
-      imageSrc: "" // Placeholder
+      imageSrc: "/images/testimonials/testimonial-2.jpg"
     },
     {
       id: "3",
-      text: "My dog loves these treats and I love the ingredients!",
+      text: "As a vet tech, I'm picky about what I give my dogs. These treats pass my ingredient inspection with flying colors!",
       author: "Sara Lee",
-      title: "Happy Pet Parent",
+      title: "Veterinary Technician",
       rating: 5,
-      imageSrc: "" // Placeholder
+      imageSrc: "/images/testimonials/testimonial-3.jpg"
     }
   ]
 }; 

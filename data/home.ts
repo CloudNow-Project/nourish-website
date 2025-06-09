@@ -164,10 +164,9 @@ export const statsSection = {
 // Hero section content
 export const heroContent = {
   heading: {
-    mainText: "Superfood Powered",
-    highlightedText: "Drool Worthy"
+    mainText: "Superfood for <br> Super Tails",
   },
-  subheading: "Crafted with love and powered by superfoods, give your dog the goodness they deserve.",
+  subheading: "Crafted with love, powerful ingredients, and zero junk.",
   primaryCta: {
     text: "Order on Shopee",
     url: "https://shopee.com/nourish"

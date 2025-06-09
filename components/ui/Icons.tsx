@@ -8,7 +8,7 @@ import React from "react";
  * - additional styling (using the className prop)
  */
 
-interface IconProps {
+export interface IconProps {
   color?: string;
   size?: number | string;
   className?: string;

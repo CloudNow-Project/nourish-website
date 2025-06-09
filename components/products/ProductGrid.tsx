@@ -75,7 +75,7 @@ export function ProductGrid({
                 text={title}
                 as="h2"
                 size="lg"
-                textColor="#00000"
+                textColor="#ffffff"
                 shadowColor="#eda334"
                 shadowOffset={3}
                 className="mb-2"
@@ -84,7 +84,7 @@ export function ProductGrid({
 
             {subtitle && (
               <AnimatedElement variant="fadeInUp" delay={0.2}>
-                <p className="text-gray-600 max-w-2xl font-semibold text-lg">{subtitle}</p>
+                <p className="text-white max-w-2xl font-semibold text-lg">{subtitle}</p>
               </AnimatedElement>
             )}
           </div>

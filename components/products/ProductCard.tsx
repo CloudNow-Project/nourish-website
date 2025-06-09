@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShadowedHeading } from "../ui/ShadowedHeading";
+import { Paw } from "../ui/Icons";
 
 interface ProductCardProps {
   id: string;
@@ -13,15 +14,15 @@ interface ProductCardProps {
 
 export function ProductCard({ name, description, price, imageSrc, slug }: ProductCardProps) {
   return (
-    <div className="group flex flex-col transition-all bg-white p-4 rounded-xl">
-      <div className="aspect-[4/5] overflow-hidden rounded-lg bg-gray-200 mb-4 relative group-hover:shadow-md transition-shadow">
-        <Link href={`/treats/${slug}`}>
+    <div className="group flex flex-col transition-all bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md">
+      <div className="relative aspect-[4/4.5] bg-[#f5efe6] overflow-hidden">
+        <Link href={`/treats/${slug}`} className="block h-full">
           {imageSrc ? (
             <Image
               src={imageSrc}
               alt={name}
               fill
-              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
             <div className="flex items-center justify-center w-full h-full">
@@ -37,20 +38,32 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
           )}
         </Link>
       </div>
-      <div>
-        <Link href={`/treats/${slug}`}>
+
+      <div className="p-6 flex-grow flex flex-col">
+        <Link href={`/treats/${slug}`} className="block">
           <ShadowedHeading
             text={name}
             as="h3"
-            size="xxs"
+            size="xs"
             textColor="#FFBD58"
             shadowColor="#FBE2BF"
             shadowOffset={2}
             className="hover:text-[#f6b656] transition-colors"
           />
         </Link>
-        <p className="mt-1 text-gray-600 mb-3 font-semibold text-base">{description}</p>
-        <p className="font-semibold text-[#333] text-xl">${price}</p>
+
+        <p className="mt-3 text-gray-600 text-sm leading-relaxed flex-grow">{description}</p>
+
+        <div className="mt-4 flex items-center justify-between">
+          <span className="font-bold text-2xl text-[#333]">${price}</span>
+          <Link
+            href={`/treats/${slug}`}
+            className="p-2 bg-[#FFBD58] text-white rounded-full hover:bg-[#f6b656] transition-colors flex items-center justify-center"
+            aria-label={`View ${name}`}
+          >
+            <Paw size={18} />
+          </Link>
+        </div>
       </div>
     </div>
   );
