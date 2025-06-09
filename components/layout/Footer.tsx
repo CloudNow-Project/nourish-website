@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { footerMenus, newsletterContent } from "@/data/site";
-import { Paw } from "@/components/ui/Icons";
 import { NourishLogo } from "@/components/ui/NourishLogo";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
 import { Mail } from "lucide-react";
+import { Paw } from "../ui/Icons";
 
 export function Footer() {
   return (
