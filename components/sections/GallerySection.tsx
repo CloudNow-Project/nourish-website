@@ -18,7 +18,13 @@ export function GallerySection({ heading, subheading, images }: GallerySectionPr
   return (
     <section className="py-24 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
-        <SectionHeading heading={heading} subheading={subheading} />
+        <SectionHeading
+          categoryLabel={{
+            text: "Gallery",
+          }}
+          heading={heading}
+          subheading={subheading}
+        />
 
         {/* Masonry Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

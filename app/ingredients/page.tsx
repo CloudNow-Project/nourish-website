@@ -4,7 +4,7 @@ import { InsideTheBiteHero } from "@/components/page/inside-the-bite/Hero";
 import { InsideTheBiteFeatures } from "@/components/page/inside-the-bite/Features";
 import { IngredientsSection } from "@/components/page/inside-the-bite/IngredientsSection";
 import { BenefitsSection } from "@/components/page/inside-the-bite/BenefitsSection";
-import { NoArtificialsSection } from "@/components/page/inside-the-bite/NoArtificialsSection";
+// import { NoArtificialsSection } from "@/components/page/inside-the-bite/NoArtificialsSection";
 import { CTASection } from "@/components/page/inside-the-bite/CTASection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { testimonials } from "@/data/inside-the-bite";
@@ -24,7 +24,7 @@ export default function IngredientsPage() {
       <InsideTheBiteFeatures />
       <IngredientsSection />
       <BenefitsSection />
-      <NoArtificialsSection />
+      {/* <NoArtificialsSection /> */}
       <TestimonialsSection
         heading={testimonials.heading}
         subheading={testimonials.subheading}

@@ -44,7 +44,14 @@ export function TestimonialsSection({ heading, subheading, reviews }: Testimonia
   return (
     <section className="py-24 bg-ernest-beige">
       <div className="container max-w-6xl mx-auto px-4">
-        <SectionHeading heading={heading} subheading={subheading} variant="secondary" />
+        <SectionHeading
+          categoryLabel={{
+            text: "Testimonials",
+          }}
+          heading={heading}
+          subheading={subheading}
+          variant="secondary"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {reviews.map((review, index) => (

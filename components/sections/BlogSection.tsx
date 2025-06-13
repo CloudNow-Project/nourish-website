@@ -35,12 +35,14 @@ export function BlogSection({ heading, subheading, posts, categories, viewAllLin
     <section className="py-24 bg-[#fffefa]">
       <div className="container max-w-6xl mx-auto px-4">
         {/* Blog Header */}
-        <div className="text-center mb-16">
-          <AnimatedElement variant="fadeInUp" delay={0.1}>
-            <div className="text-sm text-chile-rojo uppercase font-semibold tracking-wider mb-2">Blog</div>
-          </AnimatedElement>
-
-          <SectionHeading heading={heading} subheading={subheading} />
+        <div className="mb-16">
+          <SectionHeading
+            categoryLabel={{
+              text: "Blog and Insights",
+            }}
+            heading={heading}
+            subheading={subheading}
+          />
         </div>
 
         {/* Blog Posts Grid */}

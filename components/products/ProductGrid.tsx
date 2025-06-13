@@ -71,6 +71,9 @@ export function ProductGrid({
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
             <SectionHeading
+              categoryLabel={{
+                text: "Our Products",
+              }}
               heading={title}
               subheading={subtitle}
               variant="primary"

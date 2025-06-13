@@ -22,6 +22,9 @@ export function Features({ features }: FeaturesProps) {
     <section className="py-16 md:py-24 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
         <SectionHeading
+          categoryLabel={{
+            text: "Why Choose Nourish?",
+          }}
           heading="Less Junk, More Drool"
           subheading="Crafted with all-natural, health conscious ingredients, Nourish Superfood Dog Treats support your dog's health, happiness, and tail-wagging moments—one bite at a time."
         />
