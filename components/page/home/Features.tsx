@@ -4,6 +4,7 @@ import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import Image from "next/image";
 import Link from "next/link";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 interface Feature {
   id: string;
@@ -20,26 +21,10 @@ export function Features({ features }: FeaturesProps) {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
-        <AnimatedElement variant="fadeInUp" delay={0.1}>
-          <div className="text-center mb-6 md:mb-8">
-            <ShadowedHeading
-              text="Less Junk, More Drool"
-              as="h2"
-              size="lg"
-              textColor="#1f2937"
-              shadowColor="#E5E7EB"
-              shadowOffset={3}
-              className="text-center"
-            />
-          </div>
-        </AnimatedElement>
-
-        <AnimatedElement variant="fadeInUp" delay={0.2}>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10 md:mb-16 text-base md:text-lg px-4 font-semibold">
-            Crafted with all-natural, health conscious ingredients, Nourish Superfood Dog Treats support your dog&apos;s
-            health, happiness, and tail-wagging moments—one bite at a time.
-          </p>
-        </AnimatedElement>
+        <SectionHeading
+          heading="Less Junk, More Drool"
+          subheading="Crafted with all-natural, health conscious ingredients, Nourish Superfood Dog Treats support your dog's health, happiness, and tail-wagging moments—one bite at a time."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 px-4">
           {features.map((feature, index) => (

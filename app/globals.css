@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+  scroll-timeline: --page-scroll block;
+  scroll-timeline-axis: block;
+  scroll-timeline-name: --page-scroll;
+  transition: scroll 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

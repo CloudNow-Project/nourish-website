@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 
 type GalleryImage = {
@@ -18,23 +18,7 @@ export function GallerySection({ heading, subheading, images }: GallerySectionPr
   return (
     <section className="py-24 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <AnimatedElement variant="fadeInUp" delay={0.1}>
-            <ShadowedHeading
-              text={heading}
-              as="h2"
-              size="lg"
-              textColor="#1f2937"
-              shadowColor="#E5E7EB"
-              shadowOffset={3}
-              className="text-center mb-4"
-            />
-          </AnimatedElement>
-
-          <AnimatedElement variant="fadeInUp" delay={0.2}>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subheading}</p>
-          </AnimatedElement>
-        </div>
+        <SectionHeading heading={heading} subheading={subheading} />
 
         {/* Masonry Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

@@ -47,7 +47,7 @@ const iconMap: IconMapType = {
 
 export function IngredientsSection() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24" id="ingredients-detail">
       <div className="container max-w-6xl mx-auto px-4">
         <AnimatedElement variant="fadeInUp" delay={0.1}>
           <div className="text-center mb-6 md:mb-8">

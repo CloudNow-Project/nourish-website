@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,21 +38,13 @@ export function StatsSection({ heading, subheading, stats, ctaText, ctaUrl }: St
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="text-white">
-            <AnimatedElement variant="fadeInLeft" delay={0.1}>
-              <ShadowedHeading
-                text={heading}
-                as="h2"
-                size="lg"
-                textColor="white"
-                shadowColor="rgba(255,255,255,0.3)"
-                shadowOffset={3}
-                className="mb-6"
-              />
-            </AnimatedElement>
-
-            <AnimatedElement variant="fadeInLeft" delay={0.2}>
-              <p className="text-lg md:text-xl mb-8 text-white/90 max-w-lg">{subheading}</p>
-            </AnimatedElement>
+            <SectionHeading
+              heading={heading}
+              subheading={subheading}
+              variant="primary"
+              alignment="left"
+              bottomMargin="medium"
+            />
 
             {ctaText && ctaUrl && (
               <AnimatedElement variant="fadeInUp" delay={0.3}>

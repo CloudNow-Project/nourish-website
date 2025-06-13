@@ -1,7 +1,7 @@
 import { ProductCard } from "./ProductCard";
 import { Button } from "@/components/ui/button";
-import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export interface Product {
   id: string;
@@ -70,23 +70,14 @@ export function ProductGrid({
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
-            <AnimatedElement variant="fadeInUp" delay={0.1}>
-              <ShadowedHeading
-                text={title}
-                as="h2"
-                size="lg"
-                textColor="#ffffff"
-                shadowColor="#eda334"
-                shadowOffset={3}
-                className="mb-2"
-              />
-            </AnimatedElement>
-
-            {subtitle && (
-              <AnimatedElement variant="fadeInUp" delay={0.2}>
-                <p className="text-white max-w-2xl font-semibold text-lg">{subtitle}</p>
-              </AnimatedElement>
-            )}
+            <SectionHeading
+              heading={title}
+              subheading={subtitle}
+              variant="primary"
+              customShadowColor="#eda334"
+              alignment="left"
+              bottomMargin="none"
+            />
           </div>
 
           {showViewAllButton && (

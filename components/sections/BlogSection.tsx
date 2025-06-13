@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type BlogPost = {
   id: string;
@@ -36,24 +37,10 @@ export function BlogSection({ heading, subheading, posts, categories, viewAllLin
         {/* Blog Header */}
         <div className="text-center mb-16">
           <AnimatedElement variant="fadeInUp" delay={0.1}>
-            <div className="text-sm text-ernest-teal uppercase font-medium tracking-wider mb-2">Blog</div>
+            <div className="text-sm text-chile-rojo uppercase font-semibold tracking-wider mb-2">Blog</div>
           </AnimatedElement>
 
-          <AnimatedElement variant="fadeInUp" delay={0.2}>
-            <ShadowedHeading
-              text={heading}
-              as="h2"
-              size="lg"
-              textColor="#1f2937"
-              shadowColor="#E5E7EB"
-              shadowOffset={3}
-              className="text-center mb-4"
-            />
-          </AnimatedElement>
-
-          <AnimatedElement variant="fadeInUp" delay={0.3}>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subheading}</p>
-          </AnimatedElement>
+          <SectionHeading heading={heading} subheading={subheading} />
         </div>
 
         {/* Blog Posts Grid */}
@@ -96,7 +83,7 @@ export function BlogSection({ heading, subheading, posts, categories, viewAllLin
 
                   {/* Category Label */}
                   <div className="mb-2">
-                    <span className="text-xs font-medium uppercase tracking-wider text-ernest-coral">
+                    <span className="text-xs font-medium uppercase tracking-wider text-chile-rojo">
                       {category?.name || "Uncategorized"}
                     </span>
                   </div>

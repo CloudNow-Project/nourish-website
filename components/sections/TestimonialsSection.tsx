@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type Review = {
   id: string;
@@ -44,23 +44,7 @@ export function TestimonialsSection({ heading, subheading, reviews }: Testimonia
   return (
     <section className="py-24 bg-ernest-beige">
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <AnimatedElement variant="fadeInUp" delay={0.1}>
-            <ShadowedHeading
-              text={heading}
-              as="h2"
-              size="lg"
-              textColor="#1f2937"
-              shadowColor="#E5E7EB"
-              shadowOffset={3}
-              className="text-center mb-4"
-            />
-          </AnimatedElement>
-
-          <AnimatedElement variant="fadeInUp" delay={0.2}>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subheading}</p>
-          </AnimatedElement>
-        </div>
+        <SectionHeading heading={heading} subheading={subheading} variant="secondary" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {reviews.map((review, index) => (

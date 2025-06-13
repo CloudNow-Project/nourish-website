@@ -3,6 +3,7 @@ import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
 import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import Image from "next/image";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function InsideTheBiteFeatures() {
   const features = [
@@ -31,30 +32,12 @@ export function InsideTheBiteFeatures() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container max-w-6xl mx-auto px-4">
-        <AnimatedElement variant="fadeInUp" delay={0.1}>
-          <div className="text-center mb-6 md:mb-8">
-            <div className="max-w-4xl mx-auto">
-              <ShadowedHeading
-                text="Discover the Superpower<br>of Our Ingredients"
-                as="h2"
-                size="lg"
-                textColor="#1f2937"
-                shadowColor="#E5E7EB"
-                shadowOffset={3}
-                className="text-center"
-              />
-            </div>
-          </div>
-        </AnimatedElement>
+        <SectionHeading
+          heading="Discover the Superpower<br>of Our Ingredients"
+          subheading="Every bite is packed with purposeful superfoods that support your dog's health from nose to tail. No fillers, no fluff, just functional food for dogs who deserve the best."
+        />
 
-        <AnimatedElement variant="fadeInUp" delay={0.2}>
-          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 md:mb-16 text-base md:text-lg px-4 font-semibold">
-            Every bite is packed with purposeful superfoods that support your dog&apos;s health from nose to tail. No
-            fillers, no fluff, just functional food for dogs who deserve the best.
-          </p>
-        </AnimatedElement>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <AnimatedElement key={feature.id} variant="fadeInUp" delay={0.3 + index * 0.1}>
               <div className="text-center p-6 md:p-4 rounded-xl transition-transform hover:scale-105 h-full flex flex-col">

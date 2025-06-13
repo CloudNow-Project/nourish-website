@@ -2,7 +2,7 @@ import Link from "next/link";
 import { footerMenus, newsletterContent } from "@/data/site";
 import { NourishLogo } from "@/components/ui/NourishLogo";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
-import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
 import { Mail } from "lucide-react";
 import { Paw } from "../ui/Icons";
@@ -26,16 +26,14 @@ export function Footer() {
             {/* Newsletter Subscription */}
             <AnimatedElement variant="fadeInUp" delay={0.1}>
               <div className="mb-10 lg:mb-0 pr-0 lg:pr-12">
-                <ShadowedHeading
-                  text={newsletterContent.title}
-                  as="h2"
+                <SectionHeading
+                  heading={newsletterContent.title}
+                  subheading={newsletterContent.description}
+                  variant="primary"
+                  alignment="left"
                   size="md"
-                  textColor="white"
-                  shadowColor="rgba(255,255,255,0.3)"
-                  shadowOffset={3}
-                  className="mb-4"
+                  bottomMargin="medium"
                 />
-                <p className="text-white font-semibold mb-6">{newsletterContent.description}</p>
 
                 <div className="mb-6">
                   <input

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 interface CTASectionProps {
   heading: string;
@@ -27,21 +27,14 @@ export function CTASection({ heading, description, image, primaryButton, seconda
             <div className="flex flex-col md:flex-row">
               {/* Left side - Content */}
               <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                <AnimatedElement variant="fadeInLeft" delay={0.2}>
-                  <ShadowedHeading
-                    text={heading}
-                    as="h2"
-                    size="md"
-                    textColor="#1f2937"
-                    shadowColor="#E5E7EB"
-                    shadowOffset={3}
-                    className="mb-4"
-                  />
-                </AnimatedElement>
-
-                <AnimatedElement variant="fadeInLeft" delay={0.3}>
-                  <p className="text-gray-600 mb-8">{description}</p>
-                </AnimatedElement>
+                <SectionHeading
+                  heading={heading}
+                  subheading={description}
+                  variant="secondary"
+                  alignment="left"
+                  size="md"
+                  bottomMargin="small"
+                />
 
                 <AnimatedElement variant="fadeInUp" delay={0.4}>
                   <div className="flex flex-wrap gap-4">
