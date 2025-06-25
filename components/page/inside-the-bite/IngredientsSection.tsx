@@ -1,7 +1,6 @@
 import React from "react";
 import { ingredients } from "@/data/inside-the-bite";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
-import { ShadowedHeading } from "@/components/ui/ShadowedHeading";
 import { IconProps } from "@/components/ui/Icons";
 import {
   GingerPowder,
