@@ -21,6 +21,7 @@ import {
   Strawberry,
   Rice,
 } from "@/components/ui/IngredientIcon";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type IconMapType = {
   [key: string]: React.FC<IconProps>;
@@ -52,14 +53,13 @@ export function IngredientsSection() {
         <AnimatedElement variant="fadeInUp" delay={0.1}>
           <div className="text-center mb-6 md:mb-8">
             <div className="max-w-4xl mx-auto">
-              <ShadowedHeading
-                text="Nourishing Goodness<br>One Ingredient at a Time"
-                as="h2"
+              <SectionHeading
+                heading="Nourishing Goodness<br>One Ingredient at a Time"
+                variant="secondary"
+                alignment="center"
                 size="lg"
-                textColor="#ae431e"
-                shadowColor="#E5E7EB"
-                shadowOffset={3}
-                className="text-center"
+                bottomMargin="medium"
+                categoryLabel={{ text: "Ingredients" }}
               />
             </div>
           </div>

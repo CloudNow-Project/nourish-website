@@ -10,7 +10,7 @@ export const siteConfig = {
 export const mainNav = [
   { name: "Inside the Bite", href: "/ingredients", icon: "Bowl" },
   { name: "Our Pack Story", href: "/about-us", icon: "Pack" },
-  { name: "Pawrents Ask", href: "/faq", icon: "Pawsk" },
+  // { name: "Pawrents Ask", href: "/faq", icon: "Pawsk" },
   { name: "Give us a Woof", href: "/contact", icon: "Woof" },
 ];
 

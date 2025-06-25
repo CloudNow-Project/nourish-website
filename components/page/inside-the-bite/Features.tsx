@@ -35,6 +35,7 @@ export function InsideTheBiteFeatures() {
         <SectionHeading
           heading="Discover the Superpower<br>of Our Ingredients"
           subheading="Every bite is packed with purposeful superfoods that support your dog's health from nose to tail. No fillers, no fluff, just functional food for dogs who deserve the best."
+          categoryLabel={{ text: "Features" }}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
