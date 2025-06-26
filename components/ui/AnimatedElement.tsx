@@ -30,7 +30,6 @@ export function AnimatedElement({
   className = "",
   threshold = 0.1,
 }: AnimatedElementProps) {
-  console.log("🚀 ~ className:", className);
   // Animation variants
   const animations = {
     fadeIn: {

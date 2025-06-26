@@ -3449,14 +3449,14 @@ export const HeroImageFull = ({ size = "100%" }: { size?: string | number }) => 
           width="768"
           height="1080"
           preserveAspectRatio="none"
-          xlinkHref="/images/hero/hero-pumpkin-and-beef.png"
+          xlinkHref="/images/hero/hero-product-01.webp"
         />
         <image
           id="image1_339_1779"
           width="777"
           height="1080"
           preserveAspectRatio="none"
-          xlinkHref="/images/hero/hero-strawberry-and-carrot.png"
+          xlinkHref="/images/hero/hero-product-02.webp"
         />
       </defs>
     </svg>
