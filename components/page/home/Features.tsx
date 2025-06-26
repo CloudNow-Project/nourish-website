@@ -19,12 +19,12 @@ interface FeaturesProps {
 
 export function Features({ features }: FeaturesProps) {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white shadow-top-separator z-50">
       <div className="container max-w-6xl mx-auto px-4">
         <SectionHeading
-          categoryLabel={{
-            text: "Why Choose Nourish?",
-          }}
+          // categoryLabel={{
+          //   text: "Why Choose Nourish?",
+          // }}
           heading="Less Junk, More Drool"
           subheading="Crafted with all-natural, health conscious ingredients, Nourish Superfood Dog Treats support your dog's health, happiness, and tail-wagging moments—one bite at a time."
         />
@@ -62,7 +62,7 @@ export function Features({ features }: FeaturesProps) {
           <div className="text-center mt-10 md:mt-16">
             <Link
               href="/ingredients"
-              className="inline-flex items-center text-base font-semibold transition-all px-4 py-1.5 rounded-full border-2 border-[#333] text-[#333] hover:bg-[#333] hover:text-white group"
+              className="inline-flex items-center text-medium font-semibold transition-all px-4 py-1.5 rounded-full border-2 border-[#333] text-[#333] hover:bg-[#333] hover:text-white group"
             >
               <Bowl className="w-10 h-10 mr-2" size={28} />
               <TextSwipeAnimation>Inside the Bite</TextSwipeAnimation>

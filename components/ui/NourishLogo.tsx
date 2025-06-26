@@ -2,17 +2,18 @@ import React from "react";
 
 interface NourishLogoProps {
   color?: string;
-  size?: number;
+  size?: number | string;
   className?: string;
 }
 
 export function NourishLogo({ color = "#E61A1A", size = 100, className = "" }: NourishLogoProps) {
   // Calculate height based on original aspect ratio (387/1381)
-  const height = Math.round(size * (387 / 1381));
+  const width = typeof size === "number" ? size : "100%";
+  const height = typeof size === "number" ? Math.round(size * (387 / 1381)) : "auto";
 
   return (
     <svg
-      width={size}
+      width={width}
       height={height}
       viewBox="0 0 1381 387"
       fill="none"

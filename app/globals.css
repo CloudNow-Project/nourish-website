@@ -255,3 +255,7 @@ html {
 .animate-marquee {
   animation: marquee 10s linear infinite;
 }
+
+.shadow-top-separator {
+  box-shadow: 0 -12px 24px -12px rgba(0, 0, 0, 0.1);
+}

@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { InsideTheBiteHero } from "@/components/page/inside-the-bite/Hero";
 import { InsideTheBiteFeatures } from "@/components/page/inside-the-bite/Features";
 import { IngredientsSection } from "@/components/page/inside-the-bite/IngredientsSection";
@@ -32,7 +32,7 @@ export default function IngredientsPage() {
       />
       <CTASection />
 
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 }

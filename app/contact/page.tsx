@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { GiveUsAWoofHero } from "@/components/page/give-us-a-woof/Hero";
 import { ContactInfo } from "@/components/page/give-us-a-woof/ContactInfo";
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
         <ContactInfo />
       </main>
 
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 }

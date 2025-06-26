@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { PawRentsAskHero } from "@/components/page/pawrents-ask/Hero";
 import { FaqSection } from "@/components/page/pawrents-ask/Faq";
 import { CtaSection } from "@/components/page/pawrents-ask/Cta";
@@ -18,7 +18,7 @@ export default function FaqPage() {
       <FaqSection />
       <CtaSection />
 
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 }

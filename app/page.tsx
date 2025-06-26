@@ -1,25 +1,26 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { ProductGrid } from "@/components/products/ProductGrid";
-import { StatsSection } from "@/components/sections/StatsSection";
+// import { StatsSection } from "@/components/sections/StatsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { GallerySection } from "@/components/sections/GallerySection";
+// import { GallerySection } from "@/components/sections/GallerySection";
 import { CTASection } from "@/components/sections/CTASection";
-import { BlogSection } from "@/components/sections/BlogSection";
-import { Hero } from "@/components/page/home/Hero";
+// import { BlogSection } from "@/components/sections/BlogSection";
+// import { Hero } from "@/components/page/home/Hero";
 import { Features } from "@/components/page/home/Features";
 
 // Import data from dedicated data files
 import { featuredProducts } from "@/data/products";
 import {
   features,
-  heroContent,
-  statsSection,
+  // heroContent,
+  // statsSection,
   testimonials,
-  gallerySection,
+  // gallerySection,
   ctaSection,
-  blogSection,
+  // blogSection,
 } from "@/data/home";
+import HeroOrnaments from "@/components/ui/HeroOrnaments";
 
 export default function Home() {
   return (
@@ -27,12 +28,14 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section - Already has its own animations */}
-      <Hero
+      {/* <Hero
         heading={heroContent.heading}
         subheading={heroContent.subheading}
         primaryCta={heroContent.primaryCta}
         secondaryCta={heroContent.secondaryCta}
-      />
+      /> */}
+
+      <HeroOrnaments />
 
       {/* Features Section */}
       <Features features={features} />
@@ -52,21 +55,21 @@ export default function Home() {
       />
 
       {/* Gallery Section */}
-      <GallerySection
+      {/* <GallerySection
         heading={gallerySection.heading}
         subheading={gallerySection.subheading}
         images={gallerySection.images}
-      />
+      /> */}
 
       {/* Stats Section */}
-      <StatsSection
+      {/* <StatsSection
         heading={statsSection.heading}
         subheading={statsSection.subheading}
         stats={statsSection.stats}
         ctaText={statsSection.ctaText}
         ctaUrl={statsSection.ctaUrl}
         bgColor="#555555" // Temporary gray background until image is provided
-      />
+      /> */}
 
       {/* CTA Section */}
       <CTASection
@@ -78,15 +81,15 @@ export default function Home() {
       />
 
       {/* Blog Section */}
-      <BlogSection
+      {/* <BlogSection
         heading={blogSection.heading}
         subheading={blogSection.subheading}
         categories={blogSection.categories}
         posts={blogSection.posts}
         viewAllLink={blogSection.viewAllLink}
-      />
+      /> */}
 
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 }

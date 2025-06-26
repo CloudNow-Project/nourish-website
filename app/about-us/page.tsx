@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { OurPackJourneyHero } from "@/components/page/our-pack-journey/Hero";
 import { StorySection } from "@/components/page/our-pack-journey/StorySection";
 import { VisionMissionSection } from "@/components/page/our-pack-journey/VisionMissionSection";
@@ -65,7 +65,7 @@ export default function AboutUsPage() {
         </div>
       </main>
 
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 }

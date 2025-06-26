@@ -45,9 +45,9 @@ export function TestimonialsSection({ heading, subheading, reviews }: Testimonia
     <section className="py-24 bg-ernest-beige">
       <div className="container max-w-6xl mx-auto px-4">
         <SectionHeading
-          categoryLabel={{
-            text: "Testimonials",
-          }}
+          // categoryLabel={{
+          //   text: "Testimonials",
+          // }}
           heading={heading}
           subheading={subheading}
           variant="secondary"

@@ -58,7 +58,7 @@ export function IngredientsSection() {
                 alignment="center"
                 size="lg"
                 bottomMargin="medium"
-                categoryLabel={{ text: "Ingredients" }}
+                // categoryLabel={{ text: "Ingredients" }}
               />
             </div>
           </div>

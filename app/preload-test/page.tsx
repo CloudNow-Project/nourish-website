@@ -1,9 +1,25 @@
-import { NourishLogoAnimated } from "@/components/ui/NourishLogoAnimated";
+import HeroOrnaments from "@/components/ui/HeroOrnaments";
 
 export default function PreloadTestPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center" style={{ backgroundColor: "#FFBD58" }}>
-      <NourishLogoAnimated color="white" size={500} />
+    <div
+      style={{
+        position: "relative",
+        width: "100vw",
+        minHeight: "400px",
+        background: "#f9fafb",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <HeroOrnaments />
+      </div>
+      {/* Your content here, with position: relative or zIndex: 1 */}
     </div>
   );
 }

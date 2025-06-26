@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { MinimalFooter } from "@/components/layout/MinimalFooter";
 
 export const metadata = {
   title: "Pawsome Treats | Nourish",
@@ -31,7 +31,7 @@ export default function ProductsPage() {
         </div>
       </main>
 
-      <Footer />
+      <MinimalFooter />
     </div>
   );
 }
