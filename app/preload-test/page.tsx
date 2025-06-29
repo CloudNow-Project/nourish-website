@@ -1,4 +1,4 @@
-import HeroOrnaments from "@/components/ui/HeroOrnaments";
+import HeroOrnaments from "@/components/page/home/hero/HeroOrnaments";
 
 export default function PreloadTestPage() {
   return (

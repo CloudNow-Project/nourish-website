@@ -20,7 +20,6 @@ import {
   ctaSection,
   // blogSection,
 } from "@/data/home";
-import HeroOrnaments from "@/components/ui/HeroOrnaments";
 import AnimatedHero from "@/components/page/home/hero/AnimatedHero";
 
 export default function Home() {
