@@ -4,10 +4,11 @@ import { ProductGrid } from "@/components/products/ProductGrid";
 // import { StatsSection } from "@/components/sections/StatsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 // import { GallerySection } from "@/components/sections/GallerySection";
-import { CTASection } from "@/components/sections/CTASection";
+// import { CTASection } from "@/components/sections/CTASection";
 // import { BlogSection } from "@/components/sections/BlogSection";
 // import { Hero } from "@/components/page/home/Hero";
 import { Features } from "@/components/page/home/Features";
+import { ProductGridSection } from "@/components/sections/ProductGridSection";
 
 // Import data from dedicated data files
 import { featuredProducts } from "@/data/products";
@@ -17,7 +18,7 @@ import {
   // statsSection,
   testimonials,
   // gallerySection,
-  ctaSection,
+  // ctaSection,
   // blogSection,
 } from "@/data/home";
 import AnimatedHero from "@/components/page/home/hero/AnimatedHero";
@@ -54,6 +55,9 @@ export default function Home() {
         reviews={testimonials.reviews}
       />
 
+      {/* Product Grid Image Section */}
+      <ProductGridSection />
+
       {/* Gallery Section */}
       {/* <GallerySection
         heading={gallerySection.heading}
@@ -72,13 +76,13 @@ export default function Home() {
       /> */}
 
       {/* CTA Section */}
-      <CTASection
+      {/* <CTASection
         heading={ctaSection.heading}
         description={ctaSection.description}
         image={ctaSection.image}
         primaryButton={ctaSection.primaryButton}
         secondaryButton={ctaSection.secondaryButton}
-      />
+      /> */}
 
       {/* Blog Section */}
       {/* <BlogSection
