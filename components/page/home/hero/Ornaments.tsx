@@ -2,10 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 interface HeroProductImageProps {
   initialDelay?: number;
 }
@@ -17,68 +13,90 @@ export const HeroProductImage = ({ initialDelay = 0 }: HeroProductImageProps) =>
   const group2Ref = useRef<SVGRectElement>(null);
 
   useEffect(() => {
+    // Register ScrollTrigger at the start of the effect
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
     if (!group1Ref.current || !group2Ref.current) return;
 
+    // Store animations in an array for cleanup
+    const animations: gsap.core.Tween[] = [];
+
     // Entrance animation
-    gsap.fromTo(
-      [group1Ref.current, group2Ref.current],
-      {
-        opacity: 0,
-        scale: 0.9,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        delay: initialDelay,
-        ease: "power2.out",
-        stagger: 0.2,
-      }
+    animations.push(
+      gsap.fromTo(
+        [group1Ref.current, group2Ref.current],
+        {
+          opacity: 0,
+          scale: 0.9,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          delay: initialDelay,
+          ease: "power2.out",
+          stagger: 0.2,
+        }
+      )
     );
 
     // Parallax: move group1 up, group2 down as you scroll
-    gsap.fromTo(
-      group1Ref.current,
-      {
-        rotate: 25,
-        transformOrigin: "center center",
-      },
-      {
-        rotate: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: group1Ref.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-          toggleActions: "play none none reverse",
+    animations.push(
+      gsap.fromTo(
+        group1Ref.current,
+        {
+          rotate: 25,
+          transformOrigin: "center center",
         },
-      }
+        {
+          rotate: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: group1Ref.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            toggleActions: "play none none reverse",
+          },
+        }
+      )
     );
 
-    gsap.fromTo(
-      group2Ref.current,
-      {
-        rotate: -35,
-        transformOrigin: "center center",
-      },
-      {
-        rotate: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: group2Ref.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-          toggleActions: "play none none reverse",
+    animations.push(
+      gsap.fromTo(
+        group2Ref.current,
+        {
+          rotate: -35,
+          transformOrigin: "center center",
         },
-      }
+        {
+          rotate: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: group2Ref.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            toggleActions: "play none none reverse",
+          },
+        }
+      )
     );
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      // Safer cleanup
+      try {
+        // Kill all ScrollTriggers for this component
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        // Kill all animations
+        animations.forEach((animation) => animation.kill());
+      } catch (error) {
+        console.warn("Error during GSAP cleanup:", error);
+      }
     };
-  }, []);
+  }, [initialDelay]); // Re-add initialDelay dependency
 
   return (
     <svg

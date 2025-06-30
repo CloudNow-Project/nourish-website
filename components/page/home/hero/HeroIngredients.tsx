@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Carrot01 = ({ size = "100%" }: { size?: string | number }) => {
   const width = typeof size === "number" ? size : "100%";
@@ -3226,6 +3227,10 @@ export const HeroIngredients: React.FC<HeroIngredientsProps> = ({ initialDelay =
   const ingredientsRefs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
     if (!containerRef.current) return;
 
     // Container animation

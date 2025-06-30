@@ -2,8 +2,8 @@
 // import { HeroOrnaments } from "@/components/page/home/hero/HeroOrnaments";
 import { HeroProductImage } from "./Ornaments";
 import { HeroTitle } from "./HeroTitle";
-import { HeroIngredients } from "./HeroIngredients";
 import { useLoading } from "@/components/ui/LoadingContext";
+import { HeroIngredients } from "./HeroIngredients";
 
 export default function AnimatedHero() {
   const { isLoading } = useLoading();
@@ -17,12 +17,12 @@ export default function AnimatedHero() {
       <div className="absolute inset-0 z-20">
         <HeroProductImage initialDelay={baseDelay + 0.3} />
       </div>
-      {/* <div className="absolute inset-0 z-10 opacity-30">
-        <HeroOrnaments />
-      </div> */}
       <div className="absolute inset-0 z-10">
         <HeroIngredients initialDelay={baseDelay + 0.5} />
       </div>
+      {/* <div className="absolute inset-0 z-10 opacity-30">
+        <HeroOrnaments />
+      </div> */}
     </div>
   );
 }
