@@ -5,6 +5,7 @@ import { IconButton } from "@/components/ui/IconButton";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useLoading } from "@/components/ui/LoadingContext";
 
 interface HeroProps {
   heading: {
@@ -22,6 +23,9 @@ interface HeroProps {
 }
 
 export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProps) {
+  const { isLoading } = useLoading();
+  const animationDelay = isLoading ? 3 : 0;
+
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -33,6 +37,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         damping: 18,
         stiffness: 300,
         duration: 0.5,
+        delay: animationDelay + 0.5,
       },
     },
   };
@@ -43,7 +48,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.7,
+        delayChildren: animationDelay + 0.7,
       },
     },
   };
@@ -54,7 +59,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 1,
+        delayChildren: animationDelay + 1,
       },
     },
   };
@@ -83,7 +88,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         type: "spring",
         stiffness: 200,
         damping: 20,
-        delay: 0.1,
+        delay: animationDelay + 0.1,
         duration: 0.8,
       },
     },
@@ -101,7 +106,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         stiffness: 300,
         damping: 15,
         duration: 0.8,
-        delay: 1.3,
+        delay: animationDelay + 1.3,
       },
     },
   };
@@ -118,7 +123,7 @@ export function Hero({ heading, subheading, primaryCta, secondaryCta }: HeroProp
         stiffness: 300,
         damping: 15,
         duration: 0.8,
-        delay: 1.5,
+        delay: animationDelay + 1.5,
       },
     },
   };

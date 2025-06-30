@@ -3218,7 +3218,10 @@ const Peanut15 = ({ size = "100%" }: { size?: string | number }) => {
   );
 };
 
-export const HeroIngredients: React.FC = () => {
+interface HeroIngredientsProps {
+  initialDelay?: number;
+}
+export const HeroIngredients: React.FC<HeroIngredientsProps> = ({ initialDelay = 0 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const ingredientsRefs = useRef<HTMLDivElement[]>([]);
 
@@ -3240,7 +3243,7 @@ export const HeroIngredients: React.FC = () => {
         y: "17%",
         x: "2%",
         duration: 1,
-        delay: 0.2,
+        delay: initialDelay + 0.2,
         ease: "power2.out",
       }
     );
@@ -3259,7 +3262,7 @@ export const HeroIngredients: React.FC = () => {
         y: 0,
         duration: 0.6,
         stagger: 0.05,
-        delay: 0.5,
+        delay: initialDelay + 0.5,
         ease: "back.out(1.7)",
       }
     );

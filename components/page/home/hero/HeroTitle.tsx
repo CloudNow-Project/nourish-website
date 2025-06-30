@@ -2,7 +2,11 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-export const HeroTitleSvg = () => {
+interface HeroTitleSvgProps {
+  initialDelay?: number;
+}
+
+export const HeroTitleSvg = ({ initialDelay = 0 }: HeroTitleSvgProps) => {
   const titleRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
@@ -31,6 +35,7 @@ export const HeroTitleSvg = () => {
         scale: 1,
         duration: 0.5,
         stagger: 0.05,
+        delay: initialDelay,
       }
     );
 
@@ -474,10 +479,13 @@ export const HeroTitleSvg = () => {
   );
 };
 
-export const HeroTitle = () => {
+interface HeroTitleProps {
+  initialDelay?: number;
+}
+export const HeroTitle = ({ initialDelay = 0 }: HeroTitleProps) => {
   return (
     <div className="hero-title w-full">
-      <HeroTitleSvg />
+      <HeroTitleSvg initialDelay={initialDelay} />
     </div>
   );
 };

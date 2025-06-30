@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { quicksand, fredoka, sharpshooter, agrandir } from "./fonts";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
+import { LoadingProvider } from "@/components/ui/LoadingContext";
 
 export const metadata: Metadata = {
   title: "Nourish | Superfood Dog Treats",
@@ -17,7 +19,10 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${fredoka.variable} ${sharpshooter.variable} ${agrandir.variable} antialiased font-sans overscroll-y-none`}
       >
-        {children}
+        <LoadingProvider>
+          <LoadingScreen />
+          {children}
+        </LoadingProvider>
       </body>
     </html>
   );

@@ -6,7 +6,11 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export const HeroProductImage = () => {
+interface HeroProductImageProps {
+  initialDelay?: number;
+}
+
+export const HeroProductImage = ({ initialDelay = 0 }: HeroProductImageProps) => {
   const width = "100%";
   const height = "100%";
   const group1Ref = useRef<SVGRectElement>(null);
@@ -26,7 +30,7 @@ export const HeroProductImage = () => {
         opacity: 1,
         scale: 1,
         duration: 1,
-        delay: 0.5,
+        delay: initialDelay,
         ease: "power2.out",
         stagger: 0.2,
       }

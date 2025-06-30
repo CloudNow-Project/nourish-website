@@ -1,0 +1,45 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splashToWhite {
+  0% {
+    transform: scale(1);
+    background-color: #fabd59;
+  }
+  60% {
+    transform: scale(1.2);
+    background-color: white;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    background-color: white;
+    opacity: 0;
+  }
+}
+
+.container {
+  position: fixed;
+  inset: 0;
+  background-color: #fabd59;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.splash {
+  animation: splashToWhite 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

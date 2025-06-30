@@ -9,8 +9,11 @@ import { Bowl, Pack, Pawsk, Woof, Paw } from "@/components/ui/Icons";
 import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
 import { IconButton } from "@/components/ui/IconButton";
 import { mainNav } from "@/data/site";
+import { useLoading } from "@/components/ui/LoadingContext";
 
 export function Navbar() {
+  const { isLoading } = useLoading();
+  const animationDelay = isLoading ? 3 : 0;
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +65,7 @@ export function Navbar() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3,
+        delayChildren: animationDelay + 0.3,
       },
     },
   };
@@ -88,7 +91,7 @@ export function Navbar() {
       transition: {
         type: "spring",
         stiffness: 300,
-        delay: 0.2,
+        delay: animationDelay + 0.2,
         duration: 0.6,
       },
     },
