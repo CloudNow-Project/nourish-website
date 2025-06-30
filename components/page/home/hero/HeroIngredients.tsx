@@ -3227,10 +3227,6 @@ export const HeroIngredients: React.FC<HeroIngredientsProps> = ({ initialDelay =
   const ingredientsRefs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-
     if (!containerRef.current) return;
 
     // Container animation
