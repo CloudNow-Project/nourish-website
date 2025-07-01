@@ -45,9 +45,11 @@ export function IconButton({
       break;
   }
 
+  const hasCustomPadding = className?.includes("py-");
   const buttonClasses = cn(
     buttonStyle,
-    "rounded-full px-3 py-3 flex items-center font-medium transition-all group cursor-pointer",
+    "rounded-full px-3 flex items-center font-medium transition-all group cursor-pointer",
+    !hasCustomPadding && "py-3",
     className
   );
 

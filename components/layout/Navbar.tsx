@@ -105,7 +105,7 @@ export function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
         className={`w-full hidden xl:block transition-all duration-300 ease-in-out pointer-events-auto ${
-          scrolled || !isHomePage ? "bg-white/95 backdrop-blur-sm shadow-md py-2" : "bg-transparent py-4"
+          scrolled || !isHomePage ? "bg-white/95 backdrop-blur-sm shadow-md py-4" : "bg-transparent py-4"
         }`}
         style={{
           borderRadius: scrolled || !isHomePage ? "0" : "0 0 20px 20px",
@@ -135,11 +135,11 @@ export function Navbar() {
                   <motion.div key={item.href} variants={navItem}>
                     <Link
                       href={item.href}
-                      className={`flex items-center text-base font-semibold transition-all px-3 py-2 rounded-full group ${
+                      className={`flex items-center text-base font-semibold transition-all rounded-full group px-3 ${
                         isActive
                           ? "bg-[#FDEACD] text-[#000000] font-bold"
                           : "text-nourish-text hover:text-[#A2501B] hover:bg-sunset/20"
-                      }`}
+                      } ${scrolled ? "py-[2px]" : "py-1"}`}
                     >
                       {getIconComponent(item.icon)}
                       <TextSwipeAnimation>{item.name}</TextSwipeAnimation>
@@ -157,11 +157,11 @@ export function Navbar() {
                   <motion.div key={item.href} variants={navItem}>
                     <Link
                       href={item.href}
-                      className={`flex text-[#000000] items-center text-base font-semibold transition-all px-3 py-2 rounded-full group ${
+                      className={`flex items-center text-base font-semibold transition-all rounded-full group ${
                         isActive
-                          ? "bg-[#FDEACD] font-bold"
+                          ? "bg-[#FDEACD] text-[#000000] font-bold"
                           : "text-nourish-text hover:text-[#A2501B] hover:bg-sunset/20"
-                      }`}
+                      } ${scrolled ? "px-2.5 py-1.5" : "px-3 py-2"}`}
                     >
                       {getIconComponent(item.icon)}
                       <TextSwipeAnimation>{item.name}</TextSwipeAnimation>
@@ -180,6 +180,7 @@ export function Navbar() {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
+                  className={`${scrolled ? "py-2" : "py-3"}`}
                 >
                   Pawsome Treats
                 </IconButton>
