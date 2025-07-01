@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NourishLogo } from "./NourishLogo";
+import { HeyoLogo } from "./HeyoLogo";
 import styles from "./LoadingScreen.module.css";
 import { useLoading } from "./LoadingContext";
 
@@ -25,7 +25,7 @@ export function LoadingScreen() {
   return (
     <div className={`${styles.container} ${isSplashing ? styles.splash : ""}`}>
       <div className={styles.fadeIn}>
-        <NourishLogo color="white" size={300} />
+        <HeyoLogo color="white" size={300} />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function IngredientsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-ernest-beige">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
 
       <InsideTheBiteHero />

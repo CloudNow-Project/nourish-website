@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShadowedHeading } from "../ui/ShadowedHeading";
-import { Paw } from "../ui/Icons";
+import { HeyoPaw } from "../ui/Icons";
 
 interface ProductCardProps {
   id: string;
@@ -61,7 +61,7 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
             className="p-2 bg-[#FFBD58] text-white rounded-full hover:bg-[#f6b656] transition-colors flex items-center justify-center"
             aria-label={`View ${name}`}
           >
-            <Paw size={18} />
+            <HeyoPaw size={18} />
           </Link>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { footerMenus } from "@/data/site";
-import { NourishLogo } from "@/components/ui/NourishLogo";
+import { HeyoLogo } from "@/components/ui/HeyoLogo";
 import { Paw } from "../ui/Icons";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 
@@ -20,9 +20,9 @@ export function MinimalFooter() {
 
         <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Logo and tagline */}
-          <div className="flex flex-col items-center mb-8 lg:mb-0 lg:w-1/2 lg:pr-20 xl:pr-40">
+          <div className="flex flex-col items-center mb-8 lg:mb-0 lg:w-1/2 lg:pr-20 xl:pr-0">
             <AnimatedElement className="flex flex-col items-center" variant="fadeInUp" delay={0.1}>
-              <NourishLogo color="white" size="100%" className="mb-4" />
+              <HeyoLogo color="white" size="100%" className="mb-10" />
 
               <div
                 className="text-2xl xl:text-3xl 2xl:text-4xl font-light tracking-wide text-white"

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { footerMenus, newsletterContent } from "@/data/site";
-import { NourishLogo } from "@/components/ui/NourishLogo";
+import { HeyoLogo } from "@/components/ui/HeyoLogo";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
@@ -162,7 +162,7 @@ export function Footer() {
             <div className="flex flex-col items-center justify-center md:my-4 lg:my-5">
               <AnimatedElement variant="fadeIn" delay={0.5}>
                 <div className="md:my-6 w-full flex justify-center">
-                  <NourishLogo
+                  <HeyoLogo
                     color="white"
                     size={500}
                     className="scale-50 sm:scale-100 md:scale-125 lg:scale-150 transform-gpu transition-transform duration-300 hover:scale-80 sm:hover:scale-110 md:hover:scale-130 lg:hover:scale-155 mb-10"

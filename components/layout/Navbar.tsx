@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { NourishLogo } from "@/components/ui/NourishLogo";
+import { HeyoLogo } from "@/components/ui/HeyoLogo";
 import { usePathname } from "next/navigation";
-import { Bowl, Pack, Pawsk, Woof, Paw } from "@/components/ui/Icons";
+import { Bowl, Pack, Pawsk, Woof, HeyoPaw } from "@/components/ui/Icons";
 import { TextSwipeAnimation } from "@/components/ui/TextSwipeAnimation";
 import { IconButton } from "@/components/ui/IconButton";
 import { mainNav } from "@/data/site";
@@ -18,7 +18,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // Check if current page is home or faq page
-  const isHomePage = pathname === "/" || pathname === "/faq";
+  const isHomePage = pathname === "/" || pathname === "/ingredients";
 
   // Handle scroll effect
   useEffect(() => {
@@ -122,7 +122,7 @@ export function Navbar() {
             variants={logoAnimation}
           >
             <Link href="/" className="block">
-              <NourishLogo color="#FFBD58" size={170} className="hover:scale-105 transition-transform duration-300" />
+              <HeyoLogo color="#FFBD58" size={120} className="hover:scale-105 transition-transform duration-300" />
             </Link>
           </motion.div>
 
@@ -172,7 +172,7 @@ export function Navbar() {
               <motion.div variants={navItem}>
                 <IconButton
                   href="#products-section"
-                  icon={<Paw size={20} color="#000000" />}
+                  icon={<HeyoPaw size={20} color="#000000" />}
                   variant="black"
                   onClick={() => {
                     const element = document.getElementById("products-section");
@@ -204,7 +204,7 @@ export function Navbar() {
             transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
           >
             <Link href="/" className="block">
-              <NourishLogo color="#FFBD58" size={130} className="transition-transform duration-300" />
+              <HeyoLogo color="#FFBD58" size={100} className="transition-transform duration-300" />
             </Link>
           </motion.div>
 
@@ -266,7 +266,7 @@ export function Navbar() {
                   <motion.div variants={navItem}>
                     <IconButton
                       href="#products-section"
-                      icon={<Paw size={20} color="#000000" />}
+                      icon={<HeyoPaw size={20} color="#000000" />}
                       variant="black"
                       onClick={() => {
                         setIsOpen(false);
