@@ -13,10 +13,18 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ name, description, price, imageSrc, slug }: ProductCardProps) {
+  // Format price to Rupiah
+  const formattedPrice = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+
   return (
-    <div className="group flex flex-col transition-all bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md">
-      <div className="relative aspect-[4/4.5] bg-[#f5efe6] overflow-hidden">
-        <Link href={`/treats/${slug}`} className="block h-full">
+    <Link href={`/${slug}`} className="block group">
+      <div className="h-full flex flex-col transition-all duration-300 bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1">
+        <div className="relative aspect-[4/4.5] bg-[#f5efe6] overflow-hidden">
           {imageSrc ? (
             <Image
               src={imageSrc}
@@ -36,11 +44,9 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
               </svg>
             </div>
           )}
-        </Link>
-      </div>
+        </div>
 
-      <div className="p-6 flex-grow flex flex-col">
-        <Link href={`/treats/${slug}`} className="block">
+        <div className="p-6 flex-grow flex flex-col">
           <ShadowedHeading
             text={name}
             as="h3"
@@ -48,23 +54,19 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
             textColor="#FFBD58"
             shadowColor="#FBE2BF"
             shadowOffset={2}
-            className="hover:text-[#f6b656] transition-colors"
+            className="group-hover:text-[#f6b656] transition-colors"
           />
-        </Link>
 
-        <p className="mt-3 text-gray-600 text-sm leading-relaxed flex-grow">{description}</p>
+          <p className="mt-3 text-gray-600 text-sm leading-relaxed flex-grow">{description}</p>
 
-        <div className="mt-4 flex items-center justify-between">
-          <span className="font-bold text-2xl text-[#333]">${price}</span>
-          <Link
-            href={`/treats/${slug}`}
-            className="p-2 bg-[#FFBD58] text-white rounded-full hover:bg-[#f6b656] transition-colors flex items-center justify-center"
-            aria-label={`View ${name}`}
-          >
-            <HeyoPaw size={18} />
-          </Link>
+          <div className="mt-4 flex items-center justify-between">
+            <span className="font-bold text-2xl text-[#333]">{formattedPrice}</span>
+            <div className="p-2 bg-[#FFBD58] text-white rounded-full group-hover:bg-[#f6b656] transition-colors flex items-center justify-center">
+              <HeyoPaw size={18} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

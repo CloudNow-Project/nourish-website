@@ -5,7 +5,7 @@ import { FaqSection } from "@/components/page/pawrents-ask/Faq";
 import { CtaSection } from "@/components/page/pawrents-ask/Cta";
 
 export const metadata = {
-  title: "Pawrents Ask | Nourish",
+  title: "Pawrents Ask | Heyo",
   description: "Find answers to common questions about our dog treats and ingredients.",
 };
 

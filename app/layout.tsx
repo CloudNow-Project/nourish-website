@@ -5,7 +5,7 @@ import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { LoadingProvider } from "@/components/ui/LoadingContext";
 
 export const metadata: Metadata = {
-  title: "Nourish | Superfood Dog Treats",
+  title: "Heyo | Superfood Dog Treats",
   description: "Premium dog treats made with wholesome ingredients and none of the bad stuff.",
 };
 

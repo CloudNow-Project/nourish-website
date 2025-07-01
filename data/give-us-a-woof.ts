@@ -23,9 +23,9 @@ export const contactInfo = {
     title: "Socials",
     username: "@NourishforDogs",
     platforms: [
-      { name: "Instagram", icon: "instagram", url: "https://instagram.com/NourishforDogs" },
-      { name: "TikTok", icon: "tiktok", url: "https://tiktok.com/@NourishforDogs" },
-      { name: "YouTube", icon: "youtube", url: "https://youtube.com/@NourishforDogs" }
+      { name: "Instagram", icon: "instagram", url: "https://instagram.com/heyofordogs" },
+      { name: "TikTok", icon: "tiktok", url: "https://tiktok.com/@heyofordogs" },
+      { name: "YouTube", icon: "youtube", url: "https://youtube.com/@heyofordogs" }
     ]
   },
   office: {

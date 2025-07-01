@@ -38,9 +38,9 @@ export const footerMenus = {
   social: {
     title: "Let's Be Furiends",
     items: [
-      { name: "Facebook", href: "https://facebook.com/nourishfordogs", icon: "facebook" },
-      { name: "Instagram", href: "https://instagram.com/nourishfordogs", icon: "instagram" },
-      { name: "Youtube", href: "https://youtube.com/nourishfordogs", icon: "youtube" },
+      { name: "Facebook", href: "https://facebook.com/heyofordogs", icon: "facebook" },
+      { name: "Instagram", href: "https://instagram.com/heyofordogs", icon: "instagram" },
+      { name: "Youtube", href: "https://youtube.com/heyofordogs", icon: "youtube" },
     ],
   },
 };

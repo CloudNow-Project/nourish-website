@@ -10,7 +10,7 @@ import { aboutUsCTA } from "./data";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 
 export const metadata = {
-  title: "Our Pack Story | Nourish",
+  title: "Our Pack Story | Heyo",
   description: "Learn about our journey and the team behind Nourish's premium dog treats.",
 };
 

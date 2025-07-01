@@ -10,7 +10,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { testimonials } from "@/data/inside-the-bite";
 
 export const metadata = {
-  title: "What's Inside the Bites Matters | Nourish",
+  title: "What's Inside the Bites Matters | Heyo",
   description:
     "From sweet strawberries to tummy-friendly carrots — every ingredient is chosen with love and purpose to keep your pup thriving.",
 };

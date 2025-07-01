@@ -15,9 +15,10 @@ interface TestimonialsSectionProps {
   heading: string;
   subheading: string;
   reviews: Review[];
+  pageType?: "product" | "home";
 }
 
-export function TestimonialsSection({ heading, subheading, reviews }: TestimonialsSectionProps) {
+export function TestimonialsSection({ heading, subheading, reviews, pageType = "home" }: TestimonialsSectionProps) {
   // Function to render stars based on rating
   const renderStars = (rating: number) => {
     const stars = [];
@@ -42,8 +43,8 @@ export function TestimonialsSection({ heading, subheading, reviews }: Testimonia
   };
 
   return (
-    <section className="py-24 bg-ernest-beige">
-      <div className="container max-w-6xl mx-auto px-4">
+    <section className={`bg-ernest-beige ${pageType === "product" ? "rounded-t-3xl py-12" : "py-24 "}`}>
+      <div className={`container max-w-6xl mx-auto ${pageType === "product" ? "px-12" : "px-4"}`}>
         <SectionHeading
           // categoryLabel={{
           //   text: "Testimonials",
@@ -53,7 +54,7 @@ export function TestimonialsSection({ heading, subheading, reviews }: Testimonia
           variant="secondary"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className={`grid grid-cols-1 md:grid-cols-3 ${pageType === "product" ? "gap-4" : "gap-10"}`}>
           {reviews.map((review, index) => (
             <AnimatedElement key={review.id} variant="fadeInUp" delay={0.3 + index * 0.1}>
               <div className="bg-white p-8 rounded-lg shadow-md flex flex-col">

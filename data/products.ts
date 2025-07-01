@@ -1,92 +1,424 @@
 import { Product } from "@/components/products/ProductGrid";
 
+export interface ExtendedProduct extends Product {
+  fullName: string;
+  ingredients: string[];
+  benefits: {
+    name: string;
+    description: string;
+  }[];
+  noArtificials: string[];
+  servingGuide: {
+    dogSize: string;
+    weight: string;
+    pieces: string;
+  }[];
+  storage: string;
+  netWeight: string;
+  gallery: string[];
+  marketplaces: {
+    shopee: string;
+    tokopedia: string;
+  };
+}
+
 // Featured products for the homepage
-export const featuredProducts: Product[] = [
+export const featuredProducts: ExtendedProduct[] = [
   {
     id: "1",
-    name: "Strawberry and Carrot Digestive Bites",
-    description: "Packed with fiber, superfoods, and a fruity twist—ideal for pups needing a digestion-friendly treat",
-    price: 10,
+    name: "Strawberry & Carrot",
+    fullName: "Heyo Superfood Dog Treats - Fiber Support Bites - Strawberry & Carrot",
+    description: "Fiber Support Bites with Beetroot Powder & Oatmeal. Perfect for digestive health.",
+    price: 38000,
     imageSrc: "/images/products/display-strawberry-and-carrot.png",
-    slug: "strawberry-carrot-bites",
+    slug: "products/strawberry-and-carrot",
+    ingredients: ["Oats", "Peanuts", "Egg", "Pumpkin Seeds", "Carrot", "Strawberry", "Beetroot Powder"],
+    benefits: [
+      {
+        name: "Oats",
+        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+      },
+      {
+        name: "Peanuts",
+        description: "A protein-rich source of healthy fats, vitamin B, and vitamin E for skin, coat, and energy."
+      },
+      {
+        name: "Egg",
+        description: "A complete protein packed with essential amino acids, vitamins, and minerals for muscle growth and overall health."
+      },
+      {
+        name: "Pumpkin Seeds",
+        description: "Rich in antioxidants, healthy fats, and zinc to boost immunity and promote a healthy coat."
+      },
+      {
+        name: "Carrot",
+        description: "High in beta-carotene and vitamin A, great for eye health, skin, and immune function."
+      },
+      {
+        name: "Strawberry",
+        description: "Loaded with antioxidants, vitamin C, and fiber to promote a healthy immune system and digestion."
+      },
+      {
+        name: "Beetroot Powder",
+        description: "A natural source of fiber, iron, and antioxidants that support heart health and circulation."
+      }
+    ],
+    noArtificials: [
+      "Preservatives",
+      "Coloring",
+      "Flavoring",
+      "By-products",
+      "Artificial ingredients",
+      "Salt & Sugar"
+    ],
+    servingGuide: [
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "2 - 4 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "4 - 6 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "6 - 8 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "8 - 12 pieces" }
+    ],
+    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
+    netWeight: "60g",
+    gallery: [
+      "/images/products/strawberry-and-carrot/heyo-strawberry-carrot-01.jpeg",
+      "/images/products/strawberry-and-carrot/heyo-strawberry-carrot-02.jpeg",
+      "/images/products/strawberry-and-carrot/heyo-strawberry-carrot-03.jpeg",
+      "/images/products/strawberry-and-carrot/heyo-strawberry-carrot-04.jpeg",
+      "/images/products/strawberry-and-carrot/heyo-strawberry-carrot-05.jpeg"
+    ],
+    marketplaces: {
+      shopee: "https://shopee.com",
+      tokopedia: "https://tokopedia.com"
+    }
   },
   {
     id: "2",
-    name: "Pumpkin and Beef Healthy Power Bites",
-    description: "Boosted with protein, superfoods, and a savory kick—made for pups who play hard and snack smart",
-    price: 12,
+    name: "Pumpkin & Beef",
+    fullName: "Heyo Superfood Dog Treats - Fiber Support Bites - Pumpkin & Beef",
+    description: "Hearty and protein-rich treat with natural ingredients for active dogs",
+    price: 38000,
     imageSrc: "/images/products/display-pumpkind-and-beef.png",
-    slug: "pumpkin-crunch-squares",
+    slug: "products/pumpkin-and-beef",
+    ingredients: ["Oats", "Peanuts", "Egg", "Pumpkin Seeds", "Beef", "Pumpkin"],
+    benefits: [
+      {
+        name: "Oats",
+        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+      },
+      {
+        name: "Peanuts",
+        description: "A protein-rich source of healthy fats, vitamin B, and vitamin E for skin, coat, and energy."
+      },
+      {
+        name: "Egg",
+        description: "A complete protein packed with essential amino acids, vitamins, and minerals for muscle growth and overall health."
+      },
+      {
+        name: "Pumpkin Seeds",
+        description: "Rich in antioxidants, healthy fats, and zinc to boost immunity and promote a healthy coat."
+      },
+      {
+        name: "Beef",
+        description: "High-quality protein source rich in iron and essential nutrients for muscle development and energy."
+      },
+      {
+        name: "Pumpkin",
+        description: "Excellent source of fiber and beta-carotene, supporting digestive health and immune function."
+      }
+    ],
+    noArtificials: [
+      "Preservatives",
+      "Coloring",
+      "Flavoring",
+      "By-products",
+      "Artificial ingredients",
+      "Salt & Sugar"
+    ],
+    servingGuide: [
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "2 - 4 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "4 - 6 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "6 - 8 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "8 - 12 pieces" }
+    ],
+    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
+    netWeight: "60g",
+    gallery: [
+      "/images/products/pumpkin-and-beef/heyo-pumpkin-beef-01.jpeg",
+      "/images/products/pumpkin-and-beef/heyo-pumpkin-beef-02.jpeg",
+      "/images/products/pumpkin-and-beef/heyo-pumpkin-beef-03.jpeg",
+      "/images/products/pumpkin-and-beef/heyo-pumpkin-beef-04.jpeg",
+      "/images/products/pumpkin-and-beef/heyo-pumpkin-beef-05.jpeg"
+    ],
+    marketplaces: {
+      shopee: "https://shopee.com",
+      tokopedia: "https://tokopedia.com"
+    }
   },
   {
     id: "3",
-    name: "Beef and Beetroot Energy Bites",
-    description: "Packed with protein, superfoods, and a savory twist—perfect for pups needing a muscle-building boost",
-    price: 15,
+    name: "Beef & Beetroot",
+    fullName: "Heyo Superfood Dog Treats - Antioxidant Support Bites - Beef & Beetroot",
+    description: "Antioxidant-rich formula with high-quality protein to support immune health",
+    price: 38000,
     imageSrc: "/images/products/display-beef-and-beet.png",
-    slug: "beef-beet-boosters",
+    slug: "products/beef-and-beetroot",
+    ingredients: ["Oats", "Peanuts", "Egg", "Beef", "Beetroot Powder", "Pumpkin Seeds"],
+    benefits: [
+      {
+        name: "Oats",
+        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+      },
+      {
+        name: "Peanuts",
+        description: "A protein-rich source of healthy fats, vitamin B, and vitamin E for skin, coat, and energy."
+      },
+      {
+        name: "Egg",
+        description: "A complete protein packed with essential amino acids, vitamins, and minerals for muscle growth and overall health."
+      },
+      {
+        name: "Beef",
+        description: "High-quality protein source rich in iron and essential nutrients for muscle development and energy."
+      },
+      {
+        name: "Beetroot Powder",
+        description: "Natural source of fiber, iron, and antioxidants that support heart health and circulation."
+      },
+      {
+        name: "Pumpkin Seeds",
+        description: "Rich in antioxidants, healthy fats, and zinc to boost immunity and promote a healthy coat."
+      }
+    ],
+    noArtificials: [
+      "Preservatives",
+      "Coloring",
+      "Flavoring",
+      "By-products",
+      "Artificial ingredients",
+      "Salt & Sugar"
+    ],
+    servingGuide: [
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "2 - 4 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "4 - 6 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "6 - 8 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "8 - 12 pieces" }
+    ],
+    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
+    netWeight: "60g",
+    gallery: [
+      "/images/products/beef-and-beet/heyo-beef-beet-01.jpeg",
+      "/images/products/beef-and-beet/heyo-beef-beet-02.jpeg",
+      "/images/products/beef-and-beet/heyo-beef-beet-03.jpeg",
+      "/images/products/beef-and-beet/heyo-beef-beet-04.jpeg",
+      "/images/products/beef-and-beet/heyo-beef-beet-05.jpeg"
+    ],
+    marketplaces: {
+      shopee: "https://shopee.com",
+      tokopedia: "https://tokopedia.com"
+    }
   },
   {
     id: "4",
-    name: "Coconut and Chia Omega Bites",
-    description: "Rich with healthy fats, superfoods, and a tropical twist—designed for pups needing a shiny coat and healthy skin",
-    price: 18,
+    name: "Coconut & Chia",
+    fullName: "Heyo Superfood Dog Treats - Omega Support Bites - Coconut & Chia",
+    description: "Omega-rich superfood blend for a shiny coat and healthy digestion",
+    price: 38000,
     imageSrc: "/images/products/display-coconut-and-chia.png",
-    slug: "coconut-chia-bites",
+    slug: "products/coconut-and-chia",
+    ingredients: ["Oats", "Coconut", "Chia Seeds", "Egg", "Pumpkin Seeds", "Flax Seeds"],
+    benefits: [
+      {
+        name: "Oats",
+        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+      },
+      {
+        name: "Coconut",
+        description: "Rich in healthy fats and medium-chain triglycerides for energy and coat health."
+      },
+      {
+        name: "Chia Seeds",
+        description: "Packed with omega-3s, fiber, and protein for joints, energy, and digestive health."
+      },
+      {
+        name: "Egg",
+        description: "A complete protein packed with essential amino acids, vitamins, and minerals for muscle growth and overall health."
+      },
+      {
+        name: "Pumpkin Seeds",
+        description: "Rich in antioxidants, healthy fats, and zinc to boost immunity and promote a healthy coat."
+      },
+      {
+        name: "Flax Seeds",
+        description: "Excellent source of omega-3s and fiber for coat health and digestion."
+      }
+    ],
+    noArtificials: [
+      "Preservatives",
+      "Coloring",
+      "Flavoring",
+      "By-products",
+      "Artificial ingredients",
+      "Salt & Sugar"
+    ],
+    servingGuide: [
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "2 - 4 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "4 - 6 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "6 - 8 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "8 - 12 pieces" }
+    ],
+    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
+    netWeight: "60g",
+    gallery: [
+      "/images/products/coconut-and-chia/heyo-coconut-chia-01.jpeg",
+      "/images/products/coconut-and-chia/heyo-coconut-chia-02.jpeg",
+      "/images/products/coconut-and-chia/heyo-coconut-chia-03.jpeg",
+      "/images/products/coconut-and-chia/heyo-coconut-chia-04.jpeg",
+      "/images/products/coconut-and-chia/heyo-coconut-chia-05.jpeg"
+    ],
+    marketplaces: {
+      shopee: "https://shopee.com",
+      tokopedia: "https://tokopedia.com"
+    }
   },
   {
     id: "5",
-    name: "Blueberry and Banana Antioxidant Bites",
-    description: "Loaded with vitamins, superfoods, and a fruity sweetness—ideal for pups needing immune system support",
-    price: 14,
+    name: "Blueberry & Banana",
+    fullName: "Heyo Superfood Dog Treats - Antioxidant Support Bites - Blueberry & Banana",
+    description: "Antioxidant-packed treats with natural sweetness for immune support",
+    price: 38000,
     imageSrc: "/images/products/display-blueberry-banana.png",
-    slug: "blueberry-banana-biscuits",
+    slug: "products/blueberry-and-banana",
+    ingredients: ["Oats", "Blueberries", "Banana", "Egg", "Pumpkin Seeds", "Flax Seeds"],
+    benefits: [
+      {
+        name: "Oats",
+        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+      },
+      {
+        name: "Blueberries",
+        description: "Rich in antioxidants and vitamin C for immune support and brain health."
+      },
+      {
+        name: "Banana",
+        description: "Natural source of potassium and vitamin B6 for energy and muscle function."
+      },
+      {
+        name: "Egg",
+        description: "A complete protein packed with essential amino acids, vitamins, and minerals for muscle growth and overall health."
+      },
+      {
+        name: "Pumpkin Seeds",
+        description: "Rich in antioxidants, healthy fats, and zinc to boost immunity and promote a healthy coat."
+      },
+      {
+        name: "Flax Seeds",
+        description: "Excellent source of omega-3s and fiber for coat health and digestion."
+      }
+    ],
+    noArtificials: [
+      "Preservatives",
+      "Coloring",
+      "Flavoring",
+      "By-products",
+      "Artificial ingredients",
+      "Salt & Sugar"
+    ],
+    servingGuide: [
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "2 - 4 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "4 - 6 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "6 - 8 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "8 - 12 pieces" }
+    ],
+    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
+    netWeight: "60g",
+    gallery: [
+      "/images/products/blueberry-and-banana/heyo-blueberry-banana-01.jpeg",
+      "/images/products/blueberry-and-banana/heyo-blueberry-banana-02.jpeg",
+      "/images/products/blueberry-and-banana/heyo-blueberry-banana-03.jpeg",
+      "/images/products/blueberry-and-banana/heyo-blueberry-banana-04.jpeg",
+      "/images/products/blueberry-and-banana/heyo-blueberry-banana-05.jpeg"
+    ],
+    marketplaces: {
+      shopee: "https://shopee.com",
+      tokopedia: "https://tokopedia.com"
+    }
   },
   {
     id: "6",
-    name: "Salmon and Spinach Omega Bites",
-    description: "Enriched with omega-3, superfoods, and a nutrient-dense blend—formulated for pups needing brain and joint support",
-    price: 16,
+    name: "Omega-3 Support",
+    fullName: "Heyo Superfood Dog Treats - Omega-3 Support Bites",
+    description: "Essential fatty acids blend for brain health and joint support",
+    price: 38000,
     imageSrc: "/images/products/display-omega3.png",
-    slug: "omega-3-superstars",
+    slug: "products/omega-3-support",
+    ingredients: ["Oats", "Salmon", "Chia Seeds", "Flax Seeds", "Egg", "Pumpkin Seeds"],
+    benefits: [
+      {
+        name: "Oats",
+        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+      },
+      {
+        name: "Salmon",
+        description: "Rich in omega-3 fatty acids for brain health, joint function, and coat shine."
+      },
+      {
+        name: "Chia Seeds",
+        description: "Packed with omega-3s, fiber, and protein for joints, energy, and digestive health."
+      },
+      {
+        name: "Flax Seeds",
+        description: "Excellent source of omega-3s and fiber for coat health and digestion."
+      },
+      {
+        name: "Egg",
+        description: "A complete protein packed with essential amino acids, vitamins, and minerals for muscle growth and overall health."
+      },
+      {
+        name: "Pumpkin Seeds",
+        description: "Rich in antioxidants, healthy fats, and zinc to boost immunity and promote a healthy coat."
+      }
+    ],
+    noArtificials: [
+      "Preservatives",
+      "Coloring",
+      "Flavoring",
+      "By-products",
+      "Artificial ingredients",
+      "Salt & Sugar"
+    ],
+    servingGuide: [
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "2 - 4 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "4 - 6 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "6 - 8 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "8 - 12 pieces" }
+    ],
+    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
+    netWeight: "60g",
+    gallery: [
+      "/images/products/omega-3-support/heyo-omega3-01.jpeg",
+      "/images/products/omega-3-support/heyo-omega3-02.jpeg",
+      "/images/products/omega-3-support/heyo-omega3-03.jpeg",
+      "/images/products/omega-3-support/heyo-omega3-04.jpeg",
+      "/images/products/omega-3-support/heyo-omega3-05.jpeg"
+    ],
+    marketplaces: {
+      shopee: "https://shopee.com",
+      tokopedia: "https://tokopedia.com"
+    }
   },
 ];
 
 // All products for the product catalog page
-export const allProducts: Product[] = [
+export const allProducts: ExtendedProduct[] = [
   ...featuredProducts,
-  {
-    id: "7",
-    name: "Apple Cinnamon Biscuits",
-    description: "Crunchy biscuits with fresh apples and cinnamon. A delicious way to freshen breath.",
-    price: 11,
-    imageSrc: "",
-    slug: "apple-cinnamon-biscuits",
-  },
-  {
-    id: "8",
-    name: "Turkey & Sweet Potato Nibbles",
-    description: "Protein-rich turkey and sweet potato nibbles. Perfect for active, energetic dogs.",
-    price: 13,
-    imageSrc: "",
-    slug: "turkey-sweet-potato-nibbles",
-  },
-  {
-    id: "9",
-    name: "Peanut Butter Paws",
-    description: "Paw-shaped natural peanut butter treats. Protein-rich and helps keep teeth clean.",
-    price: 12,
-    imageSrc: "",
-    slug: "peanut-butter-paws",
-  },
 ];
 
 // Product categories
 export const productCategories = [
   { id: "all", name: "All Treats" },
-  { id: "crunchy", name: "Crunchy Treats" },
-  { id: "soft", name: "Soft Treats" },
-  { id: "grain-free", name: "Grain-Free Options" },
+  { id: "grain-free", name: "Grain-Free" },
   { id: "protein", name: "Protein-Rich" },
-  { id: "superfood", name: "Superfood Treats" },
+  { id: "superfood", name: "Superfood" },
+  { id: "immunity", name: "Immunity Support" },
+  { id: "digestion", name: "Digestive Health" },
 ]; 

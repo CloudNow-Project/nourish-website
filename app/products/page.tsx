@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { MinimalFooter } from "@/components/layout/MinimalFooter";
 
 export const metadata = {
-  title: "Pawsome Treats | Nourish",
+  title: "Pawsome Treats | Heyo",
   description: "Explore our range of premium, nutritious dog treats made with wholesome ingredients.",
 };
 
