@@ -1,5 +1,5 @@
 import { ProductCard } from "./ProductCard";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -61,12 +61,12 @@ export function ProductGrid({
   title,
   subtitle,
   products = sampleProducts, // Default to sample products if none provided
-  showViewAllButton = true,
-  viewAllButtonText = "Sniff Them All",
-  viewAllUrl = "/treats",
-}: ProductGridProps) {
+}: // showViewAllButton = true,
+// viewAllButtonText = "Sniff Them All",
+// viewAllUrl = "/treats",
+ProductGridProps) {
   return (
-    <section className="py-24 bg-[#FFBD58]">
+    <section id="products-section" className="py-24 bg-[#FFBD58]">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
@@ -83,7 +83,7 @@ export function ProductGrid({
             />
           </div>
 
-          {showViewAllButton && (
+          {/* {showViewAllButton && (
             <AnimatedElement variant="fadeInLeft" delay={0.3}>
               <div className="mt-4 md:mt-0">
                 <Button
@@ -95,7 +95,7 @@ export function ProductGrid({
                 </Button>
               </div>
             </AnimatedElement>
-          )}
+          )} */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">

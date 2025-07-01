@@ -30,7 +30,7 @@ export function InsideTheBiteFeatures() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white shadow-top-separator z-20">
       <div className="container max-w-6xl mx-auto px-4">
         <SectionHeading
           heading="Discover the Superpower<br>of Our Ingredients"

@@ -62,9 +62,9 @@ export function Features({ features }: FeaturesProps) {
           <div className="text-center mt-10 md:mt-16">
             <Link
               href="/ingredients"
-              className="inline-flex items-center text-medium font-semibold transition-all px-4 py-1.5 rounded-full border-2 border-[#333] text-[#333] hover:bg-[#333] hover:text-white group"
+              className="inline-flex items-center text-xl font-semibold transition-all px-6 py-1.5 rounded-full border-2 border-[#333] text-[#333] hover:bg-[#333] hover:text-white group"
             >
-              <Bowl className="w-10 h-10 mr-2" size={28} />
+              <Bowl className="w-12 h-12 mr-2" size={32} />
               <TextSwipeAnimation>Inside the Bite</TextSwipeAnimation>
             </Link>
           </div>

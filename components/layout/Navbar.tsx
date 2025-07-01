@@ -170,7 +170,18 @@ export function Navbar() {
                 );
               })}
               <motion.div variants={navItem}>
-                <IconButton href="/products" icon={<Paw size={20} color="#000000" />} variant="black">
+                <IconButton
+                  href="#products-section"
+                  icon={<Paw size={20} color="#000000" />}
+                  variant="black"
+                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                    e.preventDefault();
+                    const element = document.getElementById("products-section");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   Pawsome Treats
                 </IconButton>
               </motion.div>
@@ -255,11 +266,17 @@ export function Navbar() {
                   })}
                   <motion.div variants={navItem}>
                     <IconButton
-                      href="/products"
+                      href="#products-section"
                       icon={<Paw size={20} color="#000000" />}
                       variant="black"
-                      onClick={() => setIsOpen(false)}
-                      className="mt-4"
+                      onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                        e.preventDefault();
+                        setIsOpen(false);
+                        const element = document.getElementById("products-section");
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
                     >
                       Pawsome Treats
                     </IconButton>
