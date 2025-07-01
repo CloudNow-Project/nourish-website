@@ -174,8 +174,7 @@ export function Navbar() {
                   href="#products-section"
                   icon={<Paw size={20} color="#000000" />}
                   variant="black"
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                    e.preventDefault();
+                  onClick={() => {
                     const element = document.getElementById("products-section");
                     if (element) {
                       element.scrollIntoView({ behavior: "smooth" });
@@ -269,8 +268,7 @@ export function Navbar() {
                       href="#products-section"
                       icon={<Paw size={20} color="#000000" />}
                       variant="black"
-                      onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                        e.preventDefault();
+                      onClick={() => {
                         setIsOpen(false);
                         const element = document.getElementById("products-section");
                         if (element) {

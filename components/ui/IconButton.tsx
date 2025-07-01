@@ -47,7 +47,7 @@ export function IconButton({
 
   const buttonClasses = cn(
     buttonStyle,
-    "rounded-full px-3 py-3 flex items-center font-medium transition-all group",
+    "rounded-full px-3 py-3 flex items-center font-medium transition-all group cursor-pointer",
     className
   );
 
