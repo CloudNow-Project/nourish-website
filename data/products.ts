@@ -27,8 +27,8 @@ export const featuredProducts: ExtendedProduct[] = [
   {
     id: "1",
     name: "Strawberry & Carrot",
-    fullName: "Heyo Superfood Dog Treats - Fiber Support Bites - Strawberry & Carrot",
-    description: "Fiber Support Bites with Beetroot Powder & Oatmeal. Perfect for digestive health.",
+    fullName: "Heyo Superfood Dog Treats - Fibre Support Bites - Strawberry and Carrot",
+    description: "Fibre Support Bites with Beetroot Powder & Oatmeal",
     price: 38000,
     imageSrc: "/images/products/display-strawberry-and-carrot.png",
     slug: "products/strawberry-and-carrot",
@@ -94,36 +94,44 @@ export const featuredProducts: ExtendedProduct[] = [
   {
     id: "2",
     name: "Pumpkin & Beef",
-    fullName: "Heyo Superfood Dog Treats - Fiber Support Bites - Pumpkin & Beef",
-    description: "Hearty and protein-rich treat with natural ingredients for active dogs",
+    fullName: "Heyo Superfood Dog Treats - Healthy Power Bites - Pumpkin and Beef",
+    description: "Pumpkin & Beef with Flax Seeds & Spirulina",
     price: 38000,
     imageSrc: "/images/products/display-pumpkind-and-beef.png",
     slug: "products/pumpkin-and-beef",
-    ingredients: ["Oats", "Peanuts", "Egg", "Pumpkin Seeds", "Beef", "Pumpkin"],
+    ingredients: ["Rice Flour", "Flax Seeds", "Pumpkin", "Ground Beef", "Spirulina", "Ginger Powder", "Sweet Potato", "Chia Seeds"],
     benefits: [
       {
-        name: "Oats",
-        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+        name: "Rice Flour",
+        description: "A gluten-free, easily digestible carbohydrate that provides energy without irritating sensitive stomachs."
       },
       {
-        name: "Peanuts",
-        description: "A protein-rich source of healthy fats, vitamin B, and vitamin E for skin, coat, and energy."
-      },
-      {
-        name: "Egg",
-        description: "A complete protein packed with essential amino acids, vitamins, and minerals for muscle growth and overall health."
-      },
-      {
-        name: "Pumpkin Seeds",
-        description: "Rich in antioxidants, healthy fats, and zinc to boost immunity and promote a healthy coat."
-      },
-      {
-        name: "Beef",
-        description: "High-quality protein source rich in iron and essential nutrients for muscle development and energy."
+        name: "Flax Seeds",
+        description: "Rich in omega-3 fatty acids for healthy skin and a shiny coat, plus fiber for digestion."
       },
       {
         name: "Pumpkin",
-        description: "Excellent source of fiber and beta-carotene, supporting digestive health and immune function."
+        description: "High in fiber, great for digestion, and supports gut health by preventing constipation and diarrhea."
+      },
+      {
+        name: "Ground Beef",
+        description: "A high-quality protein source packed with essential amino acids, iron, and B vitamins for muscle growth and energy."
+      },
+      {
+        name: "Spirulina",
+        description: "A superfood loaded with antioxidants, vitamins, and minerals that boost the immune system and support detoxification."
+      },
+      {
+        name: "Ginger Powder",
+        description: "Helps reduce inflammation, aids digestion, and can soothe nausea or an upset stomach."
+      },
+      {
+        name: "Sweet Potato",
+        description: "A nutrient-dense carbohydrate rich in fiber, vitamin A, and antioxidants for overall health and sustained energy."
+      },
+      {
+        name: "Chia Seeds",
+        description: "Packed with omega-3s, fiber, and protein to promote healthy joints, digestion, and sustained energy."
       }
     ],
     noArtificials: [
@@ -135,10 +143,10 @@ export const featuredProducts: ExtendedProduct[] = [
       "Salt & Sugar"
     ],
     servingGuide: [
-      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "2 - 4 pieces" },
-      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "4 - 6 pieces" },
-      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "6 - 8 pieces" },
-      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "8 - 12 pieces" }
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "5 - 8 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "9 - 14 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "15 - 20 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "21 - 30 pieces" }
     ],
     storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
     netWeight: "60g",

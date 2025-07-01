@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { MinimalFooter } from "@/components/layout/MinimalFooter";
@@ -43,13 +45,30 @@ export function ProductPage({ product }: ProductPageProps) {
             <AnimatedElement variant="fadeInRight" delay={0.3}>
               <div className="flex flex-col justify-center">
                 <h1 className="text-4xl font-bold mb-4">{product.fullName}</h1>
-                <div className="text-2xl font-semibold text-[#A2501B] mb-6">
+                <div className="text-2xl font-semibold text-[#A2501B] mb-4">
                   {new Intl.NumberFormat("id-ID", {
                     style: "currency",
                     currency: "IDR",
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 0,
                   }).format(product.price)}
+                </div>
+
+                <div className="flex gap-4 mb-6">
+                  <IconButton
+                    href={product.marketplaces.shopee}
+                    icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
+                    className="w-full bg-[#F65E42]"
+                  >
+                    Buy on Shopee
+                  </IconButton>
+                  <IconButton
+                    href={product.marketplaces.tokopedia}
+                    icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
+                    className="w-full bg-[#5B9959]"
+                  >
+                    Buy on Tokopedia
+                  </IconButton>
                 </div>
 
                 <div className="prose prose-lg mb-8">
@@ -65,23 +84,6 @@ export function ProductPage({ product }: ProductPageProps) {
                       ))}
                     </ul>
                   </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <IconButton
-                    href={product.marketplaces.shopee}
-                    icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
-                    className="w-full bg-[#F65E42]"
-                  >
-                    Buy on Shopee
-                  </IconButton>
-                  <IconButton
-                    href={product.marketplaces.tokopedia}
-                    icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
-                    className="w-full bg-[#5B9959]"
-                  >
-                    Buy on Tokopedia
-                  </IconButton>
                 </div>
               </div>
             </AnimatedElement>
