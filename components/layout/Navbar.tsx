@@ -19,6 +19,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   // Check if current page needs solid navbar (currently none, prepared for future)
   const solidNavPaths: string[] = [
+    "/contact",
+    "/about-us",
     // Add paths that need solid navbar here, e.g.:
     // "/checkout",
     // "/account",
@@ -176,15 +178,16 @@ export function Navbar() {
               })}
               <motion.div variants={navItem}>
                 <IconButton
-                  href="#products-section"
+                  // href="#products-section"
                   icon={<HeyoPaw size={20} color="#000000" />}
                   variant="black"
-                  onClick={() => {
-                    const element = document.getElementById("products-section");
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                  href="/products"
+                  // onClick={() => {
+                  //   const element = document.getElementById("products-section");
+                  //   if (element) {
+                  //     element.scrollIntoView({ behavior: "smooth" });
+                  //   }
+                  // }}
                   className={`${scrolled ? "py-2" : "py-3"}`}
                 >
                   Pawsome Treats
@@ -271,16 +274,17 @@ export function Navbar() {
                   })}
                   <motion.div variants={navItem}>
                     <IconButton
-                      href="#products-section"
+                      href="/products"
+                      // href="#products-section"
                       icon={<HeyoPaw size={20} color="#000000" />}
                       variant="black"
-                      onClick={() => {
-                        setIsOpen(false);
-                        const element = document.getElementById("products-section");
-                        if (element) {
-                          element.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
+                      // onClick={() => {
+                      //   setIsOpen(false);
+                      //   const element = document.getElementById("products-section");
+                      //   if (element) {
+                      //     element.scrollIntoView({ behavior: "smooth" });
+                      //   }
+                      // }}
                     >
                       Pawsome Treats
                     </IconButton>
