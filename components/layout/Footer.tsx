@@ -171,7 +171,7 @@ export function Footer() {
               </AnimatedElement>
               <AnimatedElement variant="fadeInUp" delay={0.6}>
                 <div className="text-sm text-white font-semibold">
-                  © {new Date().getFullYear()} Nourish. All rights reserved.
+                  © {new Date().getFullYear()} Heyo. All rights reserved.
                 </div>
               </AnimatedElement>
             </div>

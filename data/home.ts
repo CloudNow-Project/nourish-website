@@ -1,4 +1,4 @@
-// Features for "Why Pawrents Choose Nourish" section
+// Features for "Why Pawrents Choose Heyo" section
 export const features = [
   {
     id: "nutritionist-formulated",
@@ -31,8 +31,8 @@ export const gallerySection = {
   heading: "Happy Tails",
   subheading: "See our furry friends enjoying their favorite treats!",
   images: [
-    { id: "1", src: "/images/home/galery/happy-tails-01.jpg", alt: "Happy dog enjoying Nourish treats" },
-    { id: "2", src: "/images/home/galery/happy-tails-02.jpg", alt: "Playful puppy with Nourish biscuit" },
+    { id: "1", src: "/images/home/galery/happy-tails-01.jpg", alt: "Happy dog enjoying Heyo treats" },
+    { id: "2", src: "/images/home/galery/happy-tails-02.jpg", alt: "Playful puppy with Heyo biscuit" },
     { id: "3", src: "/images/home/galery/happy-tails-03.jpg", alt: "Dog owner giving treats to pet" },
     { id: "4", src: "/images/home/galery/happy-tails-04.jpg", alt: "Excited dog waiting for treat" },
     { id: "5", src: "/images/home/galery/happy-tails-05.jpg", alt: "Golden retriever with pawsome treat" },
@@ -110,7 +110,7 @@ export const testimonials = {
   reviews: [
     {
       id: "1",
-      text: "Nourish treats transformed my dog's energy levels!",
+      text: "Heyo treats transformed my dog's energy levels!",
       author: "Emily Johnson",
       title: "Pet Owner, Dog Lover",
       rating: 5,

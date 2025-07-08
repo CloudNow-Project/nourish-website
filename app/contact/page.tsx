@@ -6,7 +6,7 @@ import { ContactInfo } from "@/components/page/give-us-a-woof/ContactInfo";
 
 export const metadata = {
   title: "Give Us a Woof | Heyo",
-  description: "Contact us at Nourish for any questions about our dog treats and products.",
+  description: "Contact us at Heyo for any questions about our dog treats and products.",
 };
 
 export default function ContactPage() {

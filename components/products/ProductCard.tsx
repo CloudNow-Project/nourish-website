@@ -22,8 +22,8 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
   }).format(price);
 
   return (
-    <Link href={`/${slug}`} className="block group">
-      <div className="h-full flex flex-col transition-all duration-300 bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1">
+    <Link href={`/${slug}`} className="block group h-full">
+      <div className="h-full flex flex-col transition-all duration-300 bg-white rounded-3xl overflow-hidden shadow-sm border border-[#f5efe6] hover:shadow-xl hover:-translate-y-1">
         <div className="relative aspect-[4/4.5] bg-[#f5efe6] overflow-hidden">
           {imageSrc ? (
             <Image

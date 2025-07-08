@@ -1,6 +1,6 @@
-# Nourish Website Images
+# Heyo Website Images
 
-This directory contains images used in the Nourish website.
+This directory contains images used in the Heyo website.
 
 ## Required Images
 

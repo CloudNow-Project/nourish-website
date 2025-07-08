@@ -11,7 +11,7 @@ import { AnimatedElement } from "@/components/ui/AnimatedElement";
 
 export const metadata = {
   title: "Our Pack Story | Heyo",
-  description: "Learn about our journey and the team behind Nourish's premium dog treats.",
+  description: "Learn about our journey and the team behind Heyo's premium dog treats.",
 };
 
 export default function AboutUsPage() {

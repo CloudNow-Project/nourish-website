@@ -8,12 +8,24 @@ import { IconButton } from "@/components/ui/IconButton";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ExtendedProduct } from "@/data/products";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { useState } from "react";
+import type { Swiper as SwiperType } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 interface ProductPageProps {
   product: ExtendedProduct;
 }
 
 export function ProductPage({ product }: ProductPageProps) {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
   const breadcrumbItems = [
     { label: "Products", href: "/products" },
     { label: product.name, href: `/${product.slug}` },
@@ -29,15 +41,59 @@ export function ProductPage({ product }: ProductPageProps) {
 
           {/* Product Hero Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            {/* Main Product Image */}
+            {/* Main Product Image Slider */}
             <AnimatedElement variant="fadeIn" delay={0.2}>
-              <div className="relative aspect-square overflow-hidden">
-                <Image
-                  src={product.gallery[0]}
-                  alt={`Heyo ${product.name} Dog Treats`}
-                  fill
-                  className="object-contain"
-                />
+              <div className="product-slider-container">
+                <Swiper
+                  spaceBetween={10}
+                  navigation={true}
+                  thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                  modules={[FreeMode, Navigation, Thumbs]}
+                  className="main-product-slider"
+                >
+                  {product.gallery.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="relative aspect-square overflow-hidden bg-white">
+                        <Image
+                          src={image}
+                          alt={`Heyo ${product.name} Dog Treats - Image ${index + 1}`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Thumbnail Slider */}
+                <div className="mt-4">
+                  <Swiper
+                    onSwiper={setThumbsSwiper}
+                    spaceBetween={12}
+                    slidesPerView={4}
+                    freeMode={true}
+                    watchSlidesProgress={true}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="thumb-product-slider"
+                  >
+                    {product.gallery.map((image, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="relative w-full pb-[100%]">
+                          <div className="absolute inset-0">
+                            <Image
+                              src={image}
+                              alt={`Thumbnail ${index + 1}`}
+                              fill
+                              className="object-cover rounded-lg cursor-pointer hover:opacity-75 transition-opacity"
+                              sizes="(max-width: 768px) 25vw, 120px"
+                            />
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
               </div>
             </AnimatedElement>
 
@@ -121,18 +177,31 @@ export function ProductPage({ product }: ProductPageProps) {
                 </div>
               </div>
 
-              {/* Additional Product Images */}
-              <div className="grid grid-cols-1 gap-4">
-                {product.gallery.slice(1).map((image, index) => (
-                  <div key={image} className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={image}
-                      alt={`Heyo ${product.name} Dog Treats - Image ${index + 2}`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                ))}
+              {/* Additional Product Information or Features can go here */}
+              <div className="bg-[#FFF8EA] p-8 rounded-lg">
+                <h3 className="text-xl font-bold mb-4">Product Features</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-[#A2501B] mr-2">✓</span>
+                    Human-grade ingredients
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#A2501B] mr-2">✓</span>
+                    No artificial preservatives
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#A2501B] mr-2">✓</span>
+                    Made with love in small batches
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#A2501B] mr-2">✓</span>
+                    Nutritionist formulated
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#A2501B] mr-2">✓</span>
+                    Supports overall well-being
+                  </li>
+                </ul>
               </div>
             </div>
           </AnimatedElement>
@@ -175,6 +244,58 @@ export function ProductPage({ product }: ProductPageProps) {
       </main>
 
       <MinimalFooter />
+
+      <style jsx global>{`
+        .product-slider-container {
+          width: 100%;
+          background: white;
+        }
+
+        .main-product-slider {
+          width: 100%;
+          border-radius: 12px;
+          overflow: hidden;
+          background: white;
+        }
+
+        .main-product-slider .swiper-slide {
+          background: white;
+          opacity: 1;
+        }
+
+        .thumb-product-slider {
+          width: 100%;
+        }
+
+        .thumb-product-slider .swiper-slide {
+          opacity: 0.5;
+          transition: all 0.3s ease;
+        }
+
+        .thumb-product-slider .swiper-slide-thumb-active {
+          opacity: 1;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+          color: #a2501b;
+          background: rgba(255, 255, 255, 0.8);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+          font-size: 20px;
+        }
+      `}</style>
     </div>
   );
 }

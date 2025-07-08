@@ -127,7 +127,7 @@ export function MinimalFooter() {
           <div className="mt-12 pt-8 border-t-2 border-white/20">
             <div className="flex flex-col items-center justify-center">
               <div className="text-sm text-white font-semibold">
-                © {new Date().getFullYear()} Nourish. All rights reserved.
+                © {new Date().getFullYear()} Heyo. All rights reserved.
               </div>
             </div>
           </div>

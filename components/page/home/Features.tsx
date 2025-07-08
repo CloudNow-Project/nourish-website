@@ -26,7 +26,7 @@ export function Features({ features }: FeaturesProps) {
           //   text: "Why Choose Nourish?",
           // }}
           heading="Less Junk, More Drool"
-          subheading="Crafted with all-natural, health conscious ingredients, Nourish Superfood Dog Treats support your dog's health, happiness, and tail-wagging moments—one bite at a time."
+          subheading="Crafted with all-natural, health conscious ingredients, Heyo Superfood Dog Treats support your dog's health, happiness, and tail-wagging moments—one bite at a time."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 px-4">

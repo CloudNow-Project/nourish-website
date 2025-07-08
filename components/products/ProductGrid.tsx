@@ -55,17 +55,19 @@ export function ProductGrid({ title, subtitle, products }: ProductGridProps) {
           )} */}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
-            <AnimatedElement key={product.id} variant="fadeInUp" delay={0.1 + index * 0.1}>
-              <ProductCard
-                id={product.id}
-                name={product.name}
-                description={product.description}
-                price={product.price}
-                imageSrc={product.imageSrc}
-                slug={product.slug}
-              />
+            <AnimatedElement key={product.id} variant="fadeInUp" delay={0.1 + index * 0.1} className="h-full">
+              <div className="h-full">
+                <ProductCard
+                  id={product.id}
+                  name={product.name}
+                  description={product.description}
+                  price={product.price}
+                  imageSrc={product.imageSrc}
+                  slug={product.slug}
+                />
+              </div>
             </AnimatedElement>
           ))}
         </div>
