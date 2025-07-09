@@ -31,6 +31,11 @@ export function ProductPage({ product }: ProductPageProps) {
     { label: product.name, href: `/${product.slug}` },
   ];
 
+  // Combine main image with gallery images, ensuring no duplicates
+  const allImages = product.mainImage
+    ? [product.mainImage, ...product.gallery.filter((img) => img !== product.mainImage)]
+    : product.gallery;
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
@@ -51,7 +56,7 @@ export function ProductPage({ product }: ProductPageProps) {
                   modules={[FreeMode, Navigation, Thumbs]}
                   className="main-product-slider"
                 >
-                  {product.gallery.map((image, index) => (
+                  {allImages.map((image, index) => (
                     <SwiperSlide key={index}>
                       <div className="relative aspect-square overflow-hidden bg-white">
                         <Image
@@ -77,7 +82,7 @@ export function ProductPage({ product }: ProductPageProps) {
                     modules={[FreeMode, Navigation, Thumbs]}
                     className="thumb-product-slider"
                   >
-                    {product.gallery.map((image, index) => (
+                    {allImages.map((image, index) => (
                       <SwiperSlide key={index}>
                         <div className="relative w-full pb-[100%]">
                           <div className="absolute inset-0">
