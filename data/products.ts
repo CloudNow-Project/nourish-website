@@ -164,12 +164,12 @@ export const featuredProducts: ExtendedProduct[] = [
   },
   {
     id: "3",
-    name: "Coconut & Basil",
+    name: "Coconut Oil & Basil",
     fullName: "Heyo Superfood Dog Treats - Better Breath Bites - Coconut Oil and Basil",
     description: "Coconut Oil & Basil with Honey & Chia Seeds",
     price: 38000,
     imageSrc: "/images/products/coconut-and-basil/heyo-coconut-basil-00.webp",
-    slug: "products/coconut-and-basil",
+    slug: "products/coconut-oil-and-basil",
     ingredients: ["Oats", "Pumpkin", "Coconut Oil", "Honey", "Chia Seeds", "Spirulina", "Dried Basil", "Dried Parsley"],
     benefits: [
       {

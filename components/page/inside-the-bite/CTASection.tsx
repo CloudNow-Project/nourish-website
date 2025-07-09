@@ -1,5 +1,7 @@
 import React from "react";
-import Link from "next/link";
+import Image from "next/image";
+import { IconButton } from "@/components/ui/IconButton";
+import { heroContent } from "@/data/home";
 
 export function CTASection() {
   return (
@@ -17,18 +19,20 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/products"
-              className="px-8 py-3 bg-nourish-orange text-white font-bold rounded-lg hover:bg-chile-rojo transition-colors"
+            <IconButton
+              href={heroContent.primaryCta.url}
+              icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
+              className="bg-[#F65E42]"
             >
-              🛍️ Explore Our Treats
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-3 bg-gray-100 text-gray-800 font-bold rounded-lg hover:bg-gray-200 transition-colors"
+              Buy on Shopee
+            </IconButton>
+            <IconButton
+              href={heroContent.secondaryCta.url}
+              icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
+              className="bg-[#5B9959]"
             >
-              📣 Give Us a Woof
-            </Link>
+              Buy on Tokopedia
+            </IconButton>
           </div>
         </div>
       </div>
