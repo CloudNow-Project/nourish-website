@@ -120,8 +120,8 @@ export const featuredProducts: ExtendedProduct[] = [
     "Keep in a cool, dry place or refrigerate for maximum freshness.",
     "60g",
     {
-      shopee: "https://shopee.co.id/product/1363197955/42104633895",
-      tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-fibre-support-bites-strawberry-and-carrot-1731810397177808544"
+      shopee: "https://shopee.co.id/Heyo-Superfood-Dog-Treats-Fibre-Support-Bites-Strawberry-and-Carrot-i.1363197955.27579742548",
+      tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-fibre-support-bites-strawberry-and-carrot-1731007996702262944"
     }
   ),
   createProduct(
@@ -183,8 +183,8 @@ export const featuredProducts: ExtendedProduct[] = [
     "Keep in a cool, dry place or refrigerate for maximum freshness.",
     "60g",
     {
-      shopee: "https://shopee.co.id/product/1363197955/42104633895",
-      tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-healthy-power-bites-pumpkin-and-beef-1731810397177808544"
+      shopee: "https://shopee.co.id/Heyo-Superfood-Dog-Treats-Healthy-Power-Bites-Pumpkin-and-Beef-i.1363197955.26230237485",
+      tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-healthy-power-bites-pumpkin-and-beef-1731046003767281312"
     }
   ),
   createProduct(
@@ -243,7 +243,7 @@ export const featuredProducts: ExtendedProduct[] = [
     "Keep in a cool, dry place or refrigerate for maximum freshness.",
     "15g",
     {
-      shopee: "https://shopee.co.id/product/1363197955/41956669262",
+      shopee: "https://shopee.co.id/Heyo-Superfood-Dog-Treats-Better-Breath-Bites-Coconut-Oil-and-Basil-i.1363197955.41956669262",
       tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-better-breath-bites-coconut-oil-and-basil-1731810397177808544"
     }
   )
