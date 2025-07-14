@@ -23,6 +23,7 @@ interface ProductGridProps {
 }
 
 export function ProductGrid({ title, subtitle, products }: ProductGridProps) {
+  console.log("🚀 ~ ProductGrid ~ products:", products);
   return (
     <section id="products-section" className="py-24 bg-[#FFBD58]">
       <div className="container max-w-6xl mx-auto px-4">

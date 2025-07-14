@@ -255,10 +255,41 @@ export const featuredProducts: ExtendedProduct[] = [
   )
 ];
 
-// All products for the product catalog page
-export const allProducts: ExtendedProduct[] = [
-  ...featuredProducts,
+export const miniPackProducts = [
+  {
+    id: "mini-pack-strawberry-and-carrot",
+    name: "Mini Pack Strawberry & Carrot",
+    description: "Healthy Digestive Bites with Beetroot Powder & Oatmeal",
+    price: 15000,
+    imageSrc: "/images/products/mini-pack-strawberry-and-carrot/heyo-mini-pack-strawberry-and-carrot-card.webp",
+    slug: "mini-pack-strawberry-and-carrot",
+    productColor: "#DFA194",
+    isMiniPack: true
+  },
+  {
+    id: "mini-pack-pumpkin-and-beef",
+    name: "Mini Pack Pumpkin & Beef",
+    description: "Pumpkin & Beef with Flax Seeds & Spirulina",
+    price: 15000,
+    imageSrc: "/images/products/mini-pack-pumpkin-and-beef/heyo-mini-pack-pumpkin-and-beef-card.webp",
+    slug: "mini-pack-pumpkin-and-beef",
+    productColor: "#FFBD58",
+    isMiniPack: true
+  },
+  {
+    id: "mini-pack-coconut-oil-and-basil",
+    name: "Mini Pack Coconut Oil & Basil",
+    description: "Coconut Oil & Basil with Honey & Chia Seeds",
+    price: 15000,
+    imageSrc: "/images/products/mini-pack-coconut-oil-and-basil/heyo-mini-pack-coconut-oil-and-basil-card.webp",
+    slug: "mini-pack-coconut-oil-and-basil",
+    productColor: "#8DC3A7",
+    isMiniPack: true
+  },
 ];
+
+// Combine all products
+export const allProducts = [...featuredProducts, ...miniPackProducts];
 
 // Product categories
 export const productCategories = [

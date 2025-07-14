@@ -3,8 +3,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { ProductCard } from "@/components/products/ProductCard";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
-import { allProducts } from "@/data/products";
+import { featuredProducts, miniPackProducts } from "@/data/products";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
   title: "Our Pawsome Treats | Heyo Superfood Dog Treats",
@@ -36,20 +37,60 @@ export default function ProductsPage() {
             </div>
           </AnimatedElement>
 
+          {/* Main Products Section */}
           <AnimatedElement variant="fadeInUp" delay={0.3}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  id={product.id}
-                  name={product.name}
-                  description={product.description}
-                  price={product.price}
-                  imageSrc={product.imageSrc}
-                  slug={product.slug}
-                  productColor={product.productColor}
+            <div className="mb-20">
+              <div className="mb-12">
+                <SectionHeading
+                  heading="Premium Treats"
+                  subheading="Our signature collection of nutritious and delicious treats"
+                  variant="secondary"
+                  alignment="center"
                 />
-              ))}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    description={product.description}
+                    price={product.price}
+                    imageSrc={product.imageSrc}
+                    slug={product.slug}
+                    productColor={product.productColor}
+                  />
+                ))}
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* Mini Pack Section */}
+          <AnimatedElement variant="fadeInUp" delay={0.4}>
+            <div>
+              <div className="mb-12">
+                <SectionHeading
+                  heading="Mini Packs"
+                  subheading="Perfect trial size treats for your furry friend"
+                  variant="secondary"
+                  alignment="center"
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {miniPackProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    description={product.description}
+                    price={product.price}
+                    imageSrc={product.imageSrc}
+                    slug={product.slug}
+                    productColor={product.productColor}
+                    isMiniPack={true}
+                  />
+                ))}
+              </div>
             </div>
           </AnimatedElement>
         </div>
