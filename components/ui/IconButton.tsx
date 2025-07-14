@@ -14,6 +14,8 @@ interface IconButtonProps {
     iconWrapper?: string;
   };
   onClick?: () => void;
+  target?: string;
+  rel?: string;
 }
 
 export function IconButton({
@@ -24,6 +26,8 @@ export function IconButton({
   variant = "black",
   customClasses,
   onClick,
+  target,
+  rel,
 }: IconButtonProps) {
   // Define styling based on variant
   let buttonStyle = "";
@@ -71,7 +75,7 @@ export function IconButton({
 
   // Otherwise render as a Link
   return (
-    <Link href={href} className={buttonClasses}>
+    <Link href={href} className={buttonClasses} target={target} rel={rel}>
       {content}
     </Link>
   );

@@ -10,9 +10,10 @@ interface ProductCardProps {
   price: number;
   imageSrc: string;
   slug: string;
+  productColor: string; // Add productColor prop
 }
 
-export function ProductCard({ name, description, price, imageSrc, slug }: ProductCardProps) {
+export function ProductCard({ name, description, price, imageSrc, slug, productColor }: ProductCardProps) {
   // Format price to Rupiah
   const formattedPrice = new Intl.NumberFormat("id-ID", {
     style: "currency",
@@ -20,6 +21,9 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(price);
+
+  // Calculate a lighter shade for the shadow color
+  const shadowColor = productColor + "80"; // Adding 80 for 50% opacity
 
   return (
     <Link href={`/${slug}`} className="block group h-full">
@@ -51,17 +55,23 @@ export function ProductCard({ name, description, price, imageSrc, slug }: Produc
             text={name}
             as="h3"
             size="xs"
-            textColor="#FFBD58"
-            shadowColor="#FBE2BF"
+            textColor={productColor}
+            shadowColor={shadowColor}
             shadowOffset={2}
-            className="group-hover:text-[#f6b656] transition-colors"
+            className={`group-hover:text-[${productColor}] transition-colors`}
           />
 
           <p className="mt-3 text-gray-600 text-sm leading-relaxed flex-grow">{description}</p>
 
           <div className="mt-4 flex items-center justify-between">
             <span className="font-bold text-2xl text-[#333]">{formattedPrice}</span>
-            <div className="p-2 bg-[#FFBD58] text-white rounded-full group-hover:bg-[#f6b656] transition-colors flex items-center justify-center">
+            <div
+              className="p-2 text-white rounded-full transition-colors flex items-center justify-center"
+              style={{
+                backgroundColor: productColor,
+                transition: "background-color 0.3s ease",
+              }}
+            >
               <HeyoPaw size={18} />
             </div>
           </div>

@@ -47,6 +47,7 @@ export default function ProductsPage() {
                   price={product.price}
                   imageSrc={product.imageSrc}
                   slug={product.slug}
+                  productColor={product.productColor}
                 />
               ))}
             </div>

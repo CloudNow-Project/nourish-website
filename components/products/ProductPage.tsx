@@ -5,7 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { IconButton } from "@/components/ui/IconButton";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+// import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ExtendedProduct } from "@/data/products";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -120,6 +120,8 @@ export function ProductPage({ product }: ProductPageProps) {
                     href={product.marketplaces.shopee}
                     icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
                     className="w-full bg-[#F65E42]"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Buy on Shopee
                   </IconButton>
@@ -127,6 +129,8 @@ export function ProductPage({ product }: ProductPageProps) {
                     href={product.marketplaces.tokopedia}
                     icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
                     className="w-full bg-[#5B9959]"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Buy on Tokopedia
                   </IconButton>
@@ -212,7 +216,7 @@ export function ProductPage({ product }: ProductPageProps) {
           </AnimatedElement>
 
           {/* Testimonials Section */}
-          <AnimatedElement variant="fadeInUp" delay={0.5}>
+          {/* <AnimatedElement variant="fadeInUp" delay={0.5}>
             <TestimonialsSection
               heading="What Pet Parents Say"
               subheading="Don't just take our word for it - hear from other happy pet parents who have tried our treats!"
@@ -244,7 +248,7 @@ export function ProductPage({ product }: ProductPageProps) {
               ]}
               pageType="product"
             />
-          </AnimatedElement>
+          </AnimatedElement> */}
         </div>
       </main>
 

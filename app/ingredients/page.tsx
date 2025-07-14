@@ -6,7 +6,7 @@ import { IngredientsSection } from "@/components/page/inside-the-bite/Ingredient
 import { BenefitsSection } from "@/components/page/inside-the-bite/BenefitsSection";
 // import { NoArtificialsSection } from "@/components/page/inside-the-bite/NoArtificialsSection";
 import { CTASection } from "@/components/page/inside-the-bite/CTASection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+// import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { testimonials } from "@/data/inside-the-bite";
 
 export const metadata = {
@@ -25,11 +25,11 @@ export default function IngredientsPage() {
       <IngredientsSection />
       <BenefitsSection />
       {/* <NoArtificialsSection /> */}
-      <TestimonialsSection
+      {/* <TestimonialsSection
         heading={testimonials.heading}
         subheading={testimonials.subheading}
         reviews={testimonials.reviews}
-      />
+      /> */}
       <CTASection />
 
       <MinimalFooter />

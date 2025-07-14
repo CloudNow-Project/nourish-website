@@ -5,7 +5,7 @@ export function ProductGridSection() {
   return (
     <section className="relative h-[600px] w-full overflow-hidden">
       <AnimatedElement variant="fadeIn" delay={0.2}>
-        <Image src="/images/product-grids.jpg" alt="Nourish Product Grid" fill className="object-cover" priority />
+        <Image src="/images/home/product-grids.jpg" alt="Nourish Product Grid" fill className="object-cover" priority />
         {/* Optional overlay for better text readability if needed */}
         <div className="absolute inset-0"></div>
       </AnimatedElement>

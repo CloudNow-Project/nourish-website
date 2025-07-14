@@ -21,7 +21,8 @@ export interface ExtendedProduct extends Product {
     shopee: string;
     tokopedia: string;
   };
-  mainImage?: string; // Add mainImage for product detail pages
+  mainImage?: string;
+  productColor: string; // Add product color property
 }
 
 // Helper function to create a product with automatic image handling
@@ -38,7 +39,8 @@ function createProduct(
   servingGuide: ExtendedProduct['servingGuide'],
   storage: string,
   netWeight: string,
-  marketplaces: ExtendedProduct['marketplaces']
+  marketplaces: ExtendedProduct['marketplaces'],
+  productColor: string // Add product color parameter
 ): ExtendedProduct {
   // Extract the last part of the slug for the image directory name
   const imageSlug = slug.split('/').pop() || slug;
@@ -49,8 +51,8 @@ function createProduct(
     fullName,
     description,
     price,
-    imageSrc: getProductCardImage(imageSlug) || '', // Use -card image for product cards
-    mainImage: getProductMainImage(imageSlug), // Use -00 image for main product image
+    imageSrc: getProductCardImage(imageSlug) || '',
+    mainImage: getProductMainImage(imageSlug),
     slug,
     ingredients,
     benefits,
@@ -58,8 +60,9 @@ function createProduct(
     servingGuide,
     storage,
     netWeight,
-    gallery: getProductImages(imageSlug), // This now excludes -card images
-    marketplaces
+    gallery: getProductImages(imageSlug),
+    marketplaces,
+    productColor // Add product color to return object
   };
 }
 
@@ -122,7 +125,8 @@ export const featuredProducts: ExtendedProduct[] = [
     {
       shopee: "https://shopee.co.id/Heyo-Superfood-Dog-Treats-Fibre-Support-Bites-Strawberry-and-Carrot-i.1363197955.27579742548",
       tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-fibre-support-bites-strawberry-and-carrot-1731007996702262944"
-    }
+    },
+    "#DFA194" // Strawberry pink color
   ),
   createProduct(
     "2",
@@ -185,7 +189,8 @@ export const featuredProducts: ExtendedProduct[] = [
     {
       shopee: "https://shopee.co.id/Heyo-Superfood-Dog-Treats-Healthy-Power-Bites-Pumpkin-and-Beef-i.1363197955.26230237485",
       tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-healthy-power-bites-pumpkin-and-beef-1731046003767281312"
-    }
+    },
+    "#FFBD58" // Pumpkin orange color
   ),
   createProduct(
     "3",
@@ -245,7 +250,8 @@ export const featuredProducts: ExtendedProduct[] = [
     {
       shopee: "https://shopee.co.id/Heyo-Superfood-Dog-Treats-Better-Breath-Bites-Coconut-Oil-and-Basil-i.1363197955.41956669262",
       tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-better-breath-bites-coconut-oil-and-basil-1731810397177808544"
-    }
+    },
+    "#8DC3A7" // Mint green color
   )
 ];
 

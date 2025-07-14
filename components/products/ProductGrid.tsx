@@ -10,6 +10,7 @@ export interface Product {
   price: number;
   imageSrc: string;
   slug: string;
+  productColor: string;
 }
 
 interface ProductGridProps {
@@ -66,6 +67,7 @@ export function ProductGrid({ title, subtitle, products }: ProductGridProps) {
                   price={product.price}
                   imageSrc={product.imageSrc}
                   slug={product.slug}
+                  productColor={product.productColor}
                 />
               </div>
             </AnimatedElement>
