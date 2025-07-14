@@ -7,7 +7,6 @@ import { BenefitsSection } from "@/components/page/inside-the-bite/BenefitsSecti
 // import { NoArtificialsSection } from "@/components/page/inside-the-bite/NoArtificialsSection";
 import { CTASection } from "@/components/page/inside-the-bite/CTASection";
 // import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { testimonials } from "@/data/inside-the-bite";
 
 export const metadata = {
   title: "What's Inside the Bites Matters | Heyo",
@@ -25,11 +24,7 @@ export default function IngredientsPage() {
       <IngredientsSection />
       <BenefitsSection />
       {/* <NoArtificialsSection /> */}
-      {/* <TestimonialsSection
-        heading={testimonials.heading}
-        subheading={testimonials.subheading}
-        reviews={testimonials.reviews}
-      /> */}
+      {/* <TestimonialsSection /> */}
       <CTASection />
 
       <MinimalFooter />
