@@ -1,8 +1,8 @@
 import { ProductPage } from "@/components/products/ProductPage";
-import { featuredProducts } from "@/data/products";
+import { regularProducts } from "@/data/products";
 
 export default function StrawberryAndCarrotPage() {
-  const product = featuredProducts.find((p) => p.slug === "products/strawberry-and-carrot");
+  const product = regularProducts.find((p) => p.slug === "products/strawberry-and-carrot");
 
   if (!product) {
     return <div>Product not found</div>;
