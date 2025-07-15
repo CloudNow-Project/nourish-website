@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { ExtendedProduct, TopperProduct, BundleProduct, regularProducts, topperProducts, bundleProducts } from '@/data/products';
 
 /**
  * Gets all image files from a product's image directory
@@ -97,4 +98,24 @@ export function getProductHeroImage(productSlug: string): string | undefined {
   const images = getProductImages(productSlug);
   // Look for an image with '00' in the name for hero/detail pages
   return images.find(img => img.includes('00')) || images[0];
+} 
+
+type ProductType = ExtendedProduct | TopperProduct | BundleProduct;
+
+/**
+ * Gets a product by its slug and type
+ * @param params - Object containing slug and type of product
+ * @returns The product object or undefined if not found
+ */
+export function getProductBySlug({ slug, type }: { slug: string; type: 'regular' | 'topper' | 'bundle' }): ProductType | undefined {
+  switch (type) {
+    case 'regular':
+      return regularProducts.find((p: ExtendedProduct) => p.slug === slug);
+    case 'topper':
+      return topperProducts.find((p: TopperProduct) => p.slug === slug);
+    case 'bundle':
+      return bundleProducts.find((p: BundleProduct) => p.slug === slug);
+    default:
+      return undefined;
+  }
 } 

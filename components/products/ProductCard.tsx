@@ -12,9 +12,21 @@ interface ProductCardProps {
   slug: string;
   productColor: string;
   isMiniPack?: boolean;
+  isTopper?: boolean;
+  isBundle?: boolean;
 }
 
-export function ProductCard({ name, description, price, imageSrc, slug, productColor, isMiniPack }: ProductCardProps) {
+export function ProductCard({
+  name,
+  description,
+  price,
+  imageSrc,
+  slug,
+  productColor,
+  isMiniPack,
+  isTopper,
+  isBundle,
+}: ProductCardProps) {
   return (
     <Link href={`/products/${slug}`}>
       <div
@@ -29,7 +41,7 @@ export function ProductCard({ name, description, price, imageSrc, slug, productC
             src={imageSrc}
             alt={name}
             fill
-            className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           {isMiniPack && (
@@ -37,14 +49,22 @@ export function ProductCard({ name, description, price, imageSrc, slug, productC
               MINI PACK
             </div>
           )}
+          {isTopper && (
+            <div className="absolute top-4 left-4 bg-[#F4D03F] text-white text-xs px-3 py-1 rounded-full">TOPPER</div>
+          )}
+          {isBundle && (
+            <div className="absolute top-4 left-4 bg-[#E67E22] text-white text-xs px-3 py-1 rounded-full">BUNDLE</div>
+          )}
         </div>
 
         {/* Product Info */}
         <div className="p-6">
-          <h3 className="text-xl font-semibold mb-2">{name}</h3>
+          <h3 className="text-xl font-semibold mb-2" style={{ color: productColor }}>
+            {name}
+          </h3>
           <p className="text-gray-600 text-sm mb-4 line-clamp-2">{description}</p>
           <div className="flex items-center justify-between">
-            <span className="text-lg font-semibold" style={{ color: productColor }}>
+            <span className="text-lg font-semibold">
               {new Intl.NumberFormat("id-ID", {
                 style: "currency",
                 currency: "IDR",

@@ -3,7 +3,15 @@ import { Navbar } from "@/components/layout/Navbar";
 import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { ProductCard } from "@/components/products/ProductCard";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
-import { featuredProducts, miniPackProducts } from "@/data/products";
+import {
+  ExtendedProduct,
+  TopperProduct,
+  BundleProduct,
+  regularProducts,
+  miniPackProducts,
+  topperProducts,
+  bundleProducts,
+} from "@/data/products";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -24,18 +32,14 @@ export default function ProductsPage() {
         <div className="container mx-auto max-w-6xl px-4">
           <Breadcrumb items={breadcrumbItems} />
 
-          <AnimatedElement variant="fadeInUp" delay={0.1}>
-            <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">Our Pawsome Treats</h1>
-          </AnimatedElement>
-
-          <AnimatedElement variant="fadeInUp" delay={0.2}>
-            <div className="text-center mb-16">
-              <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
-                Our premium dog treats are created with human-grade, nutritionally dense ingredients that support your
-                dog&apos;s health and happiness.
-              </p>
-            </div>
-          </AnimatedElement>
+          <SectionHeading
+            heading="Our Pawsome Treats"
+            subheading="Our premium dog treats are created with human-grade, nutritionally dense ingredients that support your dog's health and happiness."
+            variant="default"
+            size="lg"
+            alignment="center"
+            bottomMargin="large"
+          />
 
           {/* Main Products Section */}
           <AnimatedElement variant="fadeInUp" delay={0.3}>
@@ -49,7 +53,7 @@ export default function ProductsPage() {
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredProducts.map((product) => (
+                {regularProducts.map((product: ExtendedProduct) => (
                   <ProductCard
                     key={product.id}
                     id={product.id}
@@ -65,9 +69,9 @@ export default function ProductsPage() {
             </div>
           </AnimatedElement>
 
-          {/* Mini Pack Section */}
+          {/* Mini Packs */}
           <AnimatedElement variant="fadeInUp" delay={0.4}>
-            <div>
+            <div className="mt-24">
               <div className="mb-12">
                 <SectionHeading
                   heading="Mini Packs"
@@ -76,6 +80,7 @@ export default function ProductsPage() {
                   alignment="center"
                 />
               </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {miniPackProducts.map((product) => (
                   <ProductCard
@@ -87,7 +92,65 @@ export default function ProductsPage() {
                     imageSrc={product.imageSrc}
                     slug={product.slug}
                     productColor={product.productColor}
-                    isMiniPack={true}
+                    isMiniPack={product.isMiniPack}
+                  />
+                ))}
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* Toppers */}
+          <AnimatedElement variant="fadeInUp" delay={0.6}>
+            <div className="mt-24">
+              <div className="mb-12">
+                <SectionHeading
+                  heading="Food Toppers"
+                  subheading="Sprinkle some extra nutrition on your pup's meal"
+                  variant="secondary"
+                  alignment="center"
+                />
+              </div>
+              <div className="flex justify-center">
+                {topperProducts.map((product: TopperProduct) => (
+                  <ProductCard
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    description={product.description}
+                    price={product.price}
+                    imageSrc={product.imageSrc}
+                    slug={product.slug}
+                    productColor={product.productColor}
+                    isTopper={true}
+                  />
+                ))}
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* Bundles */}
+          <AnimatedElement variant="fadeInUp" delay={0.8}>
+            <div className="mt-24 mb-24">
+              <div className="mb-12">
+                <SectionHeading
+                  heading="Value Bundles"
+                  subheading="Get more bark for your buck with our curated bundles"
+                  variant="secondary"
+                  alignment="center"
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                {bundleProducts.map((product: BundleProduct) => (
+                  <ProductCard
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    description={product.description}
+                    price={product.price}
+                    imageSrc={product.imageSrc}
+                    slug={product.slug}
+                    productColor={product.productColor}
+                    isBundle={true}
                   />
                 ))}
               </div>

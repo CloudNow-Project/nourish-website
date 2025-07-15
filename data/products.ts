@@ -1,7 +1,13 @@
 import { Product } from "@/components/products/ProductGrid";
 import { getProductImages, getProductCardImage, getProductMainImage } from "@/lib/product-utils";
 
-export interface ExtendedProduct extends Product {
+// Base product interface with common properties
+interface BaseProduct extends Product {
+  productColor: string;
+}
+
+// Regular product with full details
+export interface ExtendedProduct extends BaseProduct {
   fullName: string;
   ingredients: string[];
   benefits: {
@@ -22,7 +28,28 @@ export interface ExtendedProduct extends Product {
     tokopedia: string;
   };
   mainImage?: string;
-  productColor: string; // Add product color property
+}
+
+// Mini pack product with simplified details
+export interface MiniPackProduct extends BaseProduct {
+  isMiniPack: true;
+}
+
+// Topper product with simplified details
+export interface TopperProduct extends BaseProduct {
+  isTopper: true;
+}
+
+// Bundle product with bundle-specific details
+export interface BundleProduct extends BaseProduct {
+  isBundle: true;
+  fullName: string;
+  includes: string[];
+  variants: string[];
+  marketplaces?: {
+    shopee?: string;
+    tokopedia?: string;
+  };
 }
 
 // Helper function to create a product with automatic image handling
@@ -66,8 +93,8 @@ function createProduct(
   };
 }
 
-// Featured products for the homepage
-export const featuredProducts: ExtendedProduct[] = [
+// Regular products (previously featured products)
+export const regularProducts: ExtendedProduct[] = [
   createProduct(
     "1",
     "Strawberry & Carrot",
@@ -255,12 +282,13 @@ export const featuredProducts: ExtendedProduct[] = [
   )
 ];
 
-export const miniPackProducts = [
+// Mini pack products
+export const miniPackProducts: MiniPackProduct[] = [
   {
     id: "mini-pack-strawberry-and-carrot",
-    name: "Mini Pack Strawberry & Carrot",
-    description: "Healthy Digestive Bites with Beetroot Powder & Oatmeal",
-    price: 15000,
+    name: "Mini Pack - Strawberry & Carrot",
+    description: "Mini Pack - Fibre Support Bites with Beetroot Powder & Oatmeal",
+    price: 18000,
     imageSrc: "/images/products/mini-pack-strawberry-and-carrot/heyo-mini-pack-strawberry-and-carrot-card.webp",
     slug: "mini-pack-strawberry-and-carrot",
     productColor: "#DFA194",
@@ -268,9 +296,9 @@ export const miniPackProducts = [
   },
   {
     id: "mini-pack-pumpkin-and-beef",
-    name: "Mini Pack Pumpkin & Beef",
-    description: "Pumpkin & Beef with Flax Seeds & Spirulina",
-    price: 15000,
+    name: "Mini Pack - Pumpkin & Beef",
+    description: "Mini Pack - Healthy Power Bites with Flax Seeds & Spirulina",
+    price: 18000,
     imageSrc: "/images/products/mini-pack-pumpkin-and-beef/heyo-mini-pack-pumpkin-and-beef-card.webp",
     slug: "mini-pack-pumpkin-and-beef",
     productColor: "#FFBD58",
@@ -278,18 +306,60 @@ export const miniPackProducts = [
   },
   {
     id: "mini-pack-coconut-oil-and-basil",
-    name: "Mini Pack Coconut Oil & Basil",
-    description: "Coconut Oil & Basil with Honey & Chia Seeds",
-    price: 15000,
+    name: "Mini Pack - Coconut Oil & Basil",
+    description: "Mini Pack - Better Breath Bites with Honey & Chia Seeds",
+    price: 18000,
     imageSrc: "/images/products/mini-pack-coconut-oil-and-basil/heyo-mini-pack-coconut-oil-and-basil-card.webp",
     slug: "mini-pack-coconut-oil-and-basil",
-    productColor: "#8DC3A7",
+    productColor: "#A2501B",
     isMiniPack: true
-  },
+  }
 ];
 
-// Combine all products
-export const allProducts = [...featuredProducts, ...miniPackProducts];
+export const topperProducts: TopperProduct[] = [
+  {
+    id: "shiny-coat-sprinkle",
+    name: "Shiny Coat Sprinkle",
+    description: "Omega 3 and 6 Boost with Bee Pollen and Chia Seeds",
+    price: 38000,
+    imageSrc: "/images/products/shiny-coat-sprinkle/heyo-shiny-coat-sprinkle-card.webp",
+    slug: "shiny-coat-sprinkle",
+    productColor: "#F4D03F",
+    isTopper: true
+  }
+];
+
+export const bundleProducts: BundleProduct[] = [
+  {
+    id: "duo-bundle",
+    name: "The Duo Bundle",
+    description: "FREE 3 Sample Packs + 2 Full Size Packs",
+    price: 69000,
+    imageSrc: "/images/products/duo-bundle/heyo-duo-bundle-card.webp",
+    slug: "duo-bundle",
+    productColor: "#E67E22",
+    isBundle: true,
+    fullName: "The Duo Bundle",
+    includes: ["Heyo Superfood Dog Treats - Fibre Support Bites - Strawberry and Carrot", "Heyo Superfood Dog Treats - Healthy Power Bites - Pumpkin and Beef"],
+    variants: ["Heyo Superfood Dog Treats - Better Breath Bites - Coconut Oil and Basil"]
+  },
+  {
+    id: "duo-little-and-large-bundle",
+    name: "Duo Little & Large Bundle",
+    description: "Perfect combination of full-sized and mini treats",
+    price: 48000,
+    imageSrc: "/images/products/duo-little-and-large-bundle/heyo-duo-little-and-large-bundle-card.webp",
+    slug: "duo-little-and-large-bundle",
+    productColor: "#E67E22",
+    isBundle: true,
+    fullName: "Duo Little & Large Bundle",
+    includes: ["Heyo Superfood Dog Treats - Fibre Support Bites - Strawberry and Carrot", "Heyo Superfood Dog Treats - Healthy Power Bites - Pumpkin and Beef"],
+    variants: ["Heyo Superfood Dog Treats - Better Breath Bites - Coconut Oil and Basil"]
+  }
+];
+
+// Update allProducts to include new categories
+export const allProducts = [...regularProducts, ...miniPackProducts, ...topperProducts, ...bundleProducts];
 
 // Product categories
 export const productCategories = [

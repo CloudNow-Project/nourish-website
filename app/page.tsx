@@ -12,7 +12,7 @@ import { ProductGridSection } from "@/components/sections/ProductGridSection";
 import { MarketplaceCTA } from "@/components/sections/MarketplaceCTA";
 
 // Import data from dedicated data files
-import { featuredProducts } from "@/data/products";
+import { regularProducts } from "@/data/products";
 import {
   features,
   // heroContent,
@@ -45,7 +45,7 @@ export default function Home() {
       <ProductGrid
         title="Pawsome Treats"
         subtitle="Healthy, tasty, and pawpicked by dogs everywhere."
-        products={featuredProducts}
+        products={regularProducts}
       />
 
       {/* Product Grid Image Section */}
