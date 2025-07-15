@@ -28,7 +28,7 @@ export function ProductCard({
   isBundle,
 }: ProductCardProps) {
   return (
-    <Link href={`/${slug}`}>
+    <Link href={`/products/${slug}`}>
       <div
         className={cn(
           "group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg",

@@ -101,7 +101,7 @@ export const regularProducts: ExtendedProduct[] = [
     "Heyo Superfood Dog Treats - Fibre Support Bites - Strawberry and Carrot",
     "Fibre Support Bites with Beetroot Powder & Oatmeal",
     38000,
-    "products/strawberry-and-carrot",
+    "strawberry-and-carrot",
     ["Oats", "Peanuts", "Egg", "Pumpkin Seeds", "Carrot", "Strawberry", "Beetroot Powder"],
     [
       {
@@ -161,7 +161,7 @@ export const regularProducts: ExtendedProduct[] = [
     "Heyo Superfood Dog Treats - Healthy Power Bites - Pumpkin and Beef",
     "Pumpkin & Beef with Flax Seeds & Spirulina",
     38000,
-    "products/pumpkin-and-beef",
+    "pumpkin-and-beef",
     ["Rice Flour", "Flax Seeds", "Pumpkin", "Ground Beef", "Spirulina", "Ginger Powder", "Sweet Potato", "Chia Seeds"],
     [
       {
@@ -225,7 +225,7 @@ export const regularProducts: ExtendedProduct[] = [
     "Heyo Superfood Dog Treats - Better Breath Bites - Coconut Oil and Basil",
     "Coconut Oil & Basil with Honey & Chia Seeds",
     38000,
-    "products/coconut-oil-and-basil",
+    "coconut-oil-and-basil",
     ["Oats", "Pumpkin", "Coconut Oil", "Honey", "Chia Seeds", "Spirulina", "Dried Basil", "Dried Parsley"],
     [
       {
