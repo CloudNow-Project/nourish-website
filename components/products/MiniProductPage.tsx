@@ -8,6 +8,7 @@ import { IconButton } from "@/components/ui/IconButton";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { MiniPackProduct } from "@/data/products";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProductImageSlider } from "./ProductImageSlider";
 
 interface MiniProductPageProps {
   product: MiniPackProduct;
@@ -19,6 +20,11 @@ export function MiniProductPage({ product }: MiniProductPageProps) {
     { label: product.name, href: `/products/${product.slug}` },
   ];
 
+  // Get all product images
+  const allImages = product.mainImage
+    ? [product.mainImage, ...product.gallery.filter((img) => img !== product.mainImage)]
+    : product.gallery;
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
@@ -29,22 +35,17 @@ export function MiniProductPage({ product }: MiniProductPageProps) {
 
           {/* Product Hero Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            {/* Product Image */}
-            <AnimatedElement variant="fadeIn" delay={0.2}>
-              <div className="relative aspect-square overflow-hidden bg-white rounded-lg">
-                <Image
-                  src={product.imageSrc}
-                  alt={`Heyo ${product.name} Dog Treats`}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </AnimatedElement>
+            {/* Product Image Slider */}
+            <ProductImageSlider images={allImages} productName={product.name} />
 
             {/* Product Info */}
             <AnimatedElement variant="fadeInRight" delay={0.3}>
               <div className="flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <span className="bg-[#A2501B] text-white text-sm px-3 py-1 rounded-full">MINI PACK</span>
+                  <span className="text-sm text-gray-600">Perfect trial size!</span>
+                </div>
+
                 <SectionHeading
                   heading={product.name}
                   subheading={product.description}
@@ -63,9 +64,9 @@ export function MiniProductPage({ product }: MiniProductPageProps) {
                   }).format(product.price)}
                 </div>
 
-                <div className="flex gap-4 mb-6">
+                <div className="flex gap-4 mb-8">
                   <IconButton
-                    href="https://shopee.co.id/heyo.id"
+                    href={product.marketplaces.shopee}
                     icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
                     className="w-full bg-[#F65E42]"
                     target="_blank"
@@ -74,7 +75,7 @@ export function MiniProductPage({ product }: MiniProductPageProps) {
                     Buy on Shopee
                   </IconButton>
                   <IconButton
-                    href="https://www.tokopedia.com/heyo-superfood-dog-treats"
+                    href={product.marketplaces.tokopedia}
                     icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
                     className="w-full bg-[#5B9959]"
                     target="_blank"
@@ -84,31 +85,56 @@ export function MiniProductPage({ product }: MiniProductPageProps) {
                   </IconButton>
                 </div>
 
-                <div className="prose prose-lg">
-                  <div className="bg-[#FFF8EA] p-6 rounded-lg">
-                    <h3 className="font-semibold mb-4">Mini Pack Features:</h3>
-                    <ul className="list-none space-y-2">
-                      <li className="flex items-start">
-                        <span className="text-[#A2501B] mr-2">✓</span>
-                        Perfect trial size
+                <div className="bg-[#FFF8EA] p-6 rounded-lg mb-8">
+                  <h3 className="font-semibold mb-4">ABSOLUTELY NO:</h3>
+                  <ul className="list-none space-y-2">
+                    {product.noArtificials.map((item) => (
+                      <li key={item} className="flex items-start">
+                        <span className="text-[#A2501B] mr-2">✕</span>
+                        {item}
                       </li>
-                      <li className="flex items-start">
-                        <span className="text-[#A2501B] mr-2">✓</span>
-                        Human-grade ingredients
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-[#A2501B] mr-2">✓</span>
-                        No artificial preservatives
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-[#A2501B] mr-2">✓</span>
-                        Travel-friendly packaging
-                      </li>
-                    </ul>
-                  </div>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </AnimatedElement>
+          </div>
+
+          {/* Product Details */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div className="prose prose-lg">
+              <h3 className="text-xl font-bold mb-4">Why It&apos;s Nourishing:</h3>
+              <ul className="space-y-3">
+                {product.benefits.map((benefit) => (
+                  <li key={benefit.name} className="flex items-start">
+                    <span className="text-[#A2501B] mr-2">•</span>
+                    <div>
+                      <strong>{benefit.name}</strong> – {benefit.description}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="prose prose-lg">
+              <h3 className="text-xl font-bold mb-4">Serving Guide (Per Day):</h3>
+              <ul className="space-y-2">
+                {product.servingGuide.map((guide) => (
+                  <li key={guide.dogSize}>
+                    {guide.dogSize} ({guide.weight}): {guide.pieces}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8">
+                <p>
+                  <strong>Net Weight:</strong> {product.netWeight}
+                </p>
+                <p>
+                  <strong>Storage:</strong> {product.storage}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </main>

@@ -2,6 +2,10 @@
 
 # Product Price : Rp38.000
 
+# Shopee: https://shopee.co.id/Heyo-Superfood-Dog-Topper-%E2%80%93-Shiny-Coat-Sprinkle-with-Bee-Pollen-and-Chia-Seeds-i.1363197955.42007605671
+
+# Tokopedia: https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-topper-shiny-coat-sprinkle-with-bee-pollen-and-chia-seeds-1731871250321671840
+
 # Product Description
 
 Heyo Superfood Dog Topper – Shiny Coat Sprinkle

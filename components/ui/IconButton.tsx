@@ -1,12 +1,14 @@
 import React, { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { TextSwipeAnimation } from "./TextSwipeAnimation";
 import { cn } from "@/lib/utils";
 
-interface IconButtonProps {
+export interface IconButtonProps {
   href: string;
-  children: ReactNode;
-  icon: ReactNode;
+  icon: string | ReactNode;
+  label?: string;
+  children?: ReactNode;
   className?: string;
   variant?: "black" | "orange" | "olive" | "custom";
   customClasses?: {
@@ -20,8 +22,9 @@ interface IconButtonProps {
 
 export function IconButton({
   href,
-  children,
   icon,
+  label,
+  children,
   className = "",
   variant = "black",
   customClasses,
@@ -59,8 +62,10 @@ export function IconButton({
 
   const content = (
     <>
-      <span className={iconWrapperStyle}>{icon}</span>
-      <TextSwipeAnimation>{children}</TextSwipeAnimation>
+      <span className={iconWrapperStyle}>
+        {typeof icon === "string" ? <Image src={icon} alt="" width={24} height={24} className="w-6 h-6" /> : icon}
+      </span>
+      <TextSwipeAnimation>{label || children}</TextSwipeAnimation>
     </>
   );
 

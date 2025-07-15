@@ -26,6 +26,8 @@ interface BundleProductPageProps {
     description: string;
     includes: string[];
     variants: string[];
+    notes?: string[];
+    tagline?: string;
     marketplaces?: {
       shopee?: string;
       tokopedia?: string;
@@ -118,12 +120,12 @@ export function BundleProductPage({ product }: BundleProductPageProps) {
             <AnimatedElement variant="fadeInRight" delay={0.3}>
               <div className="flex flex-col justify-center">
                 <div className="inline-flex items-center gap-2 mb-2">
-                  <span className="bg-[#E67E22] text-white text-sm px-3 py-1 rounded-full">BUNDLE</span>
+                  <span className="bg-[#A2501B] text-white text-sm px-3 py-1 rounded-full">BUNDLE</span>
                   <span className="text-sm text-gray-600">FREE SAMPLES!</span>
                 </div>
                 <h1 className="text-4xl font-bold mb-2">{product.fullName}</h1>
                 <p className="text-lg text-gray-600 mb-4">{product.description}</p>
-                <div className="text-2xl font-semibold text-[#E67E22] mb-4">
+                <div className="text-2xl font-semibold text-[#A2501B] mb-4">
                   {new Intl.NumberFormat("id-ID", {
                     style: "currency",
                     currency: "IDR",
@@ -161,11 +163,11 @@ export function BundleProductPage({ product }: BundleProductPageProps) {
 
                 <div className="prose prose-lg mb-8">
                   <div className="bg-[#FFF8EA] p-6 rounded-lg mb-6">
-                    <h3 className="font-semibold mb-4">Bundle Includes:</h3>
+                    <h3 className="font-semibold mb-4">The Bundle Includes:</h3>
                     <ul className="list-none space-y-2">
                       {product.includes.map((item) => (
                         <li key={item} className="flex items-start">
-                          <span className="text-[#E67E22] mr-2">✓</span>
+                          <span className="text-[#A2501B] mr-2">✓</span>
                           {item}
                         </li>
                       ))}
@@ -177,58 +179,31 @@ export function BundleProductPage({ product }: BundleProductPageProps) {
                     <ul className="list-none space-y-2">
                       {product.variants.map((variant) => (
                         <li key={variant} className="flex items-start">
-                          <span className="text-[#E67E22] mr-2">•</span>
+                          <span className="text-[#A2501B] mr-2">•</span>
                           {variant}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
+
+                <div className="prose prose-lg">
+                  <div className="bg-[#FFF8EA] p-6 rounded-lg">
+                    <h3 className="font-semibold mb-4">Please Note:</h3>
+                    <ul className="list-none space-y-2">
+                      {product.notes?.map((note) => (
+                        <li key={note} className="flex items-start">
+                          <span className="text-[#A2501B] mr-2">•</span>
+                          {note}
+                        </li>
+                      ))}
+                    </ul>
+                    {product.tagline && <p className="mt-6 italic text-gray-700">{product.tagline}</p>}
+                  </div>
+                </div>
               </div>
             </AnimatedElement>
           </div>
-
-          {/* Additional Information */}
-          <AnimatedElement variant="fadeInUp" delay={0.4}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              <div className="prose prose-lg">
-                <h2 className="text-2xl font-bold mb-4">Important Notes:</h2>
-                <ul className="space-y-2">
-                  <li>• Samples are sent randomly based on availability</li>
-                  <li>• Variants cannot be chosen</li>
-                  <li>• All treats are made with real superfoods, no nasties</li>
-                  <li>• Perfect for trying new flavors</li>
-                </ul>
-              </div>
-
-              {/* Product Features */}
-              <div className="bg-[#FFF8EA] p-8 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Bundle Benefits</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-[#E67E22] mr-2">✓</span>
-                    Free samples with every bundle
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#E67E22] mr-2">✓</span>
-                    Great value for money
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#E67E22] mr-2">✓</span>
-                    Try different flavors
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#E67E22] mr-2">✓</span>
-                    Perfect for new customers
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#E67E22] mr-2">✓</span>
-                    Same high quality ingredients
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </AnimatedElement>
         </div>
       </main>
 

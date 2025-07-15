@@ -5,7 +5,7 @@ import { allProducts, MiniPackProduct, ExtendedProduct, TopperProduct, BundlePro
 type ProductType = ExtendedProduct | MiniPackProduct | TopperProduct | BundleProduct;
 
 export default function CoconutAndBasilPage() {
-  const product = allProducts.find((p) => p.slug === "products/coconut-oil-and-basil");
+  const product = allProducts.find((p) => p.slug === "coconut-oil-and-basil");
 
   if (!product) {
     return <div>Product not found</div>;

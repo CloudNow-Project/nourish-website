@@ -28,15 +28,15 @@ export function ProductCard({
   isBundle,
 }: ProductCardProps) {
   return (
-    <Link href={`/products/${slug}`}>
+    <Link href={`/products/${slug}`} className="h-full block">
       <div
         className={cn(
-          "group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg",
+          "group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg h-full flex flex-col",
           "border border-gray-100 hover:border-gray-200"
         )}
       >
         {/* Product Image */}
-        <div className="relative aspect-square overflow-hidden bg-white">
+        <div className="relative aspect-square overflow-hidden bg-white flex-shrink-0">
           <Image
             src={imageSrc}
             alt={name}
@@ -58,12 +58,12 @@ export function ProductCard({
         </div>
 
         {/* Product Info */}
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-grow">
           <h3 className="text-xl font-semibold mb-2" style={{ color: productColor }}>
             {name}
           </h3>
-          <p className="text-gray-600 text-sm mb-4 line-clamp-2">{description}</p>
-          <div className="flex items-center justify-between">
+          <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">{description}</p>
+          <div className="flex items-center justify-between mt-auto">
             <span className="text-lg font-semibold">
               {new Intl.NumberFormat("id-ID", {
                 style: "currency",
