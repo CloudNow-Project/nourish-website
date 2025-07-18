@@ -50,7 +50,7 @@ export function ProductCard({
             </div>
           )}
           {isTopper && (
-            <div className="absolute top-4 left-4 bg-[#F4D03F] text-white text-xs px-3 py-1 rounded-full">TOPPER</div>
+            <div className="absolute top-4 left-4 bg-[#03356D] text-white text-xs px-3 py-1 rounded-full">TOPPER</div>
           )}
           {isBundle && (
             <div className="absolute top-4 left-4 bg-[#E67E22] text-white text-xs px-3 py-1 rounded-full">BUNDLE</div>

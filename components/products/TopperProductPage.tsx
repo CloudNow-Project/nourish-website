@@ -65,7 +65,7 @@ export function TopperProductPage({ product }: TopperProductPageProps) {
             <AnimatedElement variant="fadeInRight" delay={0.3}>
               <div className="flex flex-col">
                 <div className="inline-flex items-center gap-2 mb-4">
-                  <span className="bg-[#F4D03F] text-white text-sm px-3 py-1 rounded-full">TOPPER</span>
+                  <span className="bg-[#03356D] text-white text-sm px-3 py-1 rounded-full">TOPPER</span>
                   <span className="text-sm text-gray-600">Sprinkle some love!</span>
                 </div>
 
@@ -73,7 +73,7 @@ export function TopperProductPage({ product }: TopperProductPageProps) {
                 <p className="text-xl text-gray-700 mb-4">{product.subtitle}</p>
                 <p className="text-gray-600 mb-6">{product.description}</p>
 
-                <div className="text-2xl font-semibold text-[#F4D03F] mb-6">
+                <div className="text-2xl font-semibold text-[#03356D] mb-6">
                   {new Intl.NumberFormat("id-ID", {
                     style: "currency",
                     currency: "IDR",
@@ -155,7 +155,7 @@ export function TopperProductPage({ product }: TopperProductPageProps) {
                   <ul className="grid grid-cols-2 gap-4">
                     {product.noArtificials.map((item) => (
                       <li key={item} className="flex items-center">
-                        <span className="text-[#F4D03F] mr-2">✕</span>
+                        <span className="text-[#03356D] mr-2">✕</span>
                         {item}
                       </li>
                     ))}
@@ -166,23 +166,23 @@ export function TopperProductPage({ product }: TopperProductPageProps) {
                   <h3 className="text-xl font-bold mb-4">Made with Love</h3>
                   <ul className="space-y-3">
                     <li className="flex items-center">
-                      <span className="text-[#F4D03F] mr-2">♥</span>
+                      <span className="text-[#03356D] mr-2">♥</span>
                       Human-grade ingredients
                     </li>
                     <li className="flex items-center">
-                      <span className="text-[#F4D03F] mr-2">♥</span>
+                      <span className="text-[#03356D] mr-2">♥</span>
                       Crafted in small batches
                     </li>
                     <li className="flex items-center">
-                      <span className="text-[#F4D03F] mr-2">♥</span>
+                      <span className="text-[#03356D] mr-2">♥</span>
                       Nutritionist formulated
                     </li>
                     <li className="flex items-center">
-                      <span className="text-[#F4D03F] mr-2">♥</span>
+                      <span className="text-[#03356D] mr-2">♥</span>
                       Allergy-friendly
                     </li>
                     <li className="flex items-center">
-                      <span className="text-[#F4D03F] mr-2">♥</span>
+                      <span className="text-[#03356D] mr-2">♥</span>
                       Pure & natural ingredients
                     </li>
                   </ul>
