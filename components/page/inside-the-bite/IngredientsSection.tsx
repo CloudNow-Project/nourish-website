@@ -47,13 +47,14 @@ const iconMap: IconMapType = {
 
 export function IngredientsSection() {
   return (
-    <section className="py-16 md:py-24" id="ingredients-detail">
+    <section className="py-16 md:py-24 bg-ernest-beige" id="ingredients-detail">
       <div className="container max-w-6xl mx-auto px-4">
         <AnimatedElement variant="fadeInUp" delay={0.1}>
           <div className="text-center mb-6 md:mb-8">
             <div className="max-w-4xl mx-auto">
               <SectionHeading
                 heading="Nourishing Goodness<br>One Ingredient at a Time"
+                subheading="Every ingredient we pick has a job to do — to nourish your pup from the inside out."
                 variant="secondary"
                 alignment="center"
                 size="lg"
@@ -62,12 +63,6 @@ export function IngredientsSection() {
               />
             </div>
           </div>
-        </AnimatedElement>
-
-        <AnimatedElement variant="fadeInUp" delay={0.2}>
-          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 md:mb-16 text-base md:text-lg px-4 font-semibold">
-            Every ingredient we pick has a job to do — to nourish your pup from the inside out.
-          </p>
         </AnimatedElement>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -46,8 +46,8 @@ export default function ProductsPage() {
             <div className="mb-20">
               <div className="mb-12">
                 <SectionHeading
-                  heading="Premium Treats"
-                  subheading="Our signature collection of nutritious and delicious treats"
+                  heading="Drool Worthy"
+                  subheading="Treats so good, they'll make your pup's tail wag"
                   variant="secondary"
                   alignment="center"
                 />

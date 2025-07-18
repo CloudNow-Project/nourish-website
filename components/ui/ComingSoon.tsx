@@ -39,21 +39,21 @@ export function ComingSoon({ productName, breadcrumbs }: ComingSoonProps) {
             animate={{ opacity: 0.06, rotate: 45, scale: 1 }}
             transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
           >
-            <Paw size={180} color="#FFBD58" className="absolute -top-10 -left-10" />
+            <Paw size={180} color="#F6b656" className="absolute -top-10 -left-10" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, rotate: -12, scale: 0.8 }}
             animate={{ opacity: 0.06, rotate: -12, scale: 1 }}
             transition={{ duration: 1.8, repeat: Infinity, repeatType: "reverse", delay: 0.3 }}
           >
-            <Paw size={140} color="#FFBD58" className="absolute top-1/4 -right-10" />
+            <Paw size={140} color="#F6b656" className="absolute top-1/4 -right-10" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, rotate: -30, scale: 0.8 }}
             animate={{ opacity: 0.06, rotate: -30, scale: 1 }}
             transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0.6 }}
           >
-            <Paw size={160} color="#FFBD58" className="absolute -bottom-10 left-1/4" />
+            <Paw size={160} color="#F6b656" className="absolute -bottom-10 left-1/4" />
           </motion.div>
 
           {/* Product-related icons */}
@@ -79,7 +79,7 @@ export function ComingSoon({ productName, breadcrumbs }: ComingSoonProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <h1 className="text-6xl font-bold text-[#FFBD58] mb-4">Coming Soon!</h1>
+                  <h1 className="text-6xl font-bold text-[#F6b656] mb-4">Coming Soon!</h1>
                 </motion.div>
 
                 <motion.div
@@ -125,7 +125,7 @@ export function ComingSoon({ productName, breadcrumbs }: ComingSoonProps) {
                 >
                   <Link
                     href="/products"
-                    className="inline-block bg-[#FFBD58] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#A2501B] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="inline-block bg-[#F6b656] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#A2501B] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     View Available Products
                   </Link>

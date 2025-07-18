@@ -50,7 +50,7 @@ export function InsideTheBiteFeatures() {
                     text={feature.title}
                     as="h3"
                     size="sm"
-                    textColor="#FFBD58"
+                    textColor="#F6b656"
                     shadowColor="#FBE2BF80"
                     shadowOffset={2}
                     className="text-center"

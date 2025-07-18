@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative text-white">
       {/* Main footer content */}
-      <div className="relative py-16 overflow-hidden" style={{ backgroundColor: "#FFBD58" }}>
+      <div className="relative py-16 overflow-hidden" style={{ backgroundColor: "#F6b656" }}>
         {/* Decorative paw prints in background with varied orientations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <Paw size={120} color="white" className="absolute top-10 left-10 opacity-15 rotate-45" />
@@ -39,12 +39,12 @@ export function Footer() {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full border-2 border-white/30 bg-[#FFBD58] bg-opacity-90 px-4 py-3 rounded mb-4 text-white font-semibold placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    className="w-full border-2 border-white/30 bg-[#F6b656] bg-opacity-90 px-4 py-3 rounded mb-4 text-white font-semibold placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
 
                   <Link
                     href="/newsletter"
-                    className="inline-flex items-center text-base font-semibold transition-all px-4 py-2 rounded-xs bg-white text-[#FFBD58] group"
+                    className="inline-flex items-center text-base font-semibold transition-all px-4 py-2 rounded-xs bg-white text-[#F6b656] group"
                   >
                     <Mail className="w-6 h-6 mr-2" strokeWidth={1.25} />
                     <TextSwipeAnimation>{newsletterContent.buttonText}</TextSwipeAnimation>

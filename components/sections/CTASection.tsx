@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { IconButton } from "@/components/ui/IconButton";
 
 interface CTASectionProps {
   heading: string;
@@ -11,14 +12,20 @@ interface CTASectionProps {
   primaryButton: {
     text: string;
     url: string;
+    icon?: string;
+    color?: string;
   };
   secondaryButton: {
     text: string;
     url: string;
+    icon?: string;
+    color?: string;
   };
 }
 
 export function CTASection({ heading, description, image, primaryButton, secondaryButton }: CTASectionProps) {
+  const hasMarketplaceButtons = primaryButton.icon && secondaryButton.icon;
+
   return (
     <section className="py-16">
       <div className="container max-w-6xl mx-auto px-4">
@@ -37,13 +44,50 @@ export function CTASection({ heading, description, image, primaryButton, seconda
                 />
 
                 <AnimatedElement variant="fadeInUp" delay={0.4}>
-                  <div className="flex flex-wrap gap-4">
-                    <Button asChild variant="default" className="bg-black hover:bg-gray-800 text-white font-medium">
-                      <Link href={primaryButton.url}>{primaryButton.text}</Link>
-                    </Button>
-                    <Button asChild variant="outline" className="border-gray-300 text-gray-700">
-                      <Link href={secondaryButton.url}>{secondaryButton.text}</Link>
-                    </Button>
+                  <div className="flex flex-col sm:flex-row gap-4 max-w-[320px] sm:max-w-xl">
+                    {hasMarketplaceButtons ? (
+                      <>
+                        <IconButton
+                          href={primaryButton.url}
+                          icon={
+                            primaryButton.icon && (
+                              <Image src={primaryButton.icon} alt="Marketplace" width={24} height={24} />
+                            )
+                          }
+                          className={`w-full py-4 md:py-3 ${
+                            primaryButton.color ? `bg-[${primaryButton.color}]` : "bg-black hover:bg-gray-800"
+                          }`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {primaryButton.text}
+                        </IconButton>
+                        <IconButton
+                          href={secondaryButton.url}
+                          icon={
+                            secondaryButton.icon && (
+                              <Image src={secondaryButton.icon} alt="Marketplace" width={24} height={24} />
+                            )
+                          }
+                          className={`w-full py-4 md:py-3 ${
+                            secondaryButton.color ? `bg-[${secondaryButton.color}]` : "bg-black hover:bg-gray-800"
+                          }`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {secondaryButton.text}
+                        </IconButton>
+                      </>
+                    ) : (
+                      <>
+                        <Button asChild variant="default" className="bg-black hover:bg-gray-800 text-white font-medium">
+                          <Link href={primaryButton.url}>{primaryButton.text}</Link>
+                        </Button>
+                        <Button asChild variant="outline" className="border-gray-300 text-gray-700">
+                          <Link href={secondaryButton.url}>{secondaryButton.text}</Link>
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </AnimatedElement>
               </div>

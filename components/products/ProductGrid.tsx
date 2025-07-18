@@ -25,7 +25,7 @@ interface ProductGridProps {
 export function ProductGrid({ title, subtitle, products }: ProductGridProps) {
   console.log("🚀 ~ ProductGrid ~ products:", products);
   return (
-    <section id="products-section" className="py-24 bg-[#FFBD58]">
+    <section id="products-section" className="py-24 bg-[#F6b656]">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>

@@ -41,7 +41,7 @@ export function IconButton({
       buttonStyle = "bg-black hover:bg-gray-800 text-white";
       break;
     case "orange":
-      buttonStyle = "bg-nourish-orange hover:bg-nourish-orange/90 text-nourish-text shadow-lg shadow-nourish-orange/20";
+      buttonStyle = "bg-nourish-orange hover:bg-nourish-orange/90 text-white shadow-lg shadow-nourish-orange/20";
       break;
     case "olive":
       buttonStyle = "bg-olive hover:bg-olive/90 text-white shadow-lg shadow-olive/20";

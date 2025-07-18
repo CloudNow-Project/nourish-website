@@ -236,7 +236,7 @@ export const regularProducts: ExtendedProduct[] = [
       shopee: "https://shopee.co.id/Heyo-Superfood-Dog-Treats-Healthy-Power-Bites-Pumpkin-and-Beef-i.1363197955.26230237485",
       tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/heyo-superfood-dog-treats-healthy-power-bites-pumpkin-and-beef-1731046003767281312"
     },
-    "#FFBD58" // Pumpkin orange color
+    "#F6b656" // Pumpkin orange color
   ),
   createProduct(
     "3",
@@ -303,72 +303,9 @@ export const regularProducts: ExtendedProduct[] = [
 
 // Mini pack products
 export const miniPackProducts: MiniPackProduct[] = [
+  
   {
     id: "mini-1",
-    name: "Mini Pack Coconut Oil and Basil",
-    description: "Coconut Oil & Basil with Honey & Chia Seeds",
-    price: 15000,
-    imageSrc: "/images/products/mini-pack-coconut-oil-and-basil/heyo-mini-pack-coconut-oil-and-basil-card.webp",
-    slug: "mini-pack-coconut-oil-and-basil",
-    productColor: "#A2501B",
-    isMiniPack: true,
-    ingredients: ["Oats", "Pumpkin", "Coconut Oil", "Honey", "Chia Seeds", "Spirulina", "Dried Basil", "Dried Parsley", "Lots of Love"],
-    benefits: [
-      {
-        name: "Oats",
-        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
-      },
-      {
-        name: "Pumpkin",
-        description: "High in fiber, great for digestion, and supports gut health by preventing constipation and diarrhea."
-      },
-      {
-        name: "Coconut Oil",
-        description: "A source of healthy fats that promote skin and coat health."
-      },
-      {
-        name: "Honey",
-        description: "A natural sweetener with trace antioxidants and antibacterial properties."
-      },
-      {
-        name: "Chia Seeds",
-        description: "High in omega-3s, fiber, and protein to support joints, digestion, and energy."
-      },
-      {
-        name: "Spirulina",
-        description: "A superfood loaded with antioxidants, vitamins, and minerals that boost the immune system and support detoxification."
-      },
-      {
-        name: "Basil & Parsley",
-        description: "Fragrant herbs with natural anti-inflammatory properties that also help freshen breath."
-      }
-    ],
-    noArtificials: [
-      "Preservatives",
-      "Coloring",
-      "Flavoring",
-      "By-products",
-      "Artificial ingredients",
-      "Salt & Sugar"
-    ],
-    servingGuide: [
-      { dogSize: "Toy Dogs", weight: "<5 kg", pieces: "½ - 2 pieces" },
-      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "1 - 2 pieces" },
-      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "2 - 3 pieces" },
-      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "3 - 4 pieces" },
-      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "4 - 5 pieces" }
-    ],
-    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
-    netWeight: "15g",
-    marketplaces: {
-      shopee: "https://shopee.co.id/MINI-PACK-Heyo-Superfood-Dog-Treats-Better-Breath-Bites-Coconut-Oil-and-Basil-i.1363197955.41456680982",
-      tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/mini-pack-heyo-superfood-dog-treats-better-breath-bites-coconut-oil-and-basil-1731810457579325088"
-    },
-    gallery: getProductImages("mini-pack-coconut-oil-and-basil"),
-    mainImage: getProductMainImage("mini-pack-coconut-oil-and-basil")
-  },
-  {
-    id: "mini-2",
     name: "Mini Pack Strawberry and Carrot",
     description: "Healthy Digestive Bites with Beetroot Powder & Oatmeal",
     price: 15000,
@@ -432,7 +369,7 @@ export const miniPackProducts: MiniPackProduct[] = [
     mainImage: getProductMainImage("mini-pack-strawberry-and-carrot")
   },
   {
-    id: "mini-3",
+    id: "mini-2",
     name: "Mini Pack Pumpkin and Beef",
     description: "Pumpkin & Beef with Flax Seeds & Spirulina",
     price: 15000,
@@ -498,7 +435,71 @@ export const miniPackProducts: MiniPackProduct[] = [
     },
     gallery: getProductImages("mini-pack-pumpkin-and-beef"),
     mainImage: getProductMainImage("mini-pack-pumpkin-and-beef")
-  }
+  },
+  {
+    id: "mini-3",
+    name: "Mini Pack Coconut Oil and Basil",
+    description: "Coconut Oil & Basil with Honey & Chia Seeds",
+    price: 15000,
+    imageSrc: "/images/products/mini-pack-coconut-oil-and-basil/heyo-mini-pack-coconut-oil-and-basil-card.webp",
+    slug: "mini-pack-coconut-oil-and-basil",
+    productColor: "#8DC3A7",
+    isMiniPack: true,
+    ingredients: ["Oats", "Pumpkin", "Coconut Oil", "Honey", "Chia Seeds", "Spirulina", "Dried Basil", "Dried Parsley", "Lots of Love"],
+    benefits: [
+      {
+        name: "Oats",
+        description: "Supports digestion with fiber, vitamins, and minerals while helping regulate blood sugar."
+      },
+      {
+        name: "Pumpkin",
+        description: "High in fiber, great for digestion, and supports gut health by preventing constipation and diarrhea."
+      },
+      {
+        name: "Coconut Oil",
+        description: "A source of healthy fats that promote skin and coat health."
+      },
+      {
+        name: "Honey",
+        description: "A natural sweetener with trace antioxidants and antibacterial properties."
+      },
+      {
+        name: "Chia Seeds",
+        description: "High in omega-3s, fiber, and protein to support joints, digestion, and energy."
+      },
+      {
+        name: "Spirulina",
+        description: "A superfood loaded with antioxidants, vitamins, and minerals that boost the immune system and support detoxification."
+      },
+      {
+        name: "Basil & Parsley",
+        description: "Fragrant herbs with natural anti-inflammatory properties that also help freshen breath."
+      }
+    ],
+    noArtificials: [
+      "Preservatives",
+      "Coloring",
+      "Flavoring",
+      "By-products",
+      "Artificial ingredients",
+      "Salt & Sugar"
+    ],
+    servingGuide: [
+      { dogSize: "Toy Dogs", weight: "<5 kg", pieces: "½ - 2 pieces" },
+      { dogSize: "Small Dogs", weight: "5 - 10 kg", pieces: "1 - 2 pieces" },
+      { dogSize: "Medium Dogs", weight: "10 - 25 kg", pieces: "2 - 3 pieces" },
+      { dogSize: "Large Dogs", weight: "25 - 40 kg", pieces: "3 - 4 pieces" },
+      { dogSize: "Giant Dogs", weight: ">40 kg", pieces: "4 - 5 pieces" }
+    ],
+    storage: "Keep in a cool, dry place or refrigerate for maximum freshness.",
+    netWeight: "15g",
+    marketplaces: {
+      shopee: "https://shopee.co.id/MINI-PACK-Heyo-Superfood-Dog-Treats-Better-Breath-Bites-Coconut-Oil-and-Basil-i.1363197955.41456680982",
+      tokopedia: "https://www.tokopedia.com/heyo-superfood-dog-treats/mini-pack-heyo-superfood-dog-treats-better-breath-bites-coconut-oil-and-basil-1731810457579325088"
+    },
+    gallery: getProductImages("mini-pack-coconut-oil-and-basil"),
+    mainImage: getProductMainImage("mini-pack-coconut-oil-and-basil")
+  },
 ];
 
 export const topperProducts: TopperProduct[] = [
@@ -509,7 +510,7 @@ export const topperProducts: TopperProduct[] = [
     price: 38000,
     imageSrc: "/images/products/shiny-coat-sprinkle/heyo-shiny-coat-sprinkle-card.webp",
     slug: "shiny-coat-sprinkle",
-    productColor: "#F4D03F",
+    productColor: "#A8BECD",
     isTopper: true
   }
 ];

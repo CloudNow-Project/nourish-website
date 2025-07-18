@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { NourishLogo } from "@/components/ui/NourishLogo";
+import { HeyoLogo } from "@/components/ui/HeyoLogo";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function TeamSection() {
   return (
-    <section className="py-20 bg-[#f7d08a] relative overflow-hidden">
+    <section className="py-20 bg-[#F6b656] relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute bottom-10 left-20">
         <Image src="/images/toys/ball.svg" alt="Ball toy" width={80} height={80} />
@@ -17,10 +18,14 @@ export function TeamSection() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-2">Our Team</h2>
-          <h3 className="text-6xl md:text-7xl font-display font-bold text-white">The Bailey Duo</h3>
-        </div>
+        <SectionHeading
+          heading="Meet The Bailey Duo"
+          subheading="Our Team"
+          variant="primary"
+          size="lg"
+          alignment="left"
+          bottomMargin="medium"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left side - CFO */}
@@ -40,7 +45,7 @@ export function TeamSection() {
             </div>
 
             <div className="bg-white rounded-lg p-4 shadow-lg max-w-sm mt-4">
-              <p className="text-lg">He ensures that our products are of premium quality.</p>
+              <p className="text-lg">He ensures that our treats are of premium quality.</p>
             </div>
           </div>
 
@@ -61,7 +66,7 @@ export function TeamSection() {
             </div>
 
             <div className="bg-white rounded-lg p-4 shadow-lg max-w-sm mt-4">
-              <p className="text-lg">She ensures that our products are #DroolWorthy</p>
+              <p className="text-lg">She ensures that our treats are #DroolWorthy</p>
             </div>
           </div>
         </div>
@@ -86,7 +91,7 @@ export function TeamSection() {
 
         {/* Logo */}
         <div className="absolute bottom-10 left-10">
-          <NourishLogo color="white" size={150} />
+          <HeyoLogo color="white" size={150} />
         </div>
       </div>
     </section>

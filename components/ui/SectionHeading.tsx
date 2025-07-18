@@ -10,7 +10,7 @@ interface SectionHeadingProps {
   customShadowColor?: string;
   alignment?: "left" | "center" | "right";
   size?: "sm" | "md" | "lg";
-  bottomMargin?: "none" | "small" | "medium" | "large";
+  bottomMargin?: "none" | "small" | "medium" | "large" | "negative";
   categoryLabel?: {
     text: string;
     icon?: React.ReactNode;
@@ -58,6 +58,8 @@ export function SectionHeading({
         return "mb-8";
       case "large":
         return "mb-16";
+      case "negative":
+        return "mb-[-16px]";
       default:
         return "mb-16";
     }
@@ -109,7 +111,7 @@ export function SectionHeading({
           <p
             className={`text-lg ${
               variant === "primary" ? "text-white/90" : "text-gray-600"
-            } max-w-2xl mx-auto font-semibold`}
+            } max-w-3xl mx-auto font-semibold`}
           >
             {subheading}
           </p>

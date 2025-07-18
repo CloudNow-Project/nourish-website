@@ -45,7 +45,7 @@ export function MarketplaceCTA() {
       </div>
 
       {/* Orange background section */}
-      <div className="bg-[#FFBD58] h-32 md:h-40" />
+      <div className="bg-[#F6b656] h-32 md:h-40" />
 
       {/* Overlapping image */}
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full px-4">

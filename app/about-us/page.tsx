@@ -3,11 +3,13 @@ import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { OurPackJourneyHero } from "@/components/page/our-pack-journey/Hero";
 import { StorySection } from "@/components/page/our-pack-journey/StorySection";
 import { VisionMissionSection } from "@/components/page/our-pack-journey/VisionMissionSection";
-import { ValuesSection } from "@/components/page/our-pack-journey/ValuesSection";
-import { TeamSection } from "@/components/page/our-pack-journey/TeamSection";
+// import { ValuesSection } from "@/components/page/our-pack-journey/ValuesSection";
+// import { TeamSection } from "@/components/page/our-pack-journey/TeamSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { aboutUsCTA } from "./data";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { ValuesSection } from "@/components/page/about-us/ValuesSection";
+import { TeamSection } from "@/components/page/about-us/TeamSection";
 
 export const metadata = {
   title: "Our Pack Story | Heyo",

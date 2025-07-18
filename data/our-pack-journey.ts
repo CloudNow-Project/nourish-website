@@ -1,7 +1,7 @@
 // Hero section
 export const heroContent = {
   heading: "Crafted with Care, Backed by Passion",
-  description: "At Nourish, we're on a mission to fuel joy, health, and tail-wags — one superfood bite at a time."
+  description: "At Heyo, we're on a mission to fuel joy, health, and tail-wags — one superfood bite at a time."
 };
 
 // Journey section
@@ -12,8 +12,8 @@ export const journeyContent = {
 
 // Health benefits section
 export const healthContent = {
-  heading: "Transform Your Dog's Health with Nourish Treats",
-  description: "Nourish treats are crafted to enhance your dog's overall well-being. Packed with superfoods, they support healthy digestion, boost energy, and promote a shiny coat.",
+  heading: "Transform Your Dog's Health with Heyo Treats",
+  description: "Heyo treats are crafted to enhance your dog's overall well-being. Packed with superfoods, they support healthy digestion, boost energy, and promote a shiny coat.",
   imageSrc: "",
   benefits: [
     {
@@ -38,7 +38,7 @@ export const teamContent = {
       id: "emily-carter",
       name: "Emily Carter",
       title: "Founder & Nutritionist",
-      bio: "Emily created Nourish with a passion for combining essential nutrients for your furry friends.",
+      bio: "Emily created Heyo with a passion for combining essential nutrients for your furry friends.",
       imageSrc: ""
     },
     {

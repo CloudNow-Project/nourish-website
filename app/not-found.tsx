@@ -6,7 +6,7 @@ import { Paw } from "@/components/ui/Icons";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#FFBD58] relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-[#F6b656] relative overflow-hidden">
       {/* Animated background paw prints */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -69,7 +69,7 @@ export default function NotFound() {
         >
           <Link
             href="/"
-            className="inline-block bg-white text-[#FFBD58] px-8 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all"
+            className="inline-block bg-white text-[#F6b656] px-8 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all"
           >
             Go Back Home
           </Link>

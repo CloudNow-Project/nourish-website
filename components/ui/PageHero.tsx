@@ -33,7 +33,7 @@ export function PageHero({ backgroundImage, heading, description, highlightedTex
           <ShadowedHeading
             text={heading}
             highlightWord={highlightedText}
-            highlightColor="#FFBD58"
+            highlightColor="#F6b656"
             as="h1"
             size="xl"
             textColor="#FFFFFF"

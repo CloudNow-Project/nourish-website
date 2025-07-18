@@ -2,21 +2,21 @@ import React from "react";
 import Image from "next/image";
 import { IconButton } from "@/components/ui/IconButton";
 import { heroContent } from "@/data/home";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function CTASection() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-chile-rojo mb-6">
-            Ready to Choose Better for Your Pup?
-          </h2>
-
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
-            Treat your furry bestie to something that&apos;s <em>actually</em> good for them.
-            <br />
-            From belly-happy bites to superfood-packed snacks — they&apos;ll love every crunch.
-          </p>
+          <SectionHeading
+            heading="Ready to Choose Better for Your Pup?"
+            subheading="Treat your furry bestie to something that's actually good for them. From belly-happy bites to superfood-packed snacks — they'll love every crunch."
+            variant="secondary"
+            alignment="center"
+            size="lg"
+            bottomMargin="medium"
+          />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <IconButton

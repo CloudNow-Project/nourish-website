@@ -12,20 +12,20 @@ import { mainNav } from "@/data/site";
 import { useLoading } from "@/components/ui/LoadingContext";
 
 export function Navbar() {
-  const { isLoading } = useLoading();
-  const animationDelay = isLoading ? 3 : 0;
   const pathname = usePathname();
+
+  const solidNavPaths: string[] = ["/contact", "/about-us", "/about-us-2"];
+  const needsSolidNav = solidNavPaths.includes(pathname);
+
+  // Check if current page needs animation delay
+  const animationDelayPaths: string[] = ["/"];
+  const needsAnimationDelay = animationDelayPaths.includes(pathname);
+
+  const { isLoading } = useLoading();
+  const animationDelay = isLoading && needsAnimationDelay ? 3 : 0;
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // Check if current page needs solid navbar (currently none, prepared for future)
-  const solidNavPaths: string[] = [
-    "/contact",
-    "/about-us",
-    // Add paths that need solid navbar here, e.g.:
-    // "/checkout",
-    // "/account",
-  ];
-  const needsSolidNav = solidNavPaths.includes(pathname);
 
   // Handle scroll effect
   useEffect(() => {
@@ -129,7 +129,7 @@ export function Navbar() {
             variants={logoAnimation}
           >
             <Link href="/" className="block">
-              <HeyoLogo color="#FFBD58" size={120} className="hover:scale-105 transition-transform duration-300" />
+              <HeyoLogo color="#F6b656" size={120} className="hover:scale-105 transition-transform duration-300" />
             </Link>
           </motion.div>
 
@@ -179,8 +179,8 @@ export function Navbar() {
               <motion.div variants={navItem}>
                 <IconButton
                   // href="#products-section"
-                  icon={<HeyoPaw size={20} color="#000000" />}
-                  variant="black"
+                  icon={<HeyoPaw size={20} color="#F6b656" />}
+                  variant="orange"
                   href="/products"
                   // onClick={() => {
                   //   const element = document.getElementById("products-section");
@@ -213,7 +213,7 @@ export function Navbar() {
             transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
           >
             <Link href="/" className="block">
-              <HeyoLogo color="#FFBD58" size={100} className="transition-transform duration-300" />
+              <HeyoLogo color="#F6b656" size={100} className="transition-transform duration-300" />
             </Link>
           </motion.div>
 

@@ -46,7 +46,6 @@ export function TopperProductPage({ product }: TopperProductPageProps) {
     `/images/products/${product.slug}/heyo-${product.slug}-02.webp`,
     `/images/products/${product.slug}/heyo-${product.slug}-03.webp`,
     `/images/products/${product.slug}/heyo-${product.slug}-04.webp`,
-    `/images/products/${product.slug}/heyo-${product.slug}-05.webp`,
   ];
 
   return (
