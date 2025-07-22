@@ -3,11 +3,11 @@ import { Navbar } from "@/components/layout/Navbar";
 import { MinimalFooter } from "@/components/layout/MinimalFooter";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
 import { IconButton } from "@/components/ui/IconButton";
-import { Instagram, TikTok, Youtube } from "@/components/ui/Icons";
+import { Instagram, TikTok } from "@/components/ui/Icons";
 import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const EMAIL = "contact@nourishfordogs.com";
+const EMAIL = "contact@heyofordogs.com";
 const SOCIALS = [
   {
     name: "Instagram",
@@ -19,11 +19,7 @@ const SOCIALS = [
     url: "https://tiktok.com/@heyofordogs",
     icon: <TikTok className="w-7 h-7 text-ernest-navy" />,
   },
-  {
-    name: "YouTube",
-    url: "https://youtube.com/@heyofordogs",
-    icon: <Youtube className="w-7 h-7 text-ernest-navy" />,
-  },
+  // YouTube removed
 ];
 
 export const metadata = {
@@ -80,9 +76,10 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="hover:scale-110 transition-transform"
+                  className="flex items-center gap-2 hover:scale-110 transition-transform font-semibold text-ernest-navy"
                 >
                   {social.icon}
+                  <span>{social.name}</span>
                 </a>
               ))}
             </div>
