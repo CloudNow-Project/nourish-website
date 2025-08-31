@@ -4,6 +4,7 @@ import Image from "next/image";
 import { IconButton } from "@/components/ui/IconButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedElement } from "@/components/ui/AnimatedElement";
+import { WhatsApp } from "@/components/ui/Icons";
 
 export function MarketplaceCTA() {
   return (
@@ -20,11 +21,11 @@ export function MarketplaceCTA() {
               bottomMargin="medium"
             />
 
-            <div className="flex flex-col md:flex-row gap-4 max-w-[320px] md:max-w-xl mx-auto">
+            <div className="flex flex-col gap-4 items-center justify-center max-w-[320px]  md:max-w-xl mx-auto">
               <IconButton
                 href="https://shopee.co.id/heyofordogs"
                 icon={<Image src="/images/logo/shopee-logo.png" alt="Shopee" width={24} height={24} />}
-                className="w-full bg-[#F65E42] py-4 md:py-3"
+                className="w-[280px] bg-[#F65E42] py-4 md:py-3"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -33,11 +34,20 @@ export function MarketplaceCTA() {
               <IconButton
                 href="https://www.tokopedia.com/heyo-superfood-dog-treats"
                 icon={<Image src="/images/logo/tokped-logo.png" alt="Tokopedia" width={24} height={24} />}
-                className="w-full bg-[#5B9959] py-4 md:py-3"
+                className="w-[280px] bg-[#5B9959] py-4 md:py-3"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Visit Our Tokopedia Store
+              </IconButton>
+              <IconButton
+                href="https://wa.me/6282133127474?text=Hello!%20My%20dog%20is%20ready%20to%20drool%20more%20and%20would%20like%20to%20order%20some%20Heyo%20treats!%20🐶❤️"
+                icon={<WhatsApp size={24} />}
+                className="w-[280px] bg-[#25D366] py-4 md:py-3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chat with Heyo Admin
               </IconButton>
             </div>
           </AnimatedElement>
